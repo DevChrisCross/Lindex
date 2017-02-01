@@ -1,0 +1,72 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Regular.ttf"); }
+@font-face {
+  font-family: RobotoCondensed;
+  src: url("../fonts/RobotoCondensed-Regular.ttf"); }
+
+@import "uib";
+@import "account";
+@import "home";
+@import "question";
+@import "quiz";
+
+.main-view{
+  &.ng-enter{
+    transition: 0.3s ease all;
+    opacity: 0;
+    &.ng-enter-active{
+      opacity: 1;
+    }
+  }
+
+  &.ng-leave{
+    transition: 0.3s ease all;
+    opacity: 1;
+    &.ng-leave-active{
+      opacity: 0;
+    }
+  }
+}
+
+html,
+body{
+  font-family: Roboto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+///*
+legend {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+label{
+  margin: 5px;
+}
+
+a{
+  color: #399DA8;
+  transition: 0.5s ease all;
+
+  &:hover{
+    color: #00dcff;
+  }
+}
+
+
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+//*/
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+.burger-menu{
+  height: 20px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.home-container{
+  background-color: #d7d7d7;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+.home-header{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+
+  height: 75px;
+  background-color: #fafafa;
+  color: #efe6ee;
+  width: 100%;
+  z-index: 2;
+}
+
+.home-header-title{
+  display: flex;
+  align-content: center;
+  align-items: center;
+
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  background-color: #9b2121;
+  color: whitesmoke;
+}
+
+
+.home-view{
+  background-color: #d7d7d7;
+  padding: 10px;
+  border-radius: 5px;
+
+  &.ng-enter{
+    opacity: 0;
+    transition: 1s ease all;
+
+    &.ng-enter-active{
+      opacity: 1;
+    }
+  }
+}
+
+.navigation-button{
+  color: #f5f5f5;
+  padding: 30px;
+  width: 200px;
+  transition: 0.5s ease all;
+  border-left: 0 solid #9b2121;
+  border-bottom: 1px solid #5b5b5b;
+
+  &:hover{
+    color: #9b2121;
+    background-color: #f5f5f5;
+    border-left: 7px solid #9b2121;
+  }
+
+  &.selected{
+    color: #9b2121;
+    background-color: #f5f5f5;
+    border-left: 7px solid #9b2121;
+  }
+}
+
+.navigation-button-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation-menu{
+  display: flex;
+  justify-content: center;
+  height: 0;
+  overflow: hidden;
+
+  background-color: #414141;
+  transition: 1s ease all;
+
+  &.show{
+    height: 200px;
+  }
+
+  & > #lindex-logo{
+    align-self: center;
+    margin: 0 100px;
+    height: 80px;
+  }
+}
+
+#tup-home-logo{
+  height: 50px;
+  width: auto;
+}

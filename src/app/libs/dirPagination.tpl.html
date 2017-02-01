@@ -1,0 +1,71 @@
+<style type="text/css">
+    .pagination{
+        display: flex;
+        border-radius: 5px;
+    }
+
+    .pagination > div{
+        color: #399da8;
+        cursor: pointer;
+        background-color: #fafafa;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        border: 1px solid #7C7C7C;
+
+        padding: 10px;
+        transition: 0.5s ease all;
+    }
+
+    .pagination > div:last-child{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .pagination > div:first-child{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .pagination > div:hover{
+        background-color: #3dc2cd;
+        color: #ffffff;
+    }
+    .pagination > .active{
+        background-color: #3dc2cd !important;
+        color: #ffffff !important;
+    }
+
+    .pagination > .disabled,
+    .pagination > .disabled:hover{
+        color: #5f5f5f !important;
+        background-color: #c6cdcd !important;
+        cursor: not-allowed !important;
+    }
+</style>
+
+<div class="pagination" ng-if="1 < pages.length || !autoHide">
+    <div ng-if="boundaryLinks" ng-click="setCurrent(1)" ng-class="{ disabled : pagination.current == 1 }">
+        <!--<a href="" ng-click="setCurrent(1)">&laquo;</a>-->
+        First
+    </div>
+    <div ng-if="directionLinks" ng-click="setCurrent(pagination.current - 1)" ng-class="{ disabled : pagination.current == 1 }">
+        <!--<a href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>-->
+        Prev
+    </div>
+    <div ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-click="setCurrent(pageNumber)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+        <!--<a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>-->
+        {{pageNumber}}
+    </div>
+
+    <div ng-if="directionLinks" ng-click="setCurrent(pagination.current + 1)" ng-class="{ disabled : pagination.current == pagination.last }">
+        <!--<a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>-->
+        Next
+    </div>
+    <div ng-if="boundaryLinks" ng-click="setCurrent(pagination.last)" ng-class="{ disabled : pagination.current == pagination.last }">
+        <!--<a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>-->
+        Last
+    </div>
+</div>

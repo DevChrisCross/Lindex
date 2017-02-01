@@ -1,0 +1,43 @@
+<section class="add-question-container">
+    <div class="dropdown-container">
+        <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'category'">
+            <span ng-if="questionVm.data.selectedCategory === undefined">Choose a category</span>
+            <span ng-if="questionVm.data.selectedCategory !== undefined">{{questionVm.data.selectedCategory}}</span>
+            <img src="../../../img/ico/dropdown-icon.png">
+        </div>
+        <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'category'}">
+            <li ng-repeat="category in questionVm.categories" ng-click="questionVm.selectedCategory = category; questionVm.activeDropDown = ''">{{category}}</li>
+        </ul>
+    </div>
+    <div class="dropdown-container">
+        <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'subcategory'">
+            <span ng-if="questionVm.data.selectedSubCategory === undefined">Choose a subcategory</span>
+            <span ng-if="questionVm.data.selectedSubCategory !== undefined">{{questionVm.data.selectedSubCategory}}</span>
+            <img src="../../../img/ico/dropdown-icon.png">
+        </div>
+        <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'subcategory'}">
+            <li ng-repeat="subcategory in questionVm.subcategories" ng-click="questionVm.selectedSubCategory = subcategory; questionVm.activeDropDown = ''">{{subcategory}}</li>
+        </ul>
+    </div>
+    <div class="dropdown-container">
+        <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'subject'">
+            <span ng-if="questionVm.data.selectedSubject === undefined">Choose a subject</span>
+            <span ng-if="questionVm.data.selectedSubject !== undefined">{{questionVm.data.selectedSubject}}</span>
+            <img src="../../../img/ico/dropdown-icon.png">
+        </div>
+        <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'subject'}">
+            <li ng-repeat="subject in questionVm.subjects" ng-click="questionVm.selectedSubject = subject; questionVm.activeDropDown = ''">{{subject}}</li>
+        </ul>
+    </div>
+    <section class="question-input">
+        <p>Question:</p>
+        <textarea class="user-input" placeholder="Enter the question here." ng-model="questionVm.data.question"></textarea>
+    </section>
+    <section class="question-input">
+        <p>Answer:</p>
+        <input class="user-input" placeholder="Enter the answer here." ng-model="questionVm.data.answer">
+    </section>
+    <section class="question-button-container">
+        <button class="button question-button" ng-click="questionVm.addQuestion()">Add Question</button>
+    </section>
+</section>

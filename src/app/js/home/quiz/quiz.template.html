@@ -1,0 +1,96 @@
+<uib-tabset active="active">
+    <uib-tab index="0">
+        <uib-tab-heading class="tab-head-container">
+            <img src="../../../img/ico/list-icon-2.png" class="tab-icon">
+            <p class="tab-head">Quiz List</p>
+        </uib-tab-heading>
+        <section class="search-bar">
+            <section class="search-filter">
+                <span>Search:</span>
+                <input type="text" class="user-input search-bar" ng-model="quizVm.search" placeholder="Search quiz title here">
+            </section>
+            <section class="search-filter">
+                <span>Sort by:</span>
+                <section class="search-filter-container">
+                    <div class="dropdown-container">
+                        <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'sorter'">
+                            <span>{{quizVm.selectedSorter}}</span>
+                            <img src="../../../img/ico/dropdown-icon.png" class="drop-icon">
+                        </div>
+                        <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'sorter'}">
+                            <li ng-repeat="sorter in quizVm.sorters" ng-click="quizVm.selectedSorter = sorter; quizVm.activeDropDown = ''">{{sorter}}</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="search-filter-container">
+                    <div class="dropdown-container">
+                        <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'sorterType'">
+                            <span>{{quizVm.selectedSortType.name}}</span>
+                            <img src="../../../img/ico/dropdown-icon.png" class="drop-icon">
+                        </div>
+                        <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'sorterType'}">
+                            <li ng-repeat="sortType in quizVm.sortTypes" ng-value="sortType.value"
+                                ng-click="quizVm.selectedSortType = sortType; quizVm.activeDropDown = ''">{{sortType.name}}</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+            <section class="search-filter">
+                <span>Show</span>
+                <section class="search-filter-container">
+                    <div class="dropdown-container entry">
+                        <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'limit'">
+                            {{quizVm.entryLimit}}
+                            <img src="../../../img/ico/dropdown-icon.png" class="drop-icon">
+                        </div>
+                        <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'limit'}">
+                            <li ng-repeat="entry in quizVm.entries" ng-click="quiz.entryLimit = entry; quizVm.activeDropDown = '';">{{entry}}</li>
+                        </ul>
+                    </div>
+                </section>
+                <span>entries</span>
+            </section>
+        </section>
+        <hr class="row-divider">
+        <section class="item-pager">
+            <section>Total of {{quizVm.totalItems}} items</section>
+            <dir-pagination-controls auto-hide="false"
+                                     direction-links="true"
+                                     boundary-links="true"
+                                     template-url="libs/dirPagination.tpl.html">
+            </dir-pagination-controls>
+        </section>
+        <!--
+        <section class="question-table">
+            <section class="question-header">
+                <section class="question-header-item" ng-repeat="questionHeader in quizVm.quizHeaders">{{questionHeader}}</section>
+            </section>
+            <section class="question-list-container">
+                <section class="question-view"
+                         dir-paginate="item in quizVm.items |
+                                    orderBy:quizVm.selectedSorter.toLowerCase():quizVm.selectedSortType.value |
+                                    itemsPerPage: quizVm.entryLimit |
+                                    filter: {question: quizVm.search} as itemsFound">
+
+                </section>
+                <section class="empty-list" ng-class="{'active': itemsFound.length===0}">No items found</section>
+            </section>
+        </section>-->
+        <section class="item-pager">
+            <section>Total of {{questionVm.totalItems}} items</section>
+            <dir-pagination-controls auto-hide="false"
+                                     direction-links="true"
+                                     boundary-links="true"
+                                     template-url="libs/dirPagination.tpl.html">
+            </dir-pagination-controls>
+        </section>
+    </uib-tab>
+    <uib-tab index="1">
+        <uib-tab-heading class="tab-head-container">
+            <img src="../../../img/ico/add-icon.png" class="tab-icon">
+            <p class="tab-head">Add Quiz</p>
+        </uib-tab-heading>
+        <create-quiz></create-quiz>
+    </uib-tab>
+</uib-tabset>
+

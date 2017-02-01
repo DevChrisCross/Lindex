@@ -1,0 +1,151 @@
+#remember-label{
+  margin-right: 80px;
+}
+
+#forgot-password{
+  color: #c94f4c;
+  text-decoration: none;
+  border-bottom: 0 #c0c0c0 solid;
+  transition: 0.3s ease all;
+
+  &:hover{
+    color: #ff3b40;
+    border-bottom: 1px #f53d39 solid;
+    transition: 0.3s ease all;
+  }
+}
+
+
+  .error{
+    display: flex;
+    justify-content: space-between;
+
+    width: 375px;
+    padding: 10px;
+    margin-bottom: -20px;
+
+    background-color: #ffc0c0;
+    border: 1px solid #AF2C3C;
+    border-radius: 5px;
+    color: #AF2C3C;
+    font-size: 14px;
+
+
+    &.error-show{
+      &.ng-hide {
+        opacity: 0;
+      }
+
+      &.ng-hide-add,
+      &.ng-hide-remove {
+        transition: all linear 0.5s;
+      }
+      /*
+      &.ng-hide-add{
+        opacity: 0;
+        //transform: translateY(50);
+        transition: 0.5s ease all;
+        &.ng-hide-add-active{
+          opacity: 1;
+          //transform: translateY(0);
+        }
+      }
+
+      &.ng-hide-remove{
+        opacity: 1;
+        //transform: translateY(0);
+        transition: 0.5s ease all;
+        &.ng-hide-remove-active{
+          opacity: 0;
+          //transform: translateY(50);
+        }
+      }*/
+    }
+  }
+
+  .login-form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+
+    .login-field{
+      width: 400px;
+      margin: 30px auto;
+
+      display: flex;
+      flex-direction: column;
+
+      border: 1px #7F7F7F solid;
+      border-radius: 5px;
+    }
+
+      .login-button-container{
+        display: flex;
+        align-content: center;
+        align-items: center;
+
+        margin: 20px 10px 5px 10px;
+      }
+
+.login-type-container{
+  border: 1px #7C7C7C solid;
+  border-radius: 5px;
+  display: flex;
+  margin: 10px auto;
+  overflow: hidden;
+  width: 95%;
+}
+
+.login-type-button{
+  background-color: white;
+  color: #555555;
+  flex-basis: 50%;
+  font-size: 12px;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  transition: 0.5s ease all;
+
+  &:hover{
+    background-color: #cdcdcd;
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.login-type-button.selected{
+  background-color: #555555;
+  color: white;
+  box-shadow: inset 0 0 10px #333333;
+}
+
+.button{
+  background-color: #3dc2cd;
+  border: 1px #7C7C7C solid;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  width: 150px;
+  padding: 10px;
+  transition: 0.5s ease all;
+
+  &:hover{
+    background-color: #ffffff;
+    border: 1px #69d7e2 solid;
+    color: #3dc2cd;
+    transition: 0.3s ease all;
+  }
+}
+
+.user-input{
+  width: 95%;
+  margin: 10px auto;
+  padding: 10px;
+
+  border: 1px #7C7C7C solid;
+  border-radius: 5px;
+  box-shadow: none;
+  color: #3C3C3C;
+}

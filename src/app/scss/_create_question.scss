@@ -1,0 +1,27 @@
+.add-question-container{
+  display: flex;
+  flex-direction: column;
+  margin: 0 300px;
+
+  & > .dropdown-container{
+    width: 100%;
+  }
+
+  & > .question-input{
+    &:nth-child(4) > .user-input{
+      width: 100% !important;
+      height: 200px !important;
+      border-radius: 10px;
+    }
+
+    &:nth-child(5) > .user-input{
+      width: 100%;
+    }
+  }
+}
+
+.question-button-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}

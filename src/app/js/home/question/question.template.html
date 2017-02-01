@@ -1,0 +1,126 @@
+<uib-tabset active="active">
+    <uib-tab index="0">
+        <uib-tab-heading class="tab-head-container">
+            <img src="../../../img/ico/list-icon-2.png">
+            <p>Question List</p>
+        </uib-tab-heading>
+        <section class="search-bar">
+            <section class="search-filter">
+                <span>Search:</span>
+                <input type="text" class="user-input search-bar" ng-model="questionVm.search" placeholder="Search a question here">
+            </section>
+            <section class="search-filter">
+                <span>Sort by:</span>
+                <div class="dropdown-container">
+                    <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'sorter'">
+                        <span>{{questionVm.selectedSorter}}</span>
+                        <img src="../../../img/ico/dropdown-icon.png">
+                    </div>
+                    <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'sorter'}">
+                        <li ng-repeat="sorter in questionVm.sorters" ng-click="questionVm.selectedSorter = sorter; questionVm.activeDropDown = ''">{{sorter}}</li>
+                    </ul>
+                </div>
+                <div class="dropdown-container">
+                    <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'sorterType'">
+                        <span>{{questionVm.selectedSortType.name}}</span>
+                        <img src="../../../img/ico/dropdown-icon.png">
+                    </div>
+                    <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'sorterType'}">
+                        <li ng-repeat="sortType in questionVm.sortTypes" ng-value="sortType.value" ng-click="questionVm.selectedSortType = sortType; questionVm.activeDropDown = ''">{{sortType.name}}</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="search-filter">
+                <span>Show</span>
+                <div class="dropdown-container numeric">
+                    <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'limit'">
+                        <span>{{questionVm.entryLimit}}</span>
+                        <img src="../../../img/ico/dropdown-icon.png">
+                    </div>
+                    <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'limit'}">
+                        <li ng-repeat="entry in questionVm.entries" ng-click="questionVm.entryLimit = entry; questionVm.activeDropDown = '';">{{entry}}</li>
+                    </ul>
+                </div>
+                <span>entries</span>
+            </section>
+        </section>
+        <hr class="row-divider">
+        <section class="item-pager">
+            <section>Total of {{questionVm.totalItems}} items</section>
+            <dir-pagination-controls
+                auto-hide="false"
+                direction-links="true"
+                boundary-links="true"
+                template-url="libs/dirPagination.tpl.html">
+            </dir-pagination-controls>
+        </section>
+        <section class="table-container">
+            <header class="table-header">
+                <section class="table-header-item question-data" ng-repeat="questionHeader in questionVm.questionHeaders">{{questionHeader}}</section>
+            </header>
+            <section
+                class="table-item-container"
+                dir-paginate="item in questionVm.items |
+                    orderBy:questionVm.selectedSorter.toLowerCase():questionVm.selectedSortType.value |
+                    itemsPerPage: questionVm.entryLimit |
+                    filter: {question: questionVm.search} as itemsFound">
+                {{item.q_det}}
+                {{questionVm.sortTypes}}
+                <section class="table-item" ng-class="{'disabled': false}">
+                    <section class="table-item-data question-data">{{item.categ}}</section>
+                    <section class="table-item-data question-data">{{item.sub_code}}</section>
+                    <section class="table-item-data question-data">{{item.subject}}</section>
+                    <section class="table-item-data question-data">{{item.question}}</section>
+                    <section class="table-item-data question-data">{{item.answer}}</section>
+                    <section class="table-item-data question-data">
+                        <button class="button table-button" ng-click="questionVm.edit = item.id">
+                            <img src="../../../img/ico/edit-icon-red.png">
+                            <span>Edit</span>
+                        </button>
+                        <button class="button table-button" ng-click="">
+                            <img src="../../../img/ico/delete-icon-red.png">
+                            <span>Delete</span>
+                        </button>
+                    </section>
+                </section>
+                <section class="question-edit" ng-class="{'active': false}">
+                    <header class="question-header">
+                        <img src="../../../img/ico/edit-icon-red.png">
+                        <span>Edit Question</span>
+                    </header>
+                    <section class="question-body">
+                        <section class="question-input">
+                            <p>Question</p>
+                            <textarea class="user-input" ng-model="item.question"></textarea>
+                        </section>
+                        <section class="question-input">
+                            <p>Answer</p>
+                            <input class="user-input" type="text" ng-model="item.answer">
+                        </section>
+                        <section class="question-button-container">
+                            <button class="button question-button" ng-click="questionVm.edit = 0">Save</button>
+                            <button class="button question-button" ng-click="questionVm.edit = 0">Cancel</button>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="empty-list" ng-class="{'active': itemsFound.length===0}">No items found</section>
+        </section>
+        <section class="item-pager">
+            <section>Total of {{questionVm.totalItems}} items</section>
+            <dir-pagination-controls auto-hide="false"
+                direction-links="true"
+                boundary-links="true"
+                template-url="libs/dirPagination.tpl.html">
+            </dir-pagination-controls>
+        </section>
+    </uib-tab>
+    <uib-tab index="1">
+        <uib-tab-heading class="tab-head-container">
+            <img src="../../../img/ico/add-icon.png">
+            <p>Add Question</p>
+        </uib-tab-heading>
+        <create-question></create-question>
+    </uib-tab>
+</uib-tabset>
+

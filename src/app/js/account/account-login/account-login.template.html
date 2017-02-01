@@ -1,0 +1,21 @@
+<section class="error error-show" ng-show="accountLoginVm.incorrect">
+    <span>Incorrect username or password.</span>
+    <button class="close-button" ng-click="accountLoginVm.incorrect = false"></button>
+</section>
+<form class="login-form">
+    <fieldset class="login-field">
+        <legend>Account Sign-in</legend>
+        <div class="login-type-container">
+            <label class="login-type-button" ng-class="{'selected': accountLoginVm.signInAs==='Student'}" ng-model="accountLoginVm.signInAs" uib-btn-radio="'Student'" uib-uncheckable="uncheckable">Student</label>
+            <label class="login-type-button" ng-class="{'selected': accountLoginVm.signInAs==='Professor'}" ng-model="accountLoginVm.signInAs" uib-btn-radio="'Professor'" uib-uncheckable="uncheckable">Professor</label>
+        </div>
+        <input class="user-input" type="text" ng-model="accountLoginVm.user.username" id="username" placeholder="Username" required autofocus />
+        <input class="user-input" type="password" ng-model="accountLoginVm.user.password" id="password" placeholder="Password" required />
+        <div class="login-button-container">
+            <label for="remember-label">Remember me</label>
+            <input type="checkbox" name="rememberUser" id="remember-label">
+            <button class="button" ng-click="accountLoginVm.login()">Sign In</button>
+        </div>
+    </fieldset>
+    <a ui-sref="account.retrieve" id="forgot-password">Forgot your username or password?</a>
+</form>

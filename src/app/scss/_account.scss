@@ -1,0 +1,131 @@
+#lindex-logo{
+  height: 200px;
+  width: auto;
+  flex-shrink: 0;
+
+  display: block;
+  margin-bottom: 25px;
+}
+
+#tup-logo{
+  height: 175px;
+  width: auto;
+  margin-bottom: 30px;
+
+  transition: 1s ease all;
+  position: relative;
+  z-index: 2;
+
+  &:hover{
+    height: 200px;
+    transform: rotate(360deg);
+    transition: 1s ease all;
+  }
+  &:hover~.tup-header{
+    color: #ebebeb;
+    font-size: 30px;
+    transition: 1s ease all;
+  }
+  &:hover~.black-box{
+    background-color: #2b2b2b;
+    transition: 1s ease all;
+  }
+  &:hover~.tup-body{
+    color: #c83338;
+    transition: 1s ease all;
+
+    & a{
+      color: #ebebeb;
+      transition: 1s ease all;
+    }
+  }
+}
+
+.account-container{
+  height: 100vh;
+  display: flex;
+  position: relative;
+
+  background: url("../img/bg/login-bg.jpg") center center /cover no-repeat border-box border-box fixed white;
+  color: #4b4b4b;
+  font-family: Roboto;
+  overflow: hidden;
+}
+
+.account-login-container{
+  flex-basis: 60%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  margin-top: 125px;
+}
+
+.login-view{
+  &.ng-enter{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s ease all;
+
+    &.ng-enter-active{
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.account-side-container{
+  flex-basis: 40%;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+
+  margin-top: 115px;
+  margin-right: 50px;
+  margin-left: 100px;
+}
+
+.black-box{
+  height: 2000px;
+  width: 1000px;
+  align-self: flex-start;
+
+  position: absolute;
+  left: 720px;
+  top: -150px;
+
+  background-color: rgba(43, 43, 43, 0.9);
+  transform: rotate(45deg);
+  transition: 1s ease all;
+  z-index: 1;
+}
+
+.tup-header{
+  color: #AF2C3C;
+  font-family: RobotoCondensed;
+  font-size: 25px;
+  font-weight: bolder;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 1s ease all;
+
+  position: relative;
+  z-index: 2;
+}
+
+.tup-body{
+  color: whitesmoke;
+  font-family: Roboto;
+  font-size: 13px;
+  line-height: 2;
+  text-align: justify;
+  text-indent: 50px;
+  transition: 1s ease all;
+  position: relative;
+  z-index: 2;
+}
+
+@import "account_login";
+@import "account_retrieve";

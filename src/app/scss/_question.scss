@@ -1,0 +1,355 @@
+.button{
+  &.table-button {
+    display: flex;
+    width: 85px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #414141;
+
+    &:hover {
+      background-color: white;
+      color: #414141;
+      border: 1px solid #9b2121;
+    }
+
+    & > img {
+      height: 15px;
+      margin-right: 5px;
+    }
+  }
+
+  &.question-button{
+    width: 200px;
+  }
+}
+
+.dropdown-container{
+  position: relative;
+  font-size: 13px;
+  width: 175px;
+  margin: 10px 5px;
+
+  & > .dropdown-header{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #7d7d7d;
+    width: 100%;
+
+    & > img{
+      height: 10px;
+      width: 10px;
+    }
+  }
+
+  & > .dropdown{
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 0;
+    transition: 0.5s ease all;
+    z-index: 10;
+
+    & > li{
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      border-bottom: 1px solid #e1e1e1;
+      transition: 0.5s ease all;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #505050;
+        color: #f5f5f5;
+      }
+    }
+
+    &.active{
+      max-height: 100px;
+    }
+  }
+
+  &.numeric{
+    width: 60px;
+  }
+}
+
+.item-pager{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+
+  padding: 0 10px;
+  margin-top: 35px;
+}
+
+
+
+.tab-head-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 30px;
+
+  & > img{
+    height: 15px;
+  }
+
+  & > p{
+    display: inline;
+    margin-left: 5px;
+  }
+}
+
+.table-container{
+  border: 1px solid #c3c3c3;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 30px 0;
+
+  & > .table-header{
+    display: flex;
+    background-color: #414141;
+    color: #f5f5f5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    & > .table-header-item{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      padding: 20px;
+      border-right: 1px solid #c3c3c3;
+      border-left: 1px solid #c3c3c3;
+      word-break: break-all;
+
+      &.question-data{
+        &:first-child{
+          border-top-left-radius: 10px;
+          width: 10%;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(5){
+          width: 10%;
+        }
+
+        &:nth-child(4){
+          width: 45%;
+        }
+
+        &:last-child{
+          border-top-right-radius: 10px;
+          width: 15%;
+        }
+      }
+    }
+  }
+
+  & > .table-item-container{
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease all;
+    position: relative;
+
+    &.ng-leave {
+      opacity: 1;
+      height: 30px;
+    }
+
+    &.ng-leave-active{
+      opacity: 0;
+      height: 0px;
+    }
+
+    &.ng-enter{
+      top: 50px;
+      opacity: 0;
+    }
+
+    &.ng-enter-active{
+      top: 0;
+      opacity: 1;
+    }
+
+    &:nth-child(even) > .table-item{
+      background-color: #f5d0cf;
+      color: #4b4b4b;
+    }
+
+    &:nth-child(odd) > .table-item{
+      background-color: #fff4f5;
+      color: #4b4b4b;
+    }
+
+    & > .table-item {
+      display: flex;
+      transition: 0.5s ease all;
+      position: relative;
+      height: auto;
+      min-height: 75px;
+
+      &.disabled{
+        opacity: 0;
+        height: 0;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      & > .table-item-data{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        padding: 20px;
+        border-right: 1px solid #c3c3c3;
+        border-left: 1px solid #c3c3c3;
+        word-break: break-all;
+
+        &.question-data{
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(5){
+            width: 10%;
+          }
+
+          &:nth-child(4){
+            width: 45%;
+          }
+
+          &:nth-child(6){
+            justify-content: space-between;
+            width: 15%;
+          }
+        }
+      }
+
+      &:last-child{
+        & > .table-item-data{
+          &:first-child{
+            border-bottom-left-radius: 10px;
+          }
+
+          &:last-child{
+            border-bottom-right-radius: 10px;
+          }
+        }
+      }
+    }
+
+    & > .question-edit{
+      display: flex;
+      flex-direction: column;
+      height: 0;
+      transition: 0.5s ease all;
+      border-top: 1px solid #c3c3c3;
+      border-bottom: 1px solid #c3c3c3;
+      overflow: hidden;
+
+      &.active{
+        height: 500px;
+      }
+
+      & > .question-body{
+        margin: 0 300px;
+
+        & > .question-input{
+          &:first-child > .user-input{
+            width: 100% !important;
+            height: 200px !important;
+            border-radius: 10px;
+          }
+
+          &:nth-child(2) > .user-input{
+            width: 100%;
+          }
+        }
+      }
+
+      & > .question-header{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background-color: #cacaca;
+        color: #e33939;
+        height: 40px;
+
+        & > img{
+          height: 15px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  & > .empty-list{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: relative;
+    padding: 0;
+    height: 0;
+    top: 50px;
+
+    background-color: #cdcdcd;
+    opacity: 0;
+    transition: 0.5s ease all;
+
+    &.active{
+      padding: 20px 0;
+      height: 75px;
+      top: 0;
+      opacity: 1;
+    }
+  }
+}
+
+.row-divider{
+  margin: 25px 10px 0 10px;
+}
+
+
+.search-bar{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.search-filter{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.user-input.search-bar{
+  width: 600px;
+  padding: 10px;
+  margin-left: 5px;
+}
+
+@import "create_question";
