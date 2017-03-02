@@ -7,8 +7,8 @@
     angular.module("lindex.account")
         .config(accountConfiguration);
 
-        accountConfiguration.$inject = ["$urlRouterProvider", "$stateProvider"];
-        function accountConfiguration  ( $urlRouterProvider ,  $stateProvider ) {
+        accountConfiguration.$inject = ["$stateProvider"];
+        function accountConfiguration  ( $stateProvider ) {
             $stateProvider
                 .state("account.login", {
                     url: "",

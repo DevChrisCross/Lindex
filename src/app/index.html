@@ -7,28 +7,29 @@
     <meta name="description" content="The Technological University of the Philippines Online Examination System">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    -->
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="css/normalize.css">
-    <!--<link rel="stylesheet" href="libs/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/bootstrap-theme.min.css">-->
+    <link rel="stylesheet" href="libs/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <script src="libs/angular.min.js"></script>
-    <script src="libs/angular-resource.min.js"></script>
     <script src="libs/angular-ui-router.min.js"></script>
+    <script src="libs/ngStorage.min.js"></script>
     <script src="libs/angular-jwt.min.js"></script>
     <script src="libs/angular-storage.min.js"></script>
     <script src="libs/angular-animate.min.js"></script>
     <script src="libs/angular-touch.min.js"></script>
-    <!--<script src="libs/ui-bootstrap-2.4.0.min.js"></script>-->
     <script src="libs/ui-bootstrap-tpls-2.4.0.min.js"></script>
     <script src="libs/dirPagination.js"></script>
+    <script src="libs/jsrsasign.js"></script>
 
     <script src="js/app.module.js"></script>
     <script src="js/app.config.js"></script>
     <script src="js/account/account.module.js"></script>
     <script src="js/account/account.config.js"></script>
-    <!--<script src="js/account/account.service.js"></script>-->
     <script src="js/account/account.component.js"></script>
     <script src="js/account/account-login/account-login.component.js"></script>
     <script src="js/account/account-retrieve/account-retrieve.component.js"></script>
@@ -37,10 +38,10 @@
     <script src="js/home/home.component.js"></script>
     <script src="js/home/dashboard/dashboard.module.js"></script>
     <script src="js/home/dashboard/dashboard.component.js"></script>
+    <script src="js/home/tags/tags.module.js"></script>
+    <script src="js/home/tags/tags.component.js"></script>
     <script src="js/home/question/question.module.js"></script>
-    <script src="js/home/question/question.service.js"></script>
     <script src="js/home/question/question.component.js"></script>
-    <script src="js/home/question/create/create-question.component.js"></script>
     <script src="js/home/quiz/quiz.module.js"></script>
     <script src="js/home/quiz/quiz.config.js"></script>
     <script src="js/home/quiz/quiz.component.js"></script>
@@ -49,6 +50,8 @@
     <script src="js/home/quiz/create/add-test/add-test.component.js"></script>
     <script src="js/home/class/class.module.js"></script>
     <script src="js/home/class/class.component.js"></script>
+    <script src="js/services/authentication.service.js"></script>
+    <script src="js/services/data.service.js"></script>
 </head>
 <body>
     <main class="main-view" ui-view=""></main>

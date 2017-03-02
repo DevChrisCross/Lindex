@@ -1,6 +1,3 @@
-/**
- * Created by Chris on 10/01/2017.
- */
 (function () {
     "use strict";
 
@@ -8,39 +5,35 @@
         .component("accountLogin", {
             templateUrl: "js/account/account-login/account-login.template.html",
             controller: accountLoginController,
-            controllerAs: "accountLoginVm"
+            controllerAs: "loginVm"
         });
 
-        accountLoginController.$inject = ["$http", "$state"];
-        function accountLoginController  ( $http ,  $state ) {
+        accountLoginController.$inject = ["$state", "$rootScope", "AuthenticationService", "DataService"];
+        function accountLoginController  ( $state ,  $rootScope ,  AuthenticationService ,  DataService ) {
             let self = this;
-            self.signInAs = 'Student';
-            self.incorrect = false;
-            self.user = {};
+
+            (function init() {
+                self.invalid = false;
+                self.user = {};
+                self.user.signInAs = 'Student';
+                $rootScope.user = undefined;
+                AuthenticationService.logout();
+            })();
 
             self.login = function () {
-
                 event.preventDefault();
-
-                //$state.go("home.dashboard");
-                /*
-                event.preventDefault();
-                $http.get("http://localhost:3000/" + self.signInAs + "s?username=" + self.user.username + "&&password=" + self.user.password)
-                    .then(function (response) {
-                        let api = JSON.stringify(response.api[0]);
-                        if (api !== undefined) {
-                            api = JSON.parse(api);
-                            accountService.setName(api.name);
+                AuthenticationService.login(self.user, function (response) {
+                    if (response !== undefined) {
+                        DataService.initialize(response, function (response) {
                             $state.go("home.dashboard");
-                        } else {
-                            self.user.username = self.user.password = "";
-                            self.incorrect = true;
-                        }
-
-                    });//*/
-
-
-
+                        });
+                    } else {
+                        self.invalid = true;
+                        self.user.username = undefined;
+                        self.user.password = undefined;
+                    }
+                });
             }
+
         }
 })();

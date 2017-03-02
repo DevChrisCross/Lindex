@@ -1,0 +1,296 @@
+.table-header.qsearch{
+  height: 40px;
+
+  & > .table-header-item{
+    &.question-data{
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3){
+        width: 12%;
+      }
+
+      &:nth-child(4){
+        width: 55%;
+      }
+
+      &:last-child{
+        width: 10%;
+      }
+    }
+  }
+}
+
+.table-item-container.qsearch{
+  & > .table-item{
+    & > .table-item-data{
+      &.question-data{
+        &.question-data{
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3){
+            width: 12%;
+          }
+
+          &:nth-child(4){
+            width: 55%;
+          }
+
+          &:last-child{
+            width: 10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-header{
+  & > .table-header-item{
+    &.quiz-data{
+      &:first-child{
+        border-top-left-radius: 10px;
+        width: 10%;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(5),
+      &:nth-child(6){
+        width: 10%;
+      }
+
+      &:nth-child(4){
+        width: 20%;
+      }
+
+      &:last-child{
+        border-top-right-radius: 10px;
+        width: 30%;
+      }
+    }
+
+    &.qlist-data{
+      &:first-child{
+        border-top-left-radius: 10px;
+        width: 7%;
+      }
+
+      &:nth-child(2){
+        width: 97%;
+      }
+
+      &:last-child{
+        border-top-right-radius: 10px;
+        width: 20%;
+      }
+    }
+  }
+}
+
+.table-container.qlist-table{
+  margin: 0;
+  max-height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.table-item-container{
+  & > .table-item{
+    min-height: 0;
+
+    & > .table-item-data{
+      &.quiz-data{
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(6){
+          width: 10%;
+        }
+
+        &:nth-child(4){
+          width: 20%;
+        }
+
+        &:nth-child(7){
+          justify-content: space-between;
+          width: 30%;
+        }
+      }
+
+      &.qlist-data{
+        &:nth-child(1){
+          width: 8%;
+        }
+
+        &:nth-child(2){
+          width: 100%;
+        }
+
+        &:nth-child(3){
+          justify-content: center;
+          width: 19%;
+        }
+      }
+    }
+  }
+}
+
+.datepicker{
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  padding: 9px;
+  border-radius: 3px;
+  margin: 10px 0;
+}
+
+.add-quiz-container{
+  display: flex;
+  flex-direction: column;
+  //margin: 0 100px;
+  align-items: center;
+  align-content: center;
+
+
+  & > .quiz-form-block{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-height: 1000px;
+    margin: 5px 0;
+    transition: max-height 2s ease, margin 1s ease;
+
+
+    &:nth-child(2){
+      & > .info{
+        width: 100%;
+      }
+    }
+
+    &:nth-child(3){
+      overflow: hidden;
+    }
+
+    &.disabled{
+      max-height: 0;
+      margin: 0;
+    }
+
+    & > .set{
+      align-self: center;
+      margin-top: 15px;
+
+      & > .button.table-button{
+        &.disabled{
+          cursor: not-allowed;
+          background-color: rgb(113, 113, 113);
+          color: rgb(181, 181, 181);
+        }
+      }
+    }
+
+    & > .dropdown-format{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+
+      & > span{
+        align-self: flex-start;
+      }
+
+      & > .dropdown-container{
+        margin: 10px 0;
+        width: 100%;
+      }
+    }
+
+    & > .block-divider{
+      &:nth-child(2){
+        width: 75%;
+        margin-left: 50px;
+      }
+
+      & > .input-block{
+        margin: 10px 0;
+        max-height: 1000px;
+        overflow: hidden;
+        transition: 1s ease all;
+
+        &.disabled{
+          max-height: 0;
+          margin: 0;
+        }
+
+        & > input{
+          width: 100%;
+        }
+
+        & > #remember-label{
+          width: auto;
+          margin-left: 5px;
+        }
+      }
+
+      & > .qlist-data{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        overflow: hidden;
+        max-height: 50px;
+        transition: 0.5s ease all;
+
+        &.disabled{
+          max-height: 0;
+        }
+
+        & > .button.table-button{
+          margin: 0 10px;
+          width: 200px;
+        }
+      }
+
+      & > .qlist-button{
+        margin-top: 35px;
+      }
+
+      & > .qlist-input{
+        background-color: aquamarine;
+        max-height: 0;
+        margin: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        transition: 1s ease all;
+
+        &.active{
+          max-height: 1000px;
+          margin: 10px 0 40px 0;
+        }
+
+        & > header{
+          padding: 10px;
+          background-color: antiquewhite;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        & > section{
+          margin: 10px 10px 20px 10px;
+
+          & > textarea.user-input{
+            width: 100% !important;
+            height: 100px !important;
+          }
+
+          & > .user-input{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+

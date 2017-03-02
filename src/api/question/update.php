@@ -14,7 +14,7 @@ $quest = new Question($db);
 $data = json_decode(file_get_contents("php://input"));     
  
 // set ID property of question to be edited
-$quest->q_id = $data->id;
+$quest->question_id = $data->id;
  
 // set question property values
 $product->categ = $data->categ;

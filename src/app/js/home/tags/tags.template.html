@@ -1,0 +1,39 @@
+<uib-tabset active="active">
+    <uib-tab index="0">
+        <uib-tab-heading class="tab-head-container">
+            <img src="../../../img/ico/category-icon-red.png">
+            <p>Category List</p>
+        </uib-tab-heading>
+        <section class="search-bar">
+            <section class="search-filter">
+                <span>Search:</span>
+                <input type="text" class="user-input search-bar" ng-model="tagsVm.search" placeholder="Search a category here">
+            </section>
+
+            <section class="search-filter">
+                <span>Show</span>
+                <div class="dropdown-container numeric">
+                    <div class="dropdown-header" ng-click="tagsVm.activeDropDown = 'limit'">
+                        <span>{{tagsVm.baseLimit}}</span>
+                        <img src="../../../img/ico/dropdown-icon.png">
+                    </div>
+                    <ul class="dropdown" ng-class="{'active': tagsVm.activeDropDown === 'limit'}">
+                        <li ng-repeat="entry in $root.user.entryLimit" ng-click="tagsVm.baseLimit = entry; tagsVm.activeDropDown = '';">{{entry}}</li>
+                    </ul>
+                </div>
+                <span>entries</span>
+            </section>
+        </section>
+
+
+
+    </uib-tab>
+    <uib-tab index="1">
+        <uib-tab-heading class="tab-head-container">
+            <img src="../../../img/ico/subcategory-icon-red.png">
+            <p>Subcategory List</p>
+        </uib-tab-heading>
+
+
+    </uib-tab>
+</uib-tabset>

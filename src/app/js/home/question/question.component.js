@@ -1,6 +1,3 @@
-/**
- * Created by Chris on 13/01/2017.
- */
 (function () {
     "use strict";
 
@@ -11,105 +8,89 @@
             controllerAs: "questionVm"
         });
     
-        questionController.$inject = ["$http", "questionService"];
-        function questionController  ( $http ,  questionService ) {
+        questionController.$inject = ["$state", "$rootScope", "$interval", "DataService"];
+        function questionController  ( $state ,  $rootScope ,  $interval ,  DataService ) {
+            let self = this;
 
             (function init() {
-                $http.get("http://localhost/lindex/src/api/question/getAllQuestions.php")
-                    .then(function (response) {
-                        self.items = JSON.parse(JSON.stringify(response.data));
-                        console.log(self.items);
+                self.headers = ["Category", "Subcategory", "Subject", "Question", "Answer", "Options"];
+                self.sorters = ["Question", "Category", "Subcategory", "Subject"];
+                self.selectedSorter = self.sorters[0];
+                self.sortTypes = [{ name: "Ascending", value: false }, { name: "Descending", value: true }];
+                self.selectedSortType = self.sortTypes[0];
+                self.baseLimit = $rootScope.user.entryLimit[0];
+                self.edit = undefined;
 
-                        self.items.forEach(function (item) {
-
-                        })
-                    });
+                self.data = {
+                    selectedCategory: undefined,
+                    selectedSubCategory: undefined,
+                    selectedSubject: undefined,
+                    question: undefined,
+                    options: ["", ""],
+                    answer: undefined
+                };
             })();
 
-            
-            let self = this;
-            self.entries = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-            self.entryLimit = self.entries[0];
-            self.questionHeaders = ["Category", "Subcategory", "Subject", "Question", "Answer", "Options"];
-            self.selectedCategory = "Choose a category";
-            self.selectedSubCategory = "Choose a subcategory";
-            self.selectedSubject = "Choose a subject";
-            self.selectedSorter = "Question";
-            self.selectedSortType = {
-                name: "Ascending",
-                value: false
+            self.duplicate = function (source) {
+                return DataService.duplicate(source);
             };
-            //self.sortType = "Ascending";
-            self.sorters = ["Question", "Category", "Subcategory", "Subject"];
-            self.sortTypes = [
-                {
-                    name: "Ascending",
-                    value: false
-                },
-                {
-                    name: "Descending",
-                    value: true
-                }
-            ];
-            self.categories = ["category1", "Others"];
-            self.subcategories = ["subcategory1", "Others"];
-            self.subjects = ["subjects1", "Others"];
 
-            /*
-            self.items = [
-                {
-                    id: 1,
-                    category: "mayabang1",
-                    subcategory: "dfs",
-                    subject: "fsdfasd",
-                    question: "Sino mas mayabang si marvin o si christian o pinaka si jervin1? osdpfiipopewkkkkfkkfkkfkkfkfkfkkfkfkkqqqqppvovooovovovoovkmmmlkskskzzaafdfd000000000000Sino mas mayabang si marvin o si christian o pinaka si jervin1? osdpfiipopewkkkkfkkfkkfkkfkfkfkkfkfkkqqqqppvovooovovoSino mas mayabang si marvin o si christian o pinaka si jervin1? osdpfiipopewkkkkfkkfkkfkkfkfkfkkfkfkkqqqqppvovooovovovoovkmmmlkskskzzaafdfd000000000000Sino mas mayabang si marvin o si christian o pinaka si jervin1? osdpfiipopewkkkkfkkfkkfkkfkfkfkkfkfkkqqqqppvovooovovo",
-                    answer: "None"
-                },
-                {
-                    id: 2,
-                    category: "mayabang2",
-                    subcategory: "dfs",
-                    subject: "fsdfasd",
-                    question: "Sino mas mayabang si marvin o  o pinaka si jervin?2",
-                    answer: "None"
-                },
-                {
-                    id: 3,
-                    category: "mayabang3",
-                    subcategory: "dfs",
-                    subject: "fsdfasd",
-                    question: "Sino mas  marvin o si christian o pinaka si jervin?3",
-                    answer: "None"
-                },
-                {
-                    id: 4,
-                    category: "mayabang4",
-                    subcategory: "dfs",
-                    subject: "fsdfasd",
-                    question: "Sino mas mayabang si marvin o si christian o ?4",
-                    answer: "None"
-                },
-                {
-                    id: 5,
-                    category: "mayabang5",
-                    subcategory: "dfs",
-                    subject: "fsdfasd",
-                    question: "Sino mas mayabang o si christian o pinaka si jervin?8",
-                    answer: "None"
-                }
-            ];*/
-            //self.totalItems = self.items.length;
-            self.sortKey = 'category';
-            self.reverse = false;
+            self.choiceLimit = function (options, type) {
+                DataService.choiceLimit(options, type);
+            };
 
             self.sort = function(){
-                self.sortKey = self.selectedSorter.toLowerCase();   //set the sortKey to the param passed
-                if(self.selectedSortType.toLowerCase()  === "ascending"){
+                self.sortKey = self.selectedSorter.toLowerCase();
+                if (self.selectedSortType.toLowerCase() === "ascending") {
                     self.reverse = false;
-                }else{
+                } else {
                     self.reverse = true;
                 }
-                //self.reverse = !self.reverse; //if true make it false and vice versa
-            }
+            };
+
+            self.addQuestion = function () {
+                DataService.addQuestion(self.data, function (response) {
+                    self.data = {
+                        selectedCategory: undefined,
+                        selectedSubCategory: undefined,
+                        selectedSubject: undefined,
+                        question: undefined,
+                        options: ["", ""],
+                        answer: undefined
+                    };
+                });
+            };
+
+            self.editQuestion = function (item) {
+                DataService.updateQuestion(item, function (response) {
+                    self.edit = undefined;
+                });
+            };
+
+            self.deleteQuestion = function (id) { DataService.deleteQuestion(id, function (response) {}); };
+
+            self.checkInput = function () {
+                if(self.data.selectedCategory !== undefined &&
+                    self.data.selectedSubCategory !== undefined &&
+                    self.data.selectedSubject !== undefined &&
+                    self.data.question !== undefined && self.data.question !== "" &&
+                    self.data.answer !== undefined){
+                    for(let i = 0; i < self.data.options.length; i++){
+                        if(self.data.options[i] === "" || self.data.options[i] === undefined){
+                            return true;
+                        }
+                    }return false;
+                }else{
+                    return true;
+                }
+
+            };
+
+            /**
+            self.blah = function () {
+                $interval.timeout(function () {
+                    document.getElementById("iddidi").setAttribute("ng-class", "{'show' : questionVm.enable}")
+                }, 5000);
+            }*/
         }
 })();

@@ -15,51 +15,41 @@
   }
 }
 
-
-  .error{
+  .info{
     display: flex;
     justify-content: space-between;
 
     width: 375px;
     padding: 10px;
-    margin-bottom: -20px;
+    margin: 0 auto;
+    max-height: 0;
 
-    background-color: #ffc0c0;
-    border: 1px solid #AF2C3C;
     border-radius: 5px;
-    color: #AF2C3C;
     font-size: 14px;
+    opacity: 0;
+    transition: 1s ease all;
 
+    & > img{
+      height: 15px;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
 
-    &.error-show{
-      &.ng-hide {
-        opacity: 0;
-      }
+    &.active{
+      opacity: 1;
+      max-height: 500px;
+    }
 
-      &.ng-hide-add,
-      &.ng-hide-remove {
-        transition: all linear 0.5s;
-      }
-      /*
-      &.ng-hide-add{
-        opacity: 0;
-        //transform: translateY(50);
-        transition: 0.5s ease all;
-        &.ng-hide-add-active{
-          opacity: 1;
-          //transform: translateY(0);
-        }
-      }
+    &.error{
+      background-color: #ffc0c0;
+      border: 1px solid #AF2C3C;
+      color: #AF2C3C;
+    }
 
-      &.ng-hide-remove{
-        opacity: 1;
-        //transform: translateY(0);
-        transition: 0.5s ease all;
-        &.ng-hide-remove-active{
-          opacity: 0;
-          //transform: translateY(50);
-        }
-      }*/
+    &.warning{
+      background-color: #fff9c0;
+      border: 1px solid #af902c;
+      color: #af8d2c;
     }
   }
 
@@ -135,7 +125,6 @@
     background-color: #ffffff;
     border: 1px #69d7e2 solid;
     color: #3dc2cd;
-    transition: 0.3s ease all;
   }
 }
 

@@ -9,6 +9,7 @@
                 <span>Search:</span>
                 <input type="text" class="user-input search-bar" ng-model="questionVm.search" placeholder="Search a question here">
             </section>
+
             <section class="search-filter">
                 <span>Sort by:</span>
                 <div class="dropdown-container">
@@ -30,23 +31,25 @@
                     </ul>
                 </div>
             </section>
+
             <section class="search-filter">
                 <span>Show</span>
                 <div class="dropdown-container numeric">
                     <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'limit'">
-                        <span>{{questionVm.entryLimit}}</span>
+                        <span>{{questionVm.baseLimit}}</span>
                         <img src="../../../img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'limit'}">
-                        <li ng-repeat="entry in questionVm.entries" ng-click="questionVm.entryLimit = entry; questionVm.activeDropDown = '';">{{entry}}</li>
+                        <li ng-repeat="entry in $root.user.entryLimit" ng-click="questionVm.baseLimit = entry; questionVm.activeDropDown = '';">{{entry}}</li>
                     </ul>
                 </div>
                 <span>entries</span>
             </section>
         </section>
+
         <hr class="row-divider">
         <section class="item-pager">
-            <section>Total of {{questionVm.totalItems}} items</section>
+            <section>Total of {{$root.user.questionTotalItems}} items</section>
             <dir-pagination-controls
                 auto-hide="false"
                 direction-links="true"
@@ -54,36 +57,38 @@
                 template-url="libs/dirPagination.tpl.html">
             </dir-pagination-controls>
         </section>
+
+
         <section class="table-container">
             <header class="table-header">
-                <section class="table-header-item question-data" ng-repeat="questionHeader in questionVm.questionHeaders">{{questionHeader}}</section>
+                <section class="table-header-item question-data" ng-repeat="header in questionVm.headers">{{header}}</section>
             </header>
             <section
                 class="table-item-container"
-                dir-paginate="item in questionVm.items |
-                    orderBy:questionVm.selectedSorter.toLowerCase():questionVm.selectedSortType.value |
-                    itemsPerPage: questionVm.entryLimit |
+                dir-paginate="item in $root.user.questions |
+                    orderBy: questionVm.selectedSorter.toLowerCase() : questionVm.selectedSortType.value |
+                    itemsPerPage: questionVm.baseLimit |
                     filter: {question: questionVm.search} as itemsFound">
-                {{item.q_det}}
-                {{questionVm.sortTypes}}
-                <section class="table-item" ng-class="{'disabled': false}">
-                    <section class="table-item-data question-data">{{item.categ}}</section>
-                    <section class="table-item-data question-data">{{item.sub_code}}</section>
+
+                <section class="table-item" ng-class="{'disabled': questionVm.edit}">
+                    <section class="table-item-data question-data">{{item.category}}</section>
+                    <section class="table-item-data question-data">{{item.subcategory}}</section>
                     <section class="table-item-data question-data">{{item.subject}}</section>
                     <section class="table-item-data question-data">{{item.question}}</section>
-                    <section class="table-item-data question-data">{{item.answer}}</section>
+                    <section class="table-item-data question-data">{{item.options[item.answer]}}</section>
                     <section class="table-item-data question-data">
-                        <button class="button table-button" ng-click="questionVm.edit = item.id">
+                        <button class="button table-button" ng-click="questionVm.edit = questionVm.duplicate(item)">
                             <img src="../../../img/ico/edit-icon-red.png">
                             <span>Edit</span>
                         </button>
-                        <button class="button table-button" ng-click="">
+                        <button class="button table-button" ng-click="questionVm.deleteQuestion(item.id)">
                             <img src="../../../img/ico/delete-icon-red.png">
                             <span>Delete</span>
                         </button>
                     </section>
                 </section>
-                <section class="question-edit" ng-class="{'active': false}">
+
+                <section class="question-edit" ng-class="{'active': questionVm.edit}">
                     <header class="question-header">
                         <img src="../../../img/ico/edit-icon-red.png">
                         <span>Edit Question</span>
@@ -93,21 +98,31 @@
                             <p>Question</p>
                             <textarea class="user-input" ng-model="item.question"></textarea>
                         </section>
-                        <section class="question-input">
-                            <p>Answer</p>
-                            <input class="user-input" type="text" ng-model="item.answer">
-                        </section>
                         <section class="question-button-container">
-                            <button class="button question-button" ng-click="questionVm.edit = 0">Save</button>
-                            <button class="button question-button" ng-click="questionVm.edit = 0">Cancel</button>
+                            <button class="button question-button" ng-click="questionVm.choiceLimit(item.options, 'upper')" ng-class="{'disabled' : item.options.length === 4}">Add choice</button>
+                            <button class="button question-button" ng-click="questionVm.choiceLimit(item.options, 'lower')" ng-class="{'disabled' : item.options.length === 2}">Remove</button>
+                        </section>
+                        <ul class="options-table">
+                            <li>Choices (Choose the correct answer among the choices):</li>
+                            <li>Minimum of two(2) and maximum of four(4) choices each question.</li>
+                            <li ng-repeat="option in item.options track by $index">
+                                <input type="radio" name="answer" ng-click="item.answer = $index" ng-checked="$index == item.answer">
+                                <input class="user-input" ng-model="item.options[$index]" placeholder="Option {{$index + 1}}">
+                            </li>
+                        </ul>
+                        <hr>
+                        <section class="question-button-container">
+                            <button class="button question-button" ng-click="questionVm.editQuestion(item);">Save</button>
+                            <button class="button question-button" ng-click="item = questionVm.duplicate(questionVm.edit); questionVm.edit = undefined">Cancel</button>
                         </section>
                     </section>
                 </section>
             </section>
             <section class="empty-list" ng-class="{'active': itemsFound.length===0}">No items found</section>
         </section>
+
         <section class="item-pager">
-            <section>Total of {{questionVm.totalItems}} items</section>
+            <section>Total of {{$root.user.questionTotalItems}} items</section>
             <dir-pagination-controls auto-hide="false"
                 direction-links="true"
                 boundary-links="true"
@@ -115,12 +130,84 @@
             </dir-pagination-controls>
         </section>
     </uib-tab>
+
+<!----------------------------------------------------New Question Tab-------------------------------------------------------->
+
     <uib-tab index="1">
         <uib-tab-heading class="tab-head-container">
             <img src="../../../img/ico/add-icon.png">
             <p>Add Question</p>
         </uib-tab-heading>
-        <create-question></create-question>
+        <section class="add-question-container">
+            <section class="dropdown-format">
+                <span>Category: </span>
+                <div class="dropdown-container">
+                    <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'category'">
+                        <span ng-if="questionVm.data.selectedCategory === undefined">Choose a category</span>
+                        <span ng-if="questionVm.data.selectedCategory !== undefined">{{questionVm.data.selectedCategory.name}}</span>
+                        <img src="../../../img/ico/dropdown-icon.png">
+                    </div>
+                    <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'category'}">
+                        <li ng-repeat="category in $root.user.categories" ng-click="questionVm.data.selectedCategory = category; questionVm.activeDropDown = ''">{{category.name}}</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="dropdown-format">
+                <span>Subcategory: </span>
+                <div class="dropdown-container">
+                    <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'subcategory'">
+                        <span ng-if="questionVm.data.selectedSubCategory === undefined">Choose a subcategory</span>
+                        <span ng-if="questionVm.data.selectedSubCategory !== undefined">{{questionVm.data.selectedSubCategory.name}}</span>
+                        <img src="../../../img/ico/dropdown-icon.png">
+                    </div>
+                    <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'subcategory'}">
+                        <li ng-repeat="subcategory in $root.user.subcategories" ng-click="questionVm.data.selectedSubCategory = subcategory; questionVm.activeDropDown = ''">{{subcategory.name}}</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="dropdown-format">
+                <span>Subject: </span>
+                <div class="dropdown-container">
+                    <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'subject'">
+                        <span ng-if="questionVm.data.selectedSubject === undefined">Choose a subject</span>
+                        <span ng-if="questionVm.data.selectedSubject !== undefined">{{questionVm.data.selectedSubject.name}}</span>
+                        <img src="../../../img/ico/dropdown-icon.png">
+                    </div>
+                    <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'subject'}">
+                        <li ng-repeat="subject in $root.user.subjects" ng-click="questionVm.data.selectedSubject = subject; questionVm.activeDropDown = ''">{{subject.name}}</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="question-input">
+                <p>Question:</p>
+                <textarea class="user-input" placeholder="Enter the question here." ng-model="questionVm.data.question"></textarea>
+            </section>
+
+            <section class="question-button-container">
+                <button class="button question-button" ng-click="questionVm.choiceLimit(questionVm.data.options, 'upper')" ng-class="{'disabled' : questionVm.data.options.length === 4}">Add choice</button>
+                <button class="button question-button" ng-click="questionVm.choiceLimit(questionVm.data.options, 'lower')" ng-class="{'disabled' : questionVm.data.options.length === 2}">Remove</button>
+            </section>
+            <ul class="options-table">
+                <li>Choices (Choose the correct answer among the choices):</li>
+                <li>Minimum of two(2) and maximum of four(4) choices each question.</li>
+                <li ng-repeat="option in questionVm.data.options track by $index">
+                    <input type="radio" name="answer" ng-click="questionVm.data.answer = $index">
+                    <input class="user-input" ng-model="questionVm.data.options[$index]" placeholder="Option {{$index + 1}}">
+                </li>
+            </ul>
+            <hr>
+            <section class="question-button-container">
+                <button class="button question-button" ng-click="questionVm.addQuestion()" ng-class="{'disabled' : questionVm.checkInput()}">Add Question</button>
+            </section>
+            <section class="error error-show" ng-show="questionVm.added">
+                <span>Question successfully added.</span>
+                <img src="../../../img/ico/add-icon.png" ng-click="questionVm.added = false">
+            </section>
+            {{questionVm.data}}
+        </section>
     </uib-tab>
 </uib-tabset>
 

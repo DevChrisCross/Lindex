@@ -35,9 +35,15 @@ body{
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
-///*
+hr{
+  height: auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 legend {
   font-size: 18px;
   font-weight: bold;

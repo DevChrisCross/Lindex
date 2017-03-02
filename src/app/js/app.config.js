@@ -1,6 +1,3 @@
-/**
- * Created by Chris on 10/01/2017.
- */
 (function () {
     "use strict";
 
@@ -25,8 +22,18 @@
                 });
         }
 
-        lindexRun.$inject = [];
-        function lindexRun() {
-            ;
+        lindexRun.$inject = ["$rootScope", "$http", "$state", "$location", "$localStorage"];
+        function lindexRun  ( $rootScope ,  $http ,  $state ,  $location ,  $localStorage ) {
+            if ($localStorage.currentUser) {
+                $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.currentUser.token;
+            }
+
+            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+                let publicPages = ['/account'];
+                let restrictedPage = publicPages.indexOf($location.path()) === -1;
+                if (restrictedPage && !$localStorage.currentUser) {
+                    $location.path('/account');
+                }
+            });
         }
 })();

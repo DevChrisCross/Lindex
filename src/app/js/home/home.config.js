@@ -1,18 +1,19 @@
-/**
- * Created by Chris on 11/01/2017.
- */
 (function () {
     "use strict";
     
     angular.module("lindex.home")
         .config(homeConfiguration);
     
-        homeConfiguration.$inject = ["$urlRouterProvider", "$stateProvider"];
-        function homeConfiguration  ( $urlRouterProvider ,  $stateProvider ) {
+        homeConfiguration.$inject = ["$stateProvider"];
+        function homeConfiguration  ( $stateProvider ) {
             $stateProvider
                 .state("home.dashboard", {
                     url: "",
                     template: "<dashboard></dashboard>"
+                })
+                .state("home.tags", {
+                    url: "tags",
+                    template: "<tags></tags>"
                 })
                 .state("home.question", {
                     url: "question",

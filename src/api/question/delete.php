@@ -12,10 +12,10 @@ $db = $database->getConnection();
 // prepare question object
 $quest = new Question($db);
 
-// get q_id
+// get question_id
 $data = json_decode(file_get_contents("php://input"));
 
-$quest->q_id = $data->id;
+$quest->question_id = $data->id;
 
 // delete the question
 if($quest->delete()){
