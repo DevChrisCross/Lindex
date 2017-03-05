@@ -3,7 +3,7 @@
 
     angular.module("lindex.home")
         .component("home", {
-            templateUrl: "js/home/home.template.html",
+            templateUrl: "app/home/home.template.html",
             controller: homeController,
             controllerAs: "homeVm"
         });

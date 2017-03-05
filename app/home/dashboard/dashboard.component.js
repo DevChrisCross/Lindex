@@ -6,7 +6,7 @@
     
     angular.module("lindex.dashboard")
         .component("dashboard", {
-            templateUrl: "js/home/dashboard/dashboard.template.html",
+            templateUrl: "app/home/dashboard/dashboard.template.html",
             controller: dashboardController,
             controllerAs: "dashboardVm"
         });

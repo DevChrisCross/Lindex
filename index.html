@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lindex" ng-strict-di>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lindex - Technological University of the Philippines</title>
+    <meta name="description" content="The Technological University of the Philippines Online Examination System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    -->
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/libs/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script src="assets/libs/angular.min.js"></script>
+    <script src="assets/libs/angular-ui-router.min.js"></script>
+    <script src="assets/libs/ngStorage.min.js"></script>
+    <script src="assets/libs/angular-jwt.min.js"></script>
+    <script src="assets/libs/angular-storage.min.js"></script>
+    <script src="assets/libs/angular-animate.min.js"></script>
+    <script src="assets/libs/angular-touch.min.js"></script>
+    <script src="assets/libs/ui-bootstrap-tpls-2.4.0.min.js"></script>
+    <script src="assets/libs/dirPagination.js"></script>
+    <script src="assets/libs/jsrsasign.js"></script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/account/account.module.js"></script>
+    <script src="app/account/account.config.js"></script>
+    <script src="app/account/account.component.js"></script>
+    <script src="app/account/account-login/account-login.component.js"></script>
+    <script src="app/account/account-retrieve/account-retrieve.component.js"></script>
+    <script src="app/home/home.module.js"></script>
+    <script src="app/home/home.config.js"></script>
+    <script src="app/home/home.component.js"></script>
+    <script src="app/home/dashboard/dashboard.module.js"></script>
+    <script src="app/home/dashboard/dashboard.component.js"></script>
+    <script src="app/home/tags/tags.module.js"></script>
+    <script src="app/home/tags/tags.component.js"></script>
+    <script src="app/home/question/question.module.js"></script>
+    <script src="app/home/question/question.component.js"></script>
+    <script src="app/home/quiz/quiz.module.js"></script>
+    <script src="app/home/quiz/quiz.config.js"></script>
+    <script src="app/home/quiz/quiz.component.js"></script>
+    <script src="app/home/class/class.module.js"></script>
+    <script src="app/home/class/class.component.js"></script>
+    <script src="app/services/authentication.service.js"></script>
+    <script src="app/services/data.service.js"></script>
+</head>
+<body>
+    <main class="main-view" ui-view=""></main>
+</body>
+</html>

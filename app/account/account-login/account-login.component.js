@@ -3,7 +3,7 @@
 
     angular.module("lindex.account")
         .component("accountLogin", {
-            templateUrl: "js/account/account-login/account-login.template.html",
+            templateUrl: "app/account/account-login/account-login.template.html",
             controller: accountLoginController,
             controllerAs: "loginVm"
         });

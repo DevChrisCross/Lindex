@@ -3,7 +3,7 @@
 
     angular.module("lindex.quiz")
         .component("quiz", {
-            templateUrl: "js/home/quiz/quiz.template.html",
+            templateUrl: "app/home/quiz/quiz.template.html",
             controller: quizController,
             controllerAs: "quizVm"
         });

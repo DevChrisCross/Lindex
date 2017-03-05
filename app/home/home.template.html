@@ -6,37 +6,37 @@
         </div>
         <div class="navigation-button-container">
             <div ui-sref="home.dashboard" ng-click="homeVm.setNavigationTo('Dashboard')" class="navigation-button" ng-class="{'selected': homeVm.isNavigation('Dashboard'), 'active': homeVm.navMenu}">
-                <img src="../../img/ico/dashboard-icon.png">
+                <img src="../../../assets/img/ico/dashboard-icon.png">
                 <span>Dashboard</span>
             </div>
             <div ui-sref="home.tags" ng-click="homeVm.setNavigationTo('Tags')" class="navigation-button" ng-class="{'selected': homeVm.isNavigation('Tags'), 'active': homeVm.navMenu}">
-                <img src="../../img/ico/tag-icon.png">
+                <img src="../../../assets/img/ico/tag-icon.png">
                 <span>Tags</span>
             </div>
             <div ui-sref="home.quiz" ng-click="homeVm.setNavigationTo('Quizzes')" class="navigation-button" ng-class="{'selected': homeVm.isNavigation('Quizzes'), 'active': homeVm.navMenu}">
-                <img src="../../img/ico/paper-icon.png">
+                <img src="../../../assets/img/ico/paper-icon.png">
                 <span>Quizzes</span>
             </div>
             <div ui-sref="home.question" ng-click="homeVm.setNavigationTo('Questions')" class="navigation-button" ng-class="{'selected': homeVm.isNavigation('Questions'), 'active': homeVm.navMenu}">
-                <img src="../../img/ico/ask-question.png">
+                <img src="../../../assets/img/ico/ask-question.png">
                 <span>Questions</span>
             </div>
             <div ui-sref="home.classComp" ng-click="homeVm.setNavigationTo('Classes')" class="navigation-button" ng-class="{'selected': homeVm.isNavigation('Classes'), 'active': homeVm.navMenu}">
-                <img src="../../img/ico/user_group.png">
+                <img src="../../../assets/img/ico/user_group.png">
                 <span>Classes</span>
             </div>
         </div>
     </nav>
     <div class="black-modal" ng-class="{'active': homeVm.navMenu}">
-        <img src="../../img/bg/tup114.png">
+        <img src="../../../assets/img/bg/tup114.png">
     </div>
     <header class="home-header">
-        <img src="../../img/ico/burger-menu.png" class="burger-menu" ng-click="homeVm.navMenu = !homeVm.navMenu; homeVm.userMenu = false;" ng-model="homeVm.showNavMenu">
-        <img src="../../img/ico/tup-logo.png" id="tup-home-logo">
+        <img src="../../../assets/img/ico/burger-menu.png" class="burger-menu" ng-click="homeVm.navMenu = !homeVm.navMenu; homeVm.userMenu = false;" ng-model="homeVm.showNavMenu">
+        <img src="../../../assets/img/ico/tup-logo.png" id="tup-home-logo">
         <div class="user-account" ng-click="homeVm.userMenu =! homeVm.userMenu; homeVm.navMenu = false;">
             <p>{{homeVm.name}}</p>
-            <img src="../../img/ico/account-icon.png">
-            <img src="../../img/ico/dropdown-icon.png">
+            <img src="../../../assets/img/ico/account-icon.png">
+            <img src="../../../assets/img/ico/dropdown-icon.png">
             <ul class="user-account-menu" ng-class="{'active' : homeVm.userMenu}">
                <li ng-click="homeVm.logout()">Logout</li>
             </ul>

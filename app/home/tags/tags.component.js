@@ -3,7 +3,7 @@
 
     angular.module("lindex.tags")
         .component("tags", {
-           templateUrl: "js/home/tags/tags.template.html",
+           templateUrl: "app/home/tags/tags.template.html",
             controller: tagsController,
             controllerAs: "tagsVm"
         });

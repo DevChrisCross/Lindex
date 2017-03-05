@@ -6,6 +6,7 @@
 
     AuthenticationService.$inject = ["$http", "$localStorage", "$rootScope"];
     function AuthenticationService  ( $http ,  $localStorage ,  $rootScope ) {
+        let baseAPI = "http://localhost/lindex/api/";
         let self = {};
 
         self.login = login;
@@ -16,7 +17,7 @@
         return self;
 
         function login(data, callback) {
-            $http.post("http://localhost/lindex/src/api/professor/check.php", data)
+            $http.post(baseAPI + "professor/check.php", data)
                 .then(function (response) {
                     let token = undefined;
                     if (response.data.length !== 0) {

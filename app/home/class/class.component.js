@@ -3,7 +3,7 @@
 
     angular.module("lindex.class")
         .component("classComp", {
-            templateUrl: "js/home/class/class.template.html",
+            templateUrl: "app/home/class/class.template.html",
             controller: classController,
             controllerAs: "classVm"
         });

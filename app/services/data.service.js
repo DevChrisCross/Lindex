@@ -6,7 +6,7 @@
 
     DataService.$inject = ["$http", "$q", "$localStorage", "$rootScope", "AuthenticationService"];
     function DataService  ( $http ,  $q ,  $localStorage ,  $rootScope ,  AuthenticationService ) {
-        let baseAPI = "http://localhost/lindex/src/api/";
+        let baseAPI = "http://localhost/lindex/api/";
         let self = {};
 
         self.user = undefined;
