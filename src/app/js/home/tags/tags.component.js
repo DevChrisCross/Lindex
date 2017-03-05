@@ -8,12 +8,19 @@
             controllerAs: "tagsVm"
         });
 
-    tagsController.$inject = [];
-    function tagsController() {
+    tagsController.$inject = ["$rootScope"];
+    function tagsController  ( $rootScope ) {
         let self = this;
 
         (function init() {
             self.baseLimit = $rootScope.user.entryLimit[0];
+            self.edit = undefined;
         })();
+
+        self.data = {
+            name: undefined
+        };
+
+
     }
 })();

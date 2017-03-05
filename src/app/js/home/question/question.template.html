@@ -49,7 +49,7 @@
 
         <hr class="row-divider">
         <section class="item-pager">
-            <section>Total of {{$root.user.questionTotalItems}} items</section>
+            <section>Total of {{itemsFound.length}} items</section>
             <dir-pagination-controls
                 auto-hide="false"
                 direction-links="true"
@@ -70,7 +70,7 @@
                     itemsPerPage: questionVm.baseLimit |
                     filter: {question: questionVm.search} as itemsFound">
 
-                <section class="table-item" ng-class="{'disabled': questionVm.edit}">
+                <section class="table-item" ng-class="{'disabled': questionVm.edit.id !== undefined}">
                     <section class="table-item-data question-data">{{item.category}}</section>
                     <section class="table-item-data question-data">{{item.subcategory}}</section>
                     <section class="table-item-data question-data">{{item.subject}}</section>
@@ -88,20 +88,18 @@
                     </section>
                 </section>
 
-                <section class="question-edit" ng-class="{'active': questionVm.edit}">
+                <section class="question-edit" ng-class="{'active': questionVm.edit.id === item.id}">
                     <header class="question-header">
                         <img src="../../../img/ico/edit-icon-red.png">
                         <span>Edit Question</span>
                     </header>
                     <section class="question-body">
+                        <hr>
                         <section class="question-input">
                             <p>Question</p>
                             <textarea class="user-input" ng-model="item.question"></textarea>
                         </section>
-                        <section class="question-button-container">
-                            <button class="button question-button" ng-click="questionVm.choiceLimit(item.options, 'upper')" ng-class="{'disabled' : item.options.length === 4}">Add choice</button>
-                            <button class="button question-button" ng-click="questionVm.choiceLimit(item.options, 'lower')" ng-class="{'disabled' : item.options.length === 2}">Remove</button>
-                        </section>
+
                         <ul class="options-table">
                             <li>Choices (Choose the correct answer among the choices):</li>
                             <li>Minimum of two(2) and maximum of four(4) choices each question.</li>
@@ -110,6 +108,10 @@
                                 <input class="user-input" ng-model="item.options[$index]" placeholder="Option {{$index + 1}}">
                             </li>
                         </ul>
+                        <section class="question-button-container">
+                            <button class="button question-button" ng-click="questionVm.choiceLimit(item.options, 'upper')" ng-class="{'disabled' : item.options.length === 4}">Add choice</button>
+                            <button class="button question-button" ng-click="questionVm.choiceLimit(item.options, 'lower')" ng-class="{'disabled' : item.options.length === 2}">Remove</button>
+                        </section>
                         <hr>
                         <section class="question-button-container">
                             <button class="button question-button" ng-click="questionVm.editQuestion(item);">Save</button>
@@ -122,7 +124,7 @@
         </section>
 
         <section class="item-pager">
-            <section>Total of {{$root.user.questionTotalItems}} items</section>
+            <section>Total of {{itemsFound.length}} items</section>
             <dir-pagination-controls auto-hide="false"
                 direction-links="true"
                 boundary-links="true"
@@ -139,6 +141,7 @@
             <p>Add Question</p>
         </uib-tab-heading>
         <section class="add-question-container">
+            <hr>
             <section class="dropdown-format">
                 <span>Category: </span>
                 <div class="dropdown-container">
@@ -186,10 +189,6 @@
                 <textarea class="user-input" placeholder="Enter the question here." ng-model="questionVm.data.question"></textarea>
             </section>
 
-            <section class="question-button-container">
-                <button class="button question-button" ng-click="questionVm.choiceLimit(questionVm.data.options, 'upper')" ng-class="{'disabled' : questionVm.data.options.length === 4}">Add choice</button>
-                <button class="button question-button" ng-click="questionVm.choiceLimit(questionVm.data.options, 'lower')" ng-class="{'disabled' : questionVm.data.options.length === 2}">Remove</button>
-            </section>
             <ul class="options-table">
                 <li>Choices (Choose the correct answer among the choices):</li>
                 <li>Minimum of two(2) and maximum of four(4) choices each question.</li>
@@ -198,15 +197,22 @@
                     <input class="user-input" ng-model="questionVm.data.options[$index]" placeholder="Option {{$index + 1}}">
                 </li>
             </ul>
+
+            <section class="question-button-container">
+                <button class="button question-button" ng-click="questionVm.choiceLimit(questionVm.data.options, 'upper')" ng-class="{'disabled' : questionVm.data.options.length === 4}">Add choice</button>
+                <button class="button question-button" ng-click="questionVm.choiceLimit(questionVm.data.options, 'lower')" ng-class="{'disabled' : questionVm.data.options.length === 2}">Remove</button>
+            </section>
+
             <hr>
+
             <section class="question-button-container">
                 <button class="button question-button" ng-click="questionVm.addQuestion()" ng-class="{'disabled' : questionVm.checkInput()}">Add Question</button>
             </section>
+
             <section class="error error-show" ng-show="questionVm.added">
                 <span>Question successfully added.</span>
                 <img src="../../../img/ico/add-icon.png" ng-click="questionVm.added = false">
             </section>
-            {{questionVm.data}}
         </section>
     </uib-tab>
 </uib-tabset>

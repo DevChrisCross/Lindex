@@ -11,9 +11,11 @@
         homeController.$inject = ["$state", "$localStorage", "DataService", "AuthenticationService"];
         function homeController  ( $state ,  $localStorage ,  DataService ,  AuthenticationService ) {
             let self = this;
+            self.currentNavigation = 'Dashboard';
 
             (function init() {
                 DataService.initialize($localStorage.currentUser.token, function (response) {
+                    self.currentNavigation =
                     self.name = DataService.user.lastName + ", " + DataService.user.firstName;
                     self.navMenu = false;
                     self.userMenu = false;

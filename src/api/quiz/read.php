@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Chris
- * Date: 10/02/2017
- * Time: 12:18 PM
- */
+    include_once '../config/Database.php';
+    include_once '../objects/Quiz.php';
+
+    $database = new Database();
+    $db = $database->getConnection();
+    $data = json_decode(file_get_contents("php://input"));
+
+    $result = Quiz::read($db, $data);
+    echo json_encode($result);
+?>

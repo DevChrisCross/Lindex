@@ -6,7 +6,7 @@
       &:nth-child(1),
       &:nth-child(2),
       &:nth-child(3){
-        width: 12%;
+        width: 13%;
       }
 
       &:nth-child(4){
@@ -190,7 +190,7 @@
     }
 
     & > .dropdown-format{
-      width: 30%;
+      width: 29%;
       display: flex;
       flex-direction: column;
       align-content: center;
@@ -217,6 +217,11 @@
         max-height: 1000px;
         overflow: hidden;
         transition: 1s ease all;
+
+        &:nth-child(4){
+          display: flex;
+          justify-content: center;
+        }
 
         &.disabled{
           max-height: 0;
@@ -253,28 +258,28 @@
       }
 
       & > .qlist-button{
-        margin-top: 35px;
+        margin: 10px 0 35px auto;
+        display: flex;
       }
 
       & > .qlist-input{
-        background-color: aquamarine;
+        border: 0 solid #414141;
         max-height: 0;
         margin: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-radius: 10px;
         overflow: hidden;
         transition: 1s ease all;
 
         &.active{
           max-height: 1000px;
           margin: 10px 0 40px 0;
+          border: 1px solid #414141;
         }
 
         & > header{
+          color: white;
           padding: 10px;
-          background-color: antiquewhite;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px;
+          background-color: #414141;
         }
 
         & > section{
@@ -287,6 +292,20 @@
 
           & > .user-input{
             width: 100%;
+          }
+
+          & > .qlist-input-new{
+            display: flex;
+            justify-content: center;
+
+            &:nth-child(4){
+              justify-content: flex-end;
+              margin-bottom: 30px;
+            }
+
+            & > .button:first-child{
+              margin-right: 10px;
+            }
           }
         }
       }

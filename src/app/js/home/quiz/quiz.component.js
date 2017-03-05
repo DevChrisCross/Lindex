@@ -13,7 +13,7 @@
             let self = this;
 
             (function init() {
-                self.questionType = undefined;
+                self.questionType = 'old';
                 self.headers = ["Category", "Subcategory", "Subject", "Quiz Title", "Exam Date", "Status", "Options"];
                 self.sorters = ["Title", "Category", "Subcategory", "Subject", "Date", "Status"];
                 self.selectedSorter = self.sorters[0];
@@ -101,7 +101,6 @@
             };
 
             self.addExistingQuestion = function (item) {
-                console.log("sad");
                 if(item.added === undefined){
                     self.data.questions.push(item);
                     item.added = true;
@@ -126,7 +125,6 @@
                     options: ["", ""],
                     answer: 0
                 };
-                self.questionType = undefined;
             };
 
             self.createQuiz = function () {

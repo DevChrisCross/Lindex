@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Chris
- * Date: 03/02/2017
- * Time: 7:18 PM
- */
+    include_once '../config/Database.php';
+    include_once '../objects/Category.php';
+
+    $database = new Database();
+    $db = $database->getConnection();
+    $data = json_decode(file_get_contents("php://input"));
+
+    $result = Category::read($db, $data->user);
+    echo json_encode($result);
+?>

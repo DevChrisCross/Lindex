@@ -8,8 +8,67 @@
 @import "uib";
 @import "account";
 @import "home";
+@import "tags";
 @import "question";
 @import "quiz";
+
+.button{
+  background-color: #3dc2cd;
+  border: 1px #7C7C7C solid;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  width: 150px;
+  padding: 10px;
+  transition: 0.5s ease all;
+
+  &.disabled, &.disabled:hover{
+    background-color: #7dc7ce;
+    border: 1px #c7c7c7 solid;
+    color: #e4e4e4;
+    cursor: not-allowed;
+  }
+
+  &:hover{
+    background-color: #ffffff;
+    border: 1px #69d7e2 solid;
+    color: #3dc2cd;
+  }
+
+  &.table-button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #414141;
+    border-radius: 0;
+
+    &:hover {
+      background-color: white;
+      color: #414141;
+      border: 1px solid #9b2121;
+      filter: hue-rotate(190deg);
+    }
+
+    & > img {
+      height: 15px;
+      margin-right: 5px;
+    }
+
+    &.disabled, &.disabled:hover{
+      filter: hue-rotate(0deg);
+      background-color: #646464;
+      border: 1px #9a9a9a solid;
+      color: #a5a5a5;
+      cursor: not-allowed;
+    }
+  }
+
+  &.question-button{
+    width: 200px;
+  }
+}
 
 .main-view{
   &.ng-enter{

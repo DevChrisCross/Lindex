@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Chris
- * Date: 05/02/2017
- * Time: 12:29 PM
- */
+    header("Access-Control-Allow-Headers: authorization, content-type");
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+?>

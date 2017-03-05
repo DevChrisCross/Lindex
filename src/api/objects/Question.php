@@ -1,155 +1,127 @@
 <?php
+
 class Question
 {
-    private $conn;
-    private $table_name = "q_bank";
-    private $prof_id = "00-0000";
+    const TABLE = " question ";
 
-    public $q_id;
-    public $categ;
-    public $sub_code;
-    public $subj;
-    public $q_det;
-    public $q_points;
-    public $a_id;
-    //public $prof_id;
-
-    public function __construct($db)
+    public static function create($conn, $data)
     {
-        $this->conn = $db;
-    }
-
-
-    public function create($a_id)
-    {
-        $status = "1";
-        // query to insert record
         $query =
             "INSERT INTO"
-                . $this->table_name .
+                . Question::TABLE .
             "SET 
-                categ=:categ, 
-                sub_code=:sub_code, 
-                subj=:subj, 
-                q_det=:q_det, 
-                q_points=:q_points, 
-                prof_id=:prof_id,
-                a_id=:a_id, 
-                status=:status";
+                category_id     = :question_category, 
+                subcategory_id  = :question_subcategory, 
+                subject_id      = :question_subject, 
+                professor_id    = :professor_id,
+                detail          = :question_detail, 
+                option1         = :q_option1,
+                option2         = :q_option2,
+                option3         = :q_option3,
+                option4         = :q_option4,
+                answer          = :question_answer, 
+                status          = '1'";
 
-        // prepare query
-        $stmt = $this->conn->prepare($query);
-
-        // posted values
-        $this->categ = htmlspecialchars(strip_tags($this->categ));
-        $this->sub_code = htmlspecialchars(strip_tags($this->sub_code));
-        $this->subj = htmlspecialchars(strip_tags($this->subj));
-        $this->q_det = htmlspecialchars(strip_tags($this->q_det));
-        $this->q_points = htmlspecialchars(strip_tags($this->q_points));
-        $this->prof_id = htmlspecialchars(strip_tags($this->prof_id));
-
-        // bind values
-        $stmt->bindParam(":categ", $this->categ);
-        $stmt->bindParam(":sub_code", $this->sub_code);
-        $stmt->bindParam(":subj", $this->subj);
-        $stmt->bindParam(":q_det", $this->q_det);
-        $stmt->bindParam(":q_points", $this->q_points);
-        $stmt->bindParam(":prof_id", $this->prof_id);
-        $stmt->bindParam(":a_id", $a_id);
-        $stmt->bindParam(":status", $status);
-
-        // execute query
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            echo "<pre>";
-            print_r($stmt->errorInfo());
-            echo "</pre>";
-
-            return false;
-        }
-    }
-
-    public function readAll()
-    {
-        $query = "SELECT * FROM " . $this->table_name;
-        $stmt = $this->conn->prepare($query);
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":question_category",      $data->selectedCategory->id);
+        $stmt->bindParam(":question_subcategory",   $data->selectedSubCategory->id);
+        $stmt->bindParam(":question_subject",       $data->selectedSubject->id);
+        $stmt->bindParam(":professor_id",           $data->user);
+        $stmt->bindParam(":question_detail",        $data->question);
+        $stmt->bindParam(":q_option1",              $data->options[0]);
+        $stmt->bindParam(":q_option2",              $data->options[1]);
+        $stmt->bindParam(":q_option3",              $data->options[2]);
+        $stmt->bindParam(":q_option4",              $data->options[3]);
+        $stmt->bindParam(":question_answer",        $data->answer);
         $stmt->execute();
-        return $stmt;
+        return $conn->lastInsertId();
     }
 
-    public function retrieveProfQuestion()
+    public static function readAll($conn)
     {
-        $query = "SELECT q_id, categ, sub_code, subj, q_det, q_points, a_id FROM "
-                . $this->table_name .
-                " WHERE prof_id=:prof_id AND status='1'";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":prof_id", $this->prof_id);
+        $query = "SELECT * FROM" . Question::TABLE;
+        $stmt = $conn->prepare($query);
         $stmt->execute();
-        return $stmt;
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
-    public function updateQuestion()
+    public static function read($conn, $professor_id)
     {
-        // update query
-        $query = "UPDATE
-                " . $this->table_name . "
-            SET
-                categ = :categ,
-                sub_code = :sub_code,
-                subj = :subj,
-                q_det = :q_det,
-                q_points = :q_points
+        $query =
+            "SELECT 
+                question.id, 
+                question.detail AS question, 
+                question.answer, 
+                question.option1,
+                question.option2,
+                question.option3,
+                question.option4,
+                category.name AS category, 
+                subcategory.name AS subcategory, 
+                subject.name AS subject 
+            FROM"
+                . Question::TABLE .
+            "LEFT OUTER JOIN category 
+                ON category.id = question.category_id 
+            LEFT OUTER JOIN subcategory 
+                ON subcategory.id = question.subcategory_id 
+            LEFT OUTER JOIN subject 
+                ON subject.id = question.subject_id 
+            WHERE 
+                question.professor_id = :professor_id AND question.status = '1'";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":professor_id", $professor_id);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public static function readScope($conn, $professor_id){
+
+    }
+
+    public static function update($conn, $data)
+    {
+        $query =
+            "UPDATE"
+                . Question::TABLE .
+            "SET
+                detail  = :question_detail,
+                option1 = :q_option1,
+                option2 = :q_option2,
+                option3 = :q_option3,
+                option4 = :q_option4,
+                answer  = :question_answer
+                
             WHERE
-                q_id = :q_id";
+                id = :question_id";
 
-        // prepare query statement
-        $stmt = $this->conn->prepare($query);
-
-        // sanitize
-        $this->categ = htmlspecialchars(strip_tags($this->categ));
-        $this->sub_code = htmlspecialchars(strip_tags($this->sub_code));
-        $this->subj = htmlspecialchars(strip_tags($this->subj));
-        $this->q_det = htmlspecialchars(strip_tags($this->q_det));
-        $this->q_points = htmlspecialchars(strip_tags($this->q_points));
-        $this->q_id = htmlspecialchars(strip_tags($this->q_id));
-
-        // bind new values
-        $stmt->bindParam(':categ', $this->categ);
-        $stmt->bindParam(':sub_code', $this->sub_code);
-        $stmt->bindParam(':subj', $this->subj);
-        $stmt->bindParam(':q_det', $this->q_det);
-        $stmt->bindParam(':q_points', $this->q_points);
-        $stmt->bindParam(':q_id', $this->q_id);
-
-        // execute the query
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':question_detail',    $data->question);
+        $stmt->bindParam(":q_option1",          $data->options[0]);
+        $stmt->bindParam(":q_option2",          $data->options[1]);
+        $stmt->bindParam(":q_option3",          $data->options[2]);
+        $stmt->bindParam(":q_option4",          $data->options[3]);
+        $stmt->bindParam(':question_answer',    $data->answer);
+        $stmt->bindParam(':question_id',        $data->id);
+        return $stmt->execute();
     }
 
-    public function delQuestion()
+    public static function delete($conn, $data)
     {
-        // delete query
-        $query = "UPDATE " . $this->table_name . " SET status='0' WHERE q_id = :q_id";
+        $query =
+            "UPDATE"
+                . Question::TABLE .
+            "SET 
+                status='0' 
+            WHERE 
+                id = :question_id";
 
-        // prepare query
-        $stmt = $this->conn->prepare($query);
-
-        // sanitize
-        $this->q_id = htmlspecialchars(strip_tags($this->q_id));
-
-        // bind id of record to delete
-        $stmt->bindParam(':q_id', $this->q_id);
-
-        // execute query
-        if ($stmt->execute()) {
-            return true;
-        }
-
-        return false;
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':question_id', $data->id);
+        return $stmt->execute();
     }
 }
 

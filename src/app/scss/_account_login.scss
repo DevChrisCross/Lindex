@@ -111,23 +111,6 @@
   box-shadow: inset 0 0 10px #333333;
 }
 
-.button{
-  background-color: #3dc2cd;
-  border: 1px #7C7C7C solid;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
-  width: 150px;
-  padding: 10px;
-  transition: 0.5s ease all;
-
-  &:hover{
-    background-color: #ffffff;
-    border: 1px #69d7e2 solid;
-    color: #3dc2cd;
-  }
-}
-
 .user-input{
   width: 95%;
   margin: 10px auto;

@@ -1,26 +1,49 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Chris
- * Date: 01/02/2017
- * Time: 1:08 PM
- */
-class professor
+class Professor
 {
-    private $conn;
-    private $table_name="prof_login";
+    const TABLE = " professor_account ";
 
-    public $prof_id;
-    public $password;
-    public $last_log;
-    public $email;
+    public static function login($conn, $data) {
+        $query =
+            "SELECT 
+                professor_account.id, 
+                professor_account.email,
+                professor_detail.last_name AS lastName,
+                professor_detail.first_name AS firstName
+            FROM"
+                . Professor::TABLE .
+            "LEFT OUTER JOIN professor_detail
+                ON professor_account.id = professor_detail.id
+            WHERE 
+                professor_account.id = :id AND professor_account.password = :password";
 
-    public $last_name;
-    public $first_name;
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":id", $data->username);
+        $stmt->bindParam(":password", $data->password);
 
-    public function __construct($db){
-        $this->conn = $db;
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public static function updateLog($conn, $date, $id){
+        $query =
+            "UPDATE"
+                . Professor::TABLE .
+            "SET
+                last_log = :last_log
+            WHERE
+                id = :professor_id";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":last_log", $date);
+        $stmt->bindParam(":professor_id", $id);
+        return $stmt->execute();
+    }
+
+    public static function updateInfo($conn, $data){
+
     }
 }
 

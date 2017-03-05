@@ -60,11 +60,11 @@
         {{pageNumber}}
     </div>
 
-    <div ng-if="directionLinks" ng-click="setCurrent(pagination.current + 1)" ng-class="{ disabled : pagination.current == pagination.last }">
+    <div ng-if="directionLinks" ng-click="setCurrent(pagination.current + 1)" ng-class="{ disabled : pagination.current == pagination.last || pagination.last == undefined }">
         <!--<a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>-->
         Next
     </div>
-    <div ng-if="boundaryLinks" ng-click="setCurrent(pagination.last)" ng-class="{ disabled : pagination.current == pagination.last }">
+    <div ng-if="boundaryLinks" ng-click="setCurrent(pagination.last)" ng-class="{ disabled : pagination.current == pagination.last || pagination.last == undefined }">
         <!--<a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>-->
         Last
     </div>

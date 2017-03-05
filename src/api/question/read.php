@@ -1,15 +1,11 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/x-www-form-urlencoded; charset=UTF-8");
+    include_once '../config/Database.php';
+    include_once '../objects/Question.php';
 
-include_once '../config/Database.php';
-include_once '../objects/Question.php';
- 
-$database = new Database();
-$db = $database->getConnection();
+    $database = new Database();
+    $db = $database->getConnection();
+    $data = json_decode(file_get_contents("php://input"));
 
-$question = new Question($db);
-$stmt = $question->read();
-
-echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    $result = Question::read($db, $data->user);
+    echo json_encode($result);
 ?>
