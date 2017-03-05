@@ -2,166 +2,140 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aac986ea-a36a-4501-8e4c-0fa5f986d7d6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/index.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/category/create.php" afterPath="$PROJECT_DIR$/api/category/create.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/category/delete.php" afterPath="$PROJECT_DIR$/api/category/delete.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/category/read.php" afterPath="$PROJECT_DIR$/api/category/read.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/category/readAll.php" afterPath="$PROJECT_DIR$/api/category/readAll.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/category/update.php" afterPath="$PROJECT_DIR$/api/category/update.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/config/Database.php" afterPath="$PROJECT_DIR$/api/config/Database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/config/Headers.php" afterPath="$PROJECT_DIR$/api/config/Headers.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/objects/Category.php" afterPath="$PROJECT_DIR$/api/objects/Category.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/objects/Professor.php" afterPath="$PROJECT_DIR$/api/objects/Professor.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/objects/Question.php" afterPath="$PROJECT_DIR$/api/objects/Question.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/objects/Quiz.php" afterPath="$PROJECT_DIR$/api/objects/Quiz.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/objects/Section.php" afterPath="$PROJECT_DIR$/api/objects/Section.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/objects/Subcategory.php" afterPath="$PROJECT_DIR$/api/objects/Subcategory.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/objects/Subject.php" afterPath="$PROJECT_DIR$/api/objects/Subject.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/professor/check.php" afterPath="$PROJECT_DIR$/api/professor/check.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/question/create.php" afterPath="$PROJECT_DIR$/api/question/create.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/question/delete.php" afterPath="$PROJECT_DIR$/api/question/delete.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/question/read.php" afterPath="$PROJECT_DIR$/api/question/read.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/question/readAll.php" afterPath="$PROJECT_DIR$/api/question/readAll.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/question/update.php" afterPath="$PROJECT_DIR$/api/question/update.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/quiz/create.php" afterPath="$PROJECT_DIR$/api/quiz/create.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/quiz/read.php" afterPath="$PROJECT_DIR$/api/quiz/read.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/subcategory/read.php" afterPath="$PROJECT_DIR$/api/subcategory/read.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/api/subject/read.php" afterPath="$PROJECT_DIR$/api/subject/read.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_login.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_login.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_retrieve.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_retrieve.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_create_question.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_create_question.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_home.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_home.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question_create.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question_create.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_quiz.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_quiz.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_s.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_s.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_tags.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_tags.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_uib.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_uib.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/main.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/main.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_login.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_login.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_retrieve.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_retrieve.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_home.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_home.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_quiz.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_quiz.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/main.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/main.scssc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/css/main.css" afterPath="$PROJECT_DIR$/assets/css/main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/css/main.css.map" afterPath="$PROJECT_DIR$/assets/css/main.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/css/normalize.css" afterPath="$PROJECT_DIR$/assets/css/normalize.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/favicon.svg" afterPath="$PROJECT_DIR$/favicon.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/LICENSE.txt" afterPath="$PROJECT_DIR$/assets/fonts/LICENSE.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-Black.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Black.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-BlackItalic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-BlackItalic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-Bold.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Bold.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-BoldItalic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-BoldItalic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-Italic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Italic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-Light.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Light.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-LightItalic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-LightItalic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-Medium.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Medium.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-MediumItalic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-MediumItalic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-Regular.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-Thin.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-Thin.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/Roboto-ThinItalic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/Roboto-ThinItalic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/RobotoCondensed-Bold.ttf" afterPath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Bold.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/RobotoCondensed-BoldItalic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-BoldItalic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/RobotoCondensed-Italic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Italic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/RobotoCondensed-Light.ttf" afterPath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Light.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/RobotoCondensed-LightItalic.ttf" afterPath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-LightItalic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/RobotoCondensed-Regular.ttf" afterPath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/bg/login-bg.jpg" afterPath="$PROJECT_DIR$/assets/img/bg/login-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/bg/menu-bg.jpg" afterPath="$PROJECT_DIR$/assets/img/bg/menu-bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/bg/tup114.png" afterPath="$PROJECT_DIR$/assets/img/bg/tup114.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/account-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/account-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/add-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/add-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/ask-question-2-512.png" afterPath="$PROJECT_DIR$/assets/img/ico/ask-question-2-512.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/ask-question.png" afterPath="$PROJECT_DIR$/assets/img/ico/ask-question.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/burger-menu.png" afterPath="$PROJECT_DIR$/assets/img/ico/burger-menu.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/category-icon-red.png" afterPath="$PROJECT_DIR$/assets/img/ico/category-icon-red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/category-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/category-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/dashboard-icon-32.png" afterPath="$PROJECT_DIR$/assets/img/ico/dashboard-icon-32.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/dashboard-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/dashboard-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/delete-icon-red.png" afterPath="$PROJECT_DIR$/assets/img/ico/delete-icon-red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/delete-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/delete-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/dropdown-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/dropdown-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/edit-icon-red.png" afterPath="$PROJECT_DIR$/assets/img/ico/edit-icon-red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/edit-icon-white.png" afterPath="$PROJECT_DIR$/assets/img/ico/edit-icon-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/edit-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/edit-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/list-icon-2.png" afterPath="$PROJECT_DIR$/assets/img/ico/list-icon-2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/list-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/list-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/paper-icon-92341.png" afterPath="$PROJECT_DIR$/assets/img/ico/paper-icon-92341.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/paper-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/paper-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/subcategory-icon-red.png" afterPath="$PROJECT_DIR$/assets/img/ico/subcategory-icon-red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/subcategory-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/subcategory-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/tag-icon.png" afterPath="$PROJECT_DIR$/assets/img/ico/tag-icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/tup-logo.png" afterPath="$PROJECT_DIR$/assets/img/ico/tup-logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/user_group-512.png" afterPath="$PROJECT_DIR$/assets/img/ico/user_group-512.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/img/ico/user_group.png" afterPath="$PROJECT_DIR$/assets/img/ico/user_group.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account-login/account-login.component.js" afterPath="$PROJECT_DIR$/app/account/account-login/account-login.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account-login/account-login.template.html" afterPath="$PROJECT_DIR$/app/account/account-login/account-login.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account-retrieve/account-retrieve.component.js" afterPath="$PROJECT_DIR$/app/account/account-retrieve/account-retrieve.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account-retrieve/account-retrieve.template.html" afterPath="$PROJECT_DIR$/app/account/account-retrieve/account-retrieve.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account.component.js" afterPath="$PROJECT_DIR$/app/account/account.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account.config.js" afterPath="$PROJECT_DIR$/app/account/account.config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account.module.js" afterPath="$PROJECT_DIR$/app/account/account.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/account/account.template.html" afterPath="$PROJECT_DIR$/app/account/account.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/app.config.js" afterPath="$PROJECT_DIR$/app/app.config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/app.module.js" afterPath="$PROJECT_DIR$/app/app.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/class/class.component.js" afterPath="$PROJECT_DIR$/app/home/class/class.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/class/class.module.js" afterPath="$PROJECT_DIR$/app/home/class/class.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/class/class.template.html" afterPath="$PROJECT_DIR$/app/home/class/class.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/dashboard/dashboard.component.js" afterPath="$PROJECT_DIR$/app/home/dashboard/dashboard.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/dashboard/dashboard.module.js" afterPath="$PROJECT_DIR$/app/home/dashboard/dashboard.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/dashboard/dashboard.template.html" afterPath="$PROJECT_DIR$/app/home/dashboard/dashboard.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/home.component.js" afterPath="$PROJECT_DIR$/app/home/home.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/home.config.js" afterPath="$PROJECT_DIR$/app/home/home.config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/home.module.js" afterPath="$PROJECT_DIR$/app/home/home.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/home.template.html" afterPath="$PROJECT_DIR$/app/home/home.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/question/question.component.js" afterPath="$PROJECT_DIR$/app/home/question/question.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/question/question.module.js" afterPath="$PROJECT_DIR$/app/home/question/question.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/question/question.template.html" afterPath="$PROJECT_DIR$/app/home/question/question.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/quiz/quiz.component.js" afterPath="$PROJECT_DIR$/app/home/quiz/quiz.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/quiz/quiz.config.js" afterPath="$PROJECT_DIR$/app/home/quiz/quiz.config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/quiz/quiz.module.js" afterPath="$PROJECT_DIR$/app/home/quiz/quiz.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/quiz/quiz.template.html" afterPath="$PROJECT_DIR$/app/home/quiz/quiz.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/tags/tags.component.js" afterPath="$PROJECT_DIR$/app/home/tags/tags.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/tags/tags.module.js" afterPath="$PROJECT_DIR$/app/home/tags/tags.module.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/home/tags/tags.template.html" afterPath="$PROJECT_DIR$/app/home/tags/tags.template.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/services/authentication.service.js" afterPath="$PROJECT_DIR$/app/services/authentication.service.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/js/services/data.service.js" afterPath="$PROJECT_DIR$/app/services/data.service.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/angular-animate.min.js" afterPath="$PROJECT_DIR$/assets/libs/angular-animate.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/angular-jwt.min.js" afterPath="$PROJECT_DIR$/assets/libs/angular-jwt.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/angular-resource.min.js" afterPath="$PROJECT_DIR$/assets/libs/angular-resource.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/angular-storage.min.js" afterPath="$PROJECT_DIR$/assets/libs/angular-storage.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/angular-touch.min.js" afterPath="$PROJECT_DIR$/assets/libs/angular-touch.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/angular-ui-router.min.js" afterPath="$PROJECT_DIR$/assets/libs/angular-ui-router.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/angular.min.js" afterPath="$PROJECT_DIR$/assets/libs/angular.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/assets/libs/bootstrap-theme.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/bootstrap.min.css" afterPath="$PROJECT_DIR$/assets/libs/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/dirPagination.js" afterPath="$PROJECT_DIR$/assets/libs/dirPagination.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/dirPagination.tpl.html" afterPath="$PROJECT_DIR$/assets/libs/dirPagination.tpl.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/jsrsasign.js" afterPath="$PROJECT_DIR$/assets/libs/jsrsasign.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/ngStorage.min.js" afterPath="$PROJECT_DIR$/assets/libs/ngStorage.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/ui-bootstrap-2.4.0.min.js" afterPath="$PROJECT_DIR$/assets/libs/ui-bootstrap-2.4.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/ui-bootstrap-tpls-2.4.0.js" afterPath="$PROJECT_DIR$/assets/libs/ui-bootstrap-tpls-2.4.0.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/libs/ui-bootstrap-tpls-2.4.0.min.js" afterPath="$PROJECT_DIR$/assets/libs/ui-bootstrap-tpls-2.4.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_account.scss" afterPath="$PROJECT_DIR$/assets/scss/_account.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_account_login.scss" afterPath="$PROJECT_DIR$/assets/scss/_account_login.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_account_retrieve.scss" afterPath="$PROJECT_DIR$/assets/scss/_account_retrieve.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_home.scss" afterPath="$PROJECT_DIR$/assets/scss/_home.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_question.scss" afterPath="$PROJECT_DIR$/assets/scss/_question.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_quiz.scss" afterPath="$PROJECT_DIR$/assets/scss/_quiz.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_tags.scss" afterPath="$PROJECT_DIR$/assets/scss/_tags.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/_uib.scss" afterPath="$PROJECT_DIR$/assets/scss/_uib.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/main.css" afterPath="$PROJECT_DIR$/assets/scss/main.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/main.css.map" afterPath="$PROJECT_DIR$/assets/scss/main.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/scss/main.scss" afterPath="$PROJECT_DIR$/assets/scss/main.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dev/lindex.sql" afterPath="$PROJECT_DIR$/dev/lindex.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account-login/account-login.component.js" afterPath="$PROJECT_DIR$/public/app/account/account-login/account-login.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account-login/account-login.template.html" afterPath="$PROJECT_DIR$/public/app/account/account-login/account-login.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account-retrieve/account-retrieve.component.js" afterPath="$PROJECT_DIR$/public/app/account/account-retrieve/account-retrieve.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account-retrieve/account-retrieve.template.html" afterPath="$PROJECT_DIR$/public/app/account/account-retrieve/account-retrieve.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account.component.js" afterPath="$PROJECT_DIR$/public/app/account/account.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account.config.js" afterPath="$PROJECT_DIR$/public/app/account/account.config.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account.module.js" afterPath="$PROJECT_DIR$/public/app/account/account.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/account/account.template.html" afterPath="$PROJECT_DIR$/public/app/account/account.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/app.config.js" afterPath="$PROJECT_DIR$/public/app/app.config.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/app.module.js" afterPath="$PROJECT_DIR$/public/app/app.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/class/class.component.js" afterPath="$PROJECT_DIR$/public/app/home/class/class.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/class/class.module.js" afterPath="$PROJECT_DIR$/public/app/home/class/class.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/class/class.template.html" afterPath="$PROJECT_DIR$/public/app/home/class/class.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/dashboard/dashboard.component.js" afterPath="$PROJECT_DIR$/public/app/home/dashboard/dashboard.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/dashboard/dashboard.module.js" afterPath="$PROJECT_DIR$/public/app/home/dashboard/dashboard.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/dashboard/dashboard.template.html" afterPath="$PROJECT_DIR$/public/app/home/dashboard/dashboard.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/home.component.js" afterPath="$PROJECT_DIR$/public/app/home/home.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/home.config.js" afterPath="$PROJECT_DIR$/public/app/home/home.config.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/home.module.js" afterPath="$PROJECT_DIR$/public/app/home/home.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/home.template.html" afterPath="$PROJECT_DIR$/public/app/home/home.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/question/question.component.js" afterPath="$PROJECT_DIR$/public/app/home/question/question.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/question/question.module.js" afterPath="$PROJECT_DIR$/public/app/home/question/question.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/question/question.template.html" afterPath="$PROJECT_DIR$/public/app/home/question/question.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/quiz/quiz.component.js" afterPath="$PROJECT_DIR$/public/app/home/quiz/quiz.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/quiz/quiz.config.js" afterPath="$PROJECT_DIR$/public/app/home/quiz/quiz.config.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/quiz/quiz.module.js" afterPath="$PROJECT_DIR$/public/app/home/quiz/quiz.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/quiz/quiz.template.html" afterPath="$PROJECT_DIR$/public/app/home/quiz/quiz.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/tags/tags.component.js" afterPath="$PROJECT_DIR$/public/app/home/tags/tags.component.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/tags/tags.module.js" afterPath="$PROJECT_DIR$/public/app/home/tags/tags.module.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/home/tags/tags.template.html" afterPath="$PROJECT_DIR$/public/app/home/tags/tags.template.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/services/authentication.service.js" afterPath="$PROJECT_DIR$/public/app/services/authentication.service.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/services/data.service.js" afterPath="$PROJECT_DIR$/public/app/services/data.service.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_login.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_login.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_retrieve.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_account_retrieve.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_create_question.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_create_question.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_home.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_home.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question_create.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_question_create.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_quiz.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_quiz.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_s.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_s.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_tags.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_tags.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_uib.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/_uib.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/main.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/30c284f98db977a92433f5cdb49e232310ccb65d/main.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_login.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_login.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_retrieve.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_account_retrieve.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_home.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_home.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_quiz.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/_quiz.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/main.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/482e3bb074c9040dc7284cceda76f51637130cc9/main.scssc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="$PROJECT_DIR$/public/assets/css/main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/css/main.css.map" afterPath="$PROJECT_DIR$/public/assets/css/main.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/css/normalize.css" afterPath="$PROJECT_DIR$/public/assets/css/normalize.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/LICENSE.txt" afterPath="$PROJECT_DIR$/public/assets/fonts/LICENSE.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-Black.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Black.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-BlackItalic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-BlackItalic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-Bold.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Bold.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-BoldItalic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-BoldItalic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-Italic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Italic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-Light.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Light.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-LightItalic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-LightItalic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-Medium.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Medium.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-MediumItalic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-MediumItalic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-Regular.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-Thin.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Thin.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/Roboto-ThinItalic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-ThinItalic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Bold.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/RobotoCondensed-Bold.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-BoldItalic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/RobotoCondensed-BoldItalic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Italic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/RobotoCondensed-Italic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Light.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/RobotoCondensed-Light.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-LightItalic.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/RobotoCondensed-LightItalic.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/RobotoCondensed-Regular.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/RobotoCondensed-Regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/assets/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/assets/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/assets/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/assets/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/public/assets/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/bg/login-bg.jpg" afterPath="$PROJECT_DIR$/public/assets/img/bg/login-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/bg/menu-bg.jpg" afterPath="$PROJECT_DIR$/public/assets/img/bg/menu-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/bg/tup114.png" afterPath="$PROJECT_DIR$/public/assets/img/bg/tup114.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/account-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/account-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/add-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/add-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/ask-question-2-512.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/ask-question-2-512.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/ask-question.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/ask-question.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/burger-menu.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/burger-menu.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/category-icon-red.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/category-icon-red.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/category-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/category-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/dashboard-icon-32.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/dashboard-icon-32.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/dashboard-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/dashboard-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/delete-icon-red.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/delete-icon-red.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/delete-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/delete-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/dropdown-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/dropdown-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/edit-icon-red.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/edit-icon-red.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/edit-icon-white.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/edit-icon-white.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/edit-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/edit-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/list-icon-2.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/list-icon-2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/list-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/list-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/paper-icon-92341.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/paper-icon-92341.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/paper-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/paper-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/subcategory-icon-red.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/subcategory-icon-red.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/subcategory-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/subcategory-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/tag-icon.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/tag-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/tup-logo.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/tup-logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/user_group-512.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/user_group-512.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/img/ico/user_group.png" afterPath="$PROJECT_DIR$/public/assets/img/ico/user_group.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/angular-animate.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/angular-animate.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/angular-jwt.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/angular-jwt.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/angular-resource.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/angular-resource.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/angular-storage.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/angular-storage.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/angular-touch.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/angular-touch.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/angular-ui-router.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/angular-ui-router.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/angular.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/angular.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-theme.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/dirPagination.js" afterPath="$PROJECT_DIR$/public/assets/libs/dirPagination.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/dirPagination.tpl.html" afterPath="$PROJECT_DIR$/public/assets/libs/dirPagination.tpl.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/jsrsasign.js" afterPath="$PROJECT_DIR$/public/assets/libs/jsrsasign.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/ngStorage.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/ngStorage.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/ui-bootstrap-2.4.0.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/ui-bootstrap-2.4.0.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/ui-bootstrap-tpls-2.4.0.js" afterPath="$PROJECT_DIR$/public/assets/libs/ui-bootstrap-tpls-2.4.0.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/libs/ui-bootstrap-tpls-2.4.0.min.js" afterPath="$PROJECT_DIR$/public/assets/libs/ui-bootstrap-tpls-2.4.0.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_account.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_account.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_account_login.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_account_login.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_account_retrieve.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_account_retrieve.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_home.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_home.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_question.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_question.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_quiz.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_quiz.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_tags.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_tags.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/_uib.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_uib.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/main.css" afterPath="$PROJECT_DIR$/public/assets/scss/main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/main.css.map" afterPath="$PROJECT_DIR$/public/assets/scss/main.css.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scss/main.scss" afterPath="$PROJECT_DIR$/public/assets/scss/main.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/favicon.svg" afterPath="$PROJECT_DIR$/public/favicon.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -211,8 +185,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1056">
+              <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="data.service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/data.service.js">
+        <entry file="file://$PROJECT_DIR$/public/app/services/data.service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
               <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="53" />
@@ -221,11 +205,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authentication.service.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/services/authentication.service.js">
+      <file leaf-file-name="authentication.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/services/authentication.service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="284">
               <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/category/create.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Category.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/objects/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -384,6 +388,20 @@
               <option name="myItemId" value="Lindex" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -405,11 +423,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Lindex\public" />
       <recent name="C:\wamp64\www\Lindex" />
       <recent name="C:\wamp64\www\Lindex\app" />
       <recent name="C:\wamp64\www\Lindex\assets" />
       <recent name="C:\wamp64\www\Lindex\" />
-      <recent name="C:\wamp64\www\Lindex\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -519,12 +537,12 @@
       <workItem from="1488456948563" duration="2274000" />
       <workItem from="1488460348402" duration="1695000" />
       <workItem from="1488462976411" duration="7299000" />
-      <workItem from="1488613606540" duration="34616000" />
+      <workItem from="1488613606540" duration="36529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="711853000" />
+    <option name="totallyTimeSpent" value="713766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -571,29 +589,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/objects/Professor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="39" column="45" lean-forward="true" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/objects/Section.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/subject/read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/objects/Subcategory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -610,42 +605,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/account/account-login/account-login.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/account/account-login/account-login.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/quiz/quiz.module.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/class/class.module.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/class/class.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/class/class.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/home/class/class.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/home.config.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/tags/tags.module.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
@@ -659,21 +654,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/question/question.module.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/question/question.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/home.module.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_account.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_account.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="11" />
@@ -719,7 +714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/home.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
@@ -727,7 +722,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/libs/jsrsasign.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/libs/jsrsasign.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -735,7 +730,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_uib.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_uib.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="826" column="29" lean-forward="false" selection-start-line="826" selection-start-column="29" selection-end-line="826" selection-end-column="29" />
@@ -743,7 +738,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/libs/dirPagination.tpl.html">
+    <entry file="file://$PROJECT_DIR$/public/assets/libs/dirPagination.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="64" column="12" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
@@ -759,7 +754,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_home.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_home.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="281" column="42" lean-forward="false" selection-start-line="281" selection-start-column="42" selection-end-line="281" selection-end-column="42" />
@@ -767,7 +762,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_account_login.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_account_login.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
@@ -775,7 +770,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/question/question.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/home/question/question.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="718">
           <caret line="97" column="50" lean-forward="true" selection-start-line="97" selection-start-column="50" selection-end-line="97" selection-end-column="50" />
@@ -783,7 +778,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/main.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1053">
           <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
@@ -791,7 +786,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2310">
           <caret line="2075" column="0" lean-forward="false" selection-start-line="2075" selection-start-column="0" selection-end-line="2075" selection-end-column="0" />
@@ -799,7 +794,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_quiz.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_quiz.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
@@ -807,7 +802,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_question.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_question.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="687">
           <caret line="322" column="17" lean-forward="true" selection-start-line="322" selection-start-column="17" selection-end-line="322" selection-end-column="17" />
@@ -815,7 +810,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/quiz/quiz.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
           <caret line="210" column="102" lean-forward="false" selection-start-line="210" selection-start-column="102" selection-end-line="210" selection-end-column="102" />
@@ -823,7 +818,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/_tags.scss">
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_tags.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
@@ -831,7 +826,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/tags/tags.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1914">
           <caret line="87" column="113" lean-forward="false" selection-start-line="87" selection-start-column="113" selection-end-line="87" selection-end-column="113" />
@@ -839,7 +834,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/account/account.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/account/account.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -847,7 +842,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/account/account.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/account/account.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
@@ -855,7 +850,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.config.js">
+    <entry file="file://$PROJECT_DIR$/public/app/app.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -863,15 +858,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.module.js">
+    <entry file="file://$PROJECT_DIR$/public/app/app.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
@@ -879,7 +866,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/home.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
@@ -887,7 +874,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/account/account-login/account-login.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/account/account-login/account-login.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
@@ -895,7 +882,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/account/account-retrieve/account-retrieve.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/account/account-retrieve/account-retrieve.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
@@ -903,7 +890,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/class/class.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/class/class.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
@@ -911,7 +898,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/dashboard/dashboard.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/dashboard/dashboard.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
@@ -919,7 +906,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/question/question.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/question/question.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
@@ -927,7 +914,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/quiz/quiz.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
@@ -935,7 +922,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/tags/tags.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
@@ -959,7 +946,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/data.service.js">
+    <entry file="file://$PROJECT_DIR$/public/app/services/data.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="53" />
@@ -967,10 +954,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/authentication.service.js">
+    <entry file="file://$PROJECT_DIR$/api/category/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/category/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/objects/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/services/authentication.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
           <folding />
         </state>
       </provider>
