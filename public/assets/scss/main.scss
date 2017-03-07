@@ -44,7 +44,7 @@
     background-color: #414141;
     border-radius: 0;
 
-    &:hover {
+    &:hover, &.selected {
       background-color: white;
       color: #414141;
       border: 1px solid #9b2121;

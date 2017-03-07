@@ -27,6 +27,9 @@
         //self.deleteTest = deleteTest;
 
         self.readTags = readTags;
+        self.createTag = createTag;
+        self.updateTag = updateTag;
+        self.deleteTag = deleteTag;
 
         return self;
 
@@ -48,7 +51,7 @@
         function initialize(token, callback) {
             self.user = AuthenticationService.decodeToken(token);
             $rootScope.user = {};
-            $rootScope.user.entryLimit = [10, 20, 30, 40];
+            $rootScope.user.entryLimit = [10, 15, 20, 25, 30, 35, 40];
 
             self.readTags(function (response) {
                 self.readQuestion(function (response) {
@@ -131,6 +134,34 @@
                 $rootScope.user.subjects = response[2].data;
                 callback(true);
             });
+        }
+        
+        function createTag(data, type, callback) {
+            data.user = self.user.id;
+            $http.post(baseAPI + type + "/create.php", data)
+                .then(function (response) {
+                   self.readTags(function (response) {});
+                   callback(response.data);
+                });
+        }
+
+        function updateTag(data, type, callback) {
+            $http.post(baseAPI + type + "/update.php", data)
+                .then(function (response) {
+                    self.readTags(function (response) {
+                        self.readQuestion(function (response) {});
+                        self.readTest(function (response) {});
+                    });
+                    callback(response.data);
+                });
+        }
+
+        function deleteTag(id, type, callback) {
+            $http.post(baseAPI + type + "/delete.php", id)
+                .then(function (response) {
+                    self.readTags(function (response) {});
+                    callback(response.data);
+                });
         }
 
         function createTest(data, callback) {
