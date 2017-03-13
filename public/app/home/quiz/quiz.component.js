@@ -14,7 +14,7 @@
 
             (function init() {
                 self.questionType = 'old';
-                self.headers = ["Category", "Subcategory", "Subject", "Quiz Title", "Exam Date", "Status", "Options"];
+                self.headers = ["Category", "Subcategory", "Subject", "Quiz Title", "Duration", "Passing %", "Status", "Options"];
                 self.sorters = ["Title", "Category", "Subcategory", "Subject", "Date", "Status"];
                 self.selectedSorter = self.sorters[0];
                 self.sortTypes = [{ name: "Ascending", value: false }, { name: "Descending", value: true }];
@@ -29,8 +29,8 @@
                     selectedSubCategory: undefined,
                     selectedSubject: undefined,
                     title: undefined,
-                    duration: undefined,
-                    passingPercent: undefined,
+                    duration: 60,
+                    passingPercent: 50,
                     questions: [],
                 };
 
@@ -45,10 +45,15 @@
                     options: ["", ""],
                     answer: 0
                 };
+                //
+                // self.dateOptions = {
+                //     initDate: new Date(),
+                //     minDate: new Date()
+                // };
 
-                self.dateOptions = {
-                    initDate: new Date(),
-                    minDate: new Date()
+                self.qSearchEdit = {
+                    questions: [],
+                    search: ""
                 };
 
                 self.qSearch = {
@@ -63,11 +68,11 @@
                 self.qSearch.selectedSortType =  self.qSearch.sortTypes[0];
             })();
 
-            self.checkSearch = function () {
-                if(self.qSearch.search.length === 0){
-                    self.qSearch.questions = [];
+            self.checkSearch = function (search) {
+                if(search.length === 0){
+                    return [];
                 }else{
-                    self.qSearch.questions = $rootScope.user.questions;
+                    return $rootScope.user.questions;
                 }
             };
 
@@ -76,7 +81,6 @@
             };
 
             self.setTags = function () {
-                console.log(self.data);
               if(self.data.selectedCategory !== undefined &&
                   self.data.selectedSubCategory !== undefined &&
                   self.data.selectedSubject !== undefined){
@@ -89,21 +93,53 @@
 
             self.popItem = function (item) {
                 item.added = undefined;
-                let tempQ = self.data.questions.filter(function (question) {
-                    return question.id !== item.id;
+                self.data.questions = self.data.questions.filter(function (question) {
+                    return question.added === true;
                 });
-                self.data.questions = JSON.parse(JSON.stringify(tempQ));
                 if(item.id.includes("tid")){
-                    self.newQuestions = JSON.parse(JSON.stringify(self.newQuestions.filter(function (question) {
+                    self.newQuestions = self.newQuestions.filter(function (question) {
                         return question.id !== item.id;
-                    })));
+                    });
                 }
             };
 
-            self.addExistingQuestion = function (item) {
-                if(item.added === undefined){
-                    self.data.questions.push(item);
+            self.popEditItem = function (item) {
+                item.editAdded = undefined;
+                self.edit.questions = self.edit.questions.filter(function (question) {
+                   return question.editAdded === true;
+                });
+                for(let i = 0; i < $rootScope.user.questions.length; i++){
+                    if(item.id === $rootScope.user.questions[i].id){
+                        delete $rootScope.user.questions[i].editAdded;
+                    }
+                }
+
+            };
+
+            self.modifyQuiz = function (item, mode) {
+                self.edit = DataService.duplicate(item);
+                self.edit.mode = mode;
+                DataService.viewTest(self.edit.id, function (response) {
+                    self.edit.questions = response;
+                    console.log(self.edit.questions);
+                    for(let i = 0, j = 0; i < $rootScope.user.questions.length; i++){
+                        if(self.edit.questions[j].id === $rootScope.user.questions[i].id && j < self.edit.questions.length){
+                            $rootScope.user.questions[i].editAdded = true;
+                            self.edit.questions[j].editAdded = true;
+                            i = 0;
+                            j++;
+                        }
+                    }
+                });
+            };
+
+            self.addExistingQuestion = function (item, questions, mode) {
+                if(item.added === undefined && mode === 'new'){
+                    questions.push(item);
                     item.added = true;
+                }if(item.editAdded === undefined && mode === 'edit'){
+                    questions.push(item);
+                    item.editAdded = true;
                 }
             };
 
@@ -127,18 +163,59 @@
                 };
             };
 
+            self.checkQuiz = function (data) {
+                if(data.title === "" || data.title === undefined ||
+                    data.duration < 1 || data.passingPercent < 1 || data.questions.length < 10){
+                    return true;
+                }else{
+                    return false;
+                }
+            };
+
             self.createQuiz = function () {
-                for(let i = 0; i < self.newQuestions.length; i++){
-                    self.newQuestions[i].id = undefined;
-                    DataService.addQuestion(self.newQuestions[i], function (response) {
-                        self.newQuestions[i].id = response;
+                if(!self.checkQuiz()){
+                    if(self.newQuestions !== []){
+                        for(let i = 0; i < self.newQuestions.length; i++){
+                            self.newQuestions[i].id = undefined;
+                            DataService.addQuestion(self.newQuestions[i], function (response) {
+                                self.newQuestions[i].id = response;
+                            });
+                        }
+                    }
+
+                    for(let i = 0; i < self.data.questions.length; i++){
+                        self.data.questions[i].orderNo = i;
+                    }
+
+                    DataService.createTest(self.data, function (response) {
+                        self.data = {
+                            selectedCategory: undefined,
+                            selectedSubCategory: undefined,
+                            selectedSubject: undefined,
+                            title: undefined,
+                            duration: 60,
+                            passingPercent: 50,
+                            questions: [],
+                        };
+                        self.set = false;
                     });
                 }
-
-                DataService.createTest(self.data, function (response) {
-
-                });
-
             };
+
+            self.updateQuiz = function () {
+                if(self.edit.questions.length >= 10){
+                    for(let i = 0; i < self.edit.questions.length; i++){
+                        self.edit.questions[i].orderNo = i;
+                    }
+                    console.log(self.edit);
+                    DataService.updateTest(self.edit, function (response) {
+                        self.edit = undefined;
+                    });
+                }
+            };
+
+            self.deleteQuiz = function (id) {
+                DataService.deleteTest(id, function (response) {});
+            }
         }
 })();

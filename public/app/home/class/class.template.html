@@ -4,5 +4,9 @@
             <img src="../../../../assets/img/ico/list-icon-2.png">
             <p>Class List</p>
         </uib-tab-heading>
+        <input type="number" ng-model="classVm.num">
+        <input type="text" ng-model="classVm.str">
+        <button ng-click="classVm.func(classVm.num, classVm.str)">CLICKME!</button>
+
     </uib-tab>
 </uib-tabset>

@@ -76,48 +76,110 @@
                     <section class="table-item-data quiz-data">{{item.subcategory}}</section>
                     <section class="table-item-data quiz-data">{{item.subject}}</section>
                     <section class="table-item-data quiz-data">{{item.title}}</section>
-                    <section class="table-item-data quiz-data">{{item.date}}</section>
+                    <section class="table-item-data quiz-data">{{item.duration}}</section>
+                    <section class="table-item-data quiz-data">{{item.passingPercent}}</section>
                     <section class="table-item-data quiz-data">{{item.status}}</section>
                     <section class="table-item-data quiz-data">
-                        <button class="button table-button" ng-click="quizVm.edit = item.id">
+                        <button class="button table-button" ng-click="quizVm.modifyQuiz(item, 'edit')">
                             <img src="../../../../assets/img/ico/edit-icon-red.png">
                             <span>Edit</span>
                         </button>
-                        <button class="button table-button" ng-click="quizVm.edit = item.id">
-                            <img src="../../../../assets/img/ico/edit-icon-red.png">
-                            <span>Edit</span>
-                        </button>
-                        <button class="button table-button" ng-click="quizVm.deleteQuestion(item.id)">
+                        <button class="button table-button" ng-click="quizVm.deleteQuiz(item.id)">
                             <img src="../../../../assets/img/ico/delete-icon-red.png">
                             <span>Delete</span>
                         </button>
                     </section>
                 </section>
-
-                <!--
-                <section class="question-edit" ng-class="{'active': quizVm.edit === item.id}">
-                    <header class="question-header">
-                        <img src="../../../img/ico/edit-icon-red.png">
-                        <span>Edit Question</span>
-                    </header>
-                    <section class="question-body">
-                        <section class="question-input">
-                            <p>Question</p>
-                            <textarea class="user-input" ng-model="item.question"></textarea>
-                        </section>
-                        <section class="question-input">
-                            <p>Answer</p>
-                            <input class="user-input" type="text" ng-model="item.answer">
-                        </section>
-                        <section class="question-button-container">
-                            <button class="button question-button" ng-click="questionVm.editQuestion(item);">Save</button>
-                            <button class="button question-button" ng-click="questionVm.edit = undefined">Cancel</button>
-                        </section>
-                    </section>
-                </section>
-                -->
             </section>
             <section class="empty-list" ng-class="{'active': itemsFound.length===0}">No items found</section>
+
+            <section class="quiz-view" ng-class="{'active': quizVm.edit.mode === 'edit'}">
+                <header class="quiz-header">
+                    <img src="../../../assets/img/ico/edit-icon-red.png">
+                    <span>Edit Quiz</span>
+                </header>
+                <section class="block-divider">
+                    <div class="input-block">
+                        <span>Quiz Title</span>
+                        <input class="user-input" ng-model="quizVm.edit.title" placeholder="Enter the quiz name here.">
+                    </div>
+                    <div class="input-block">
+                        <span>Duration</span>
+                        <input class="user-input" ng-model="quizVm.edit.duration" placeholder="Enter the duration in minutes here.">
+                    </div>
+                    <div class="input-block">
+                        <span>Passing %</span>
+                        <input class="user-input" ng-model="quizVm.edit.passingPercent" placeholder="Enter the passing percentage of the quiz here.">
+                    </div>
+                </section>
+
+                <section class="block-divider">
+                    <header class="table-header">
+                        <section class="table-header-item qlist-data">No</section>
+                        <section class="table-header-item qlist-data">Question</section>
+                        <section class="table-header-item qlist-data">Options</section>
+                    </header>
+                    <section class="table-container qlist-table">
+                        <section class="table-item-container" ng-repeat="item in quizVm.edit.questions track by $index">
+                            <section class="table-item">
+                                <section class="table-item-data qlist-data">{{$index+1}}</section>
+                                <section class="table-item-data qlist-data">{{item.question}}</section>
+                                <section class="table-item-data qlist-data">
+                                    <button class="button table-button" ng-click="quizVm.popEditItem(item)">
+                                        <img src="../../../../assets/img/ico/delete-icon-red.png">
+                                        <span>Delete</span>
+                                    </button>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+
+                    <section class="qlist-input active">
+                        <header>Question List</header>
+                        <section class="search-bar">
+                            <section class="search-filter">
+                                <span>Search:</span>
+                                <input type="text" class="user-input search-bar" ng-model="quizVm.qSearchEdit.search" ng-change="quizVm.qSearchEdit.questions = quizVm.checkSearch(quizVm.qSearchEdit.search)" placeholder="Search a question here">
+                            </section>
+                        </section>
+                        <section class="table-container">
+                            <header class="table-header qsearch">
+                                <section class="table-header-item question-data" ng-repeat="header in quizVm.qSearch.headers">{{header}}</section>
+                            </header>
+                            <section class="table-item-container qsearch"
+                                dir-paginate="item in quizVm.qSearchEdit.questions |
+                                    orderBy: 'question'|
+                                    itemsPerPage: quizVm.qSearchEdit.questions.length |
+                                    filter: {question: quizVm.qSearchEdit.search} as qEditFound"
+                                pagination-id="quiz-edit">
+                                    <section class="table-item">
+                                        <section class="table-item-data question-data">{{item.category}}</section>
+                                        <section class="table-item-data question-data">{{item.subcategory}}</section>
+                                        <section class="table-item-data question-data">{{item.subject}}</section>
+                                        <section class="table-item-data question-data">{{item.question}}</section>
+                                        <section class="table-item-data question-data">
+                                            <button class="button table-button" ng-class="{'disabled': item.editAdded !== undefined}" ng-click="quizVm.addExistingQuestion(item, quizVm.edit.questions, 'edit')">
+                                                <span ng-if="item.editAdded === undefined">Add Question</span>
+                                                <span ng-if="item.editAdded !== undefined">Added</span>
+                                            </button>
+                                        </section>
+                                    </section>
+                            </section>
+                            <section class="empty-list" ng-class="{'active': qEditFound.length === 0}">No questions matched. Try another one!</section>
+                        </section>
+
+                        <dir-pagination-controls hidden pagination-id="quiz-edit"
+                        auto-hide="false"
+                        direction-links="true"
+                        boundary-links="true"
+                        template-url="assets/libs/dirPagination.tpl.html">
+                        </dir-pagination-controls>
+                    </section>
+                </section>
+                <hr>
+                <button class="button question-button" ng-class="{'disabled': quizVm.checkQuiz(quizVm.edit)}" ng-click="quizVm.updateQuiz()">Save</button>
+                <button class="button question-button" ng-click="quizVm.edit = undefined">Cancel</button>
+            </section>
         </section>
 
         <section class="item-pager">
@@ -202,14 +264,14 @@
                     </div>
                     <div class="input-block">
                         <span>Quiz Duration</span>
-                        <input class="user-input" ng-model="quizVm.data.duration" placeholder="Enter the duration in minutes here.">
+                        <input type="number" class="user-input" ng-model="quizVm.data.duration" placeholder="Enter the duration in minutes here.">
                     </div>
                     <div class="input-block">
                         <span>Quiz Passing Percentage</span>
-                        <input class="user-input" ng-model="quizVm.data.passingPercent" placeholder="Enter the passing percentage of the quiz here.">
+                        <input type="number" class="user-input" ng-model="quizVm.data.passingPercent" placeholder="Enter the passing percentage of the quiz here.">
                     </div>
                     <div class="input-block" ng-class="{'disabled' : quizVm.data.questions.length < 10}">
-                        <button class="button question-button" ng-click="quizVm.createQuiz()">Create Quiz</button>
+                        <button class="button question-button" ng-class="{'disabled' : quizVm.checkQuiz(quizVm.data)}" ng-click="quizVm.createQuiz()">Create Quiz</button>
                     </div>
                     <div class="input-block">
                         <section class="info warning" ng-class="{'active' : quizVm.data.questions.length < 10}">
@@ -287,13 +349,13 @@
                         <section class="search-bar">
                             <section class="search-filter">
                                 <span>Search:</span>
-                                <input type="text" class="user-input search-bar" ng-model="quizVm.qSearch.search" ng-change="quizVm.checkSearch()" placeholder="Search a question here">
+                                <input type="text" class="user-input search-bar" ng-model="quizVm.qSearch.search" ng-change="quizVm.qSearch.questions = quizVm.checkSearch(quizVm.qSearch.search)" placeholder="Search a question here">
                             </section>
                         </section>
+                        <header class="table-header qsearch">
+                            <section class="table-header-item question-data" ng-repeat="header in quizVm.qSearch.headers">{{header}}</section>
+                        </header>
                         <section class="table-container">
-                            <header class="table-header qsearch">
-                                <section class="table-header-item question-data" ng-repeat="header in quizVm.qSearch.headers">{{header}}</section>
-                            </header>
                             <section
                                     class="table-item-container qsearch"
                                     dir-paginate="item in quizVm.qSearch.questions |
@@ -307,7 +369,7 @@
                                     <section class="table-item-data question-data">{{item.subject}}</section>
                                     <section class="table-item-data question-data">{{item.question}}</section>
                                     <section class="table-item-data question-data">
-                                        <button class="button table-button" ng-class="{'disabled': item.added !== undefined}" ng-click="quizVm.addExistingQuestion(item)">
+                                        <button class="button table-button" ng-class="{'disabled': item.added !== undefined}" ng-click="quizVm.addExistingQuestion(item, quizVm.data.questions, 'new')">
                                             <span ng-if="item.added === undefined">Add Question</span>
                                             <span ng-if="item.added !== undefined">Added</span>
                                         </button>

@@ -22,9 +22,9 @@
 
         self.createTest = createTest;
         self.readTest = readTest;
-        //self.viewTest = viewTest;
-        //self.updateTest = updateTest;
-        //self.deleteTest = deleteTest;
+        self.viewTest = viewTest;
+        self.updateTest = updateTest;
+        self.deleteTest = deleteTest;
 
         self.readTags = readTags;
         self.createTag = createTag;
@@ -168,6 +168,7 @@
             data.user = self.user.id;
             $http.post(baseAPI + "quiz/create.php", data)
                 .then(function (response) {
+                    self.readTest(function (response) {});
                     callback(response.data);
                 });
         }
@@ -178,8 +179,46 @@
                     response = JSON.parse(JSON.stringify(response.data));
                     $rootScope.user.quizzes = response;
                     $rootScope.user.quizTotalItems = $rootScope.user.quizzes.length;
-                    console.log($rootScope.user)
+                    console.log($rootScope.user);
                     callback(true);
+                });
+        }
+
+        function updateTest(data, callback) {
+            $http.post(baseAPI + "quiz/update.php", data)
+                .then(function (response) {
+                    self.readTest(function (response) {});
+                    callback(response);
+                });
+        }
+
+        function viewTest(id, callback) {
+            $http.post(baseAPI + "quiz/view.php", {id: id})
+                .then(function (response) {
+                    response = JSON.parse(JSON.stringify(response.data));
+                    console.log(response);
+                    for(let i = 0; i < response.length; i++){
+                        response[i].options = [];
+                        let tempArray = [response[i].option1, response[i].option2, response[i].option3, response[i].option4];
+                        for(let j = 0; j < tempArray.length; j++){
+                            if(tempArray[j] !== "" && tempArray[j] !== null){
+                                response[i].options.push(tempArray[j]);
+                            }
+                        }
+                        delete response[i].option1;
+                        delete response[i].option2;
+                        delete response[i].option3;
+                        delete response[i].option4;
+                    }
+                    callback(response);
+                });
+        }
+
+        function deleteTest(id, callback) {
+            $http.post(baseAPI + "quiz/delete.php", {id: id})
+                .then(function (response) {
+                    self.readTest(function (response) {});
+                    callback(response);
                 });
         }
     }

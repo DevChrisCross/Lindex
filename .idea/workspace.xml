@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aac986ea-a36a-4501-8e4c-0fa5f986d7d6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/subcategory/create.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/subcategory/delete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/subcategory/update.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/quiz/delete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/quiz/update.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/quiz/view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/.sass-cache/daf3983409af37c2ef785628532500ba55b86d14/_quiz.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/daf3983409af37c2ef785628532500ba55b86d14/_quiz.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/.sass-cache/daf3983409af37c2ef785628532500ba55b86d14/main.scssc" afterPath="$PROJECT_DIR$/public/assets/.sass-cache/daf3983409af37c2ef785628532500ba55b86d14/main.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/category/create.php" afterPath="$PROJECT_DIR$/api/category/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/category/delete.php" afterPath="$PROJECT_DIR$/api/category/delete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/category/update.php" afterPath="$PROJECT_DIR$/api/category/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/objects/Category.php" afterPath="$PROJECT_DIR$/api/objects/Category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/objects/Subcategory.php" afterPath="$PROJECT_DIR$/api/objects/Subcategory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/question/question.template.html" afterPath="$PROJECT_DIR$/public/app/home/question/question.template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/objects/Quiz.php" afterPath="$PROJECT_DIR$/api/objects/Quiz.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/class/class.component.js" afterPath="$PROJECT_DIR$/public/app/home/class/class.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/class/class.template.html" afterPath="$PROJECT_DIR$/public/app/home/class/class.template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/quiz/quiz.component.js" afterPath="$PROJECT_DIR$/public/app/home/quiz/quiz.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/quiz/quiz.template.html" afterPath="$PROJECT_DIR$/public/app/home/quiz/quiz.template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/tags/tags.component.js" afterPath="$PROJECT_DIR$/public/app/home/tags/tags.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/home/tags/tags.template.html" afterPath="$PROJECT_DIR$/public/app/home/tags/tags.template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/services/data.service.js" afterPath="$PROJECT_DIR$/public/app/services/data.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/main.css" afterPath="$PROJECT_DIR$/public/assets/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/main.css.map" afterPath="$PROJECT_DIR$/public/assets/css/main.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/scss/_uib.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_uib.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/scss/_quiz.scss" afterPath="$PROJECT_DIR$/public/assets/scss/_quiz.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/scss/main.css" afterPath="$PROJECT_DIR$/public/assets/scss/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/scss/main.css.map" afterPath="$PROJECT_DIR$/public/assets/scss/main.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/scss/main.scss" afterPath="$PROJECT_DIR$/public/assets/scss/main.scss" />
@@ -50,32 +49,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
+      <file leaf-file-name="quiz.template.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="48" column="61" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+            <state relative-caret-position="394">
+              <caret line="357" column="57" lean-forward="false" selection-start-line="357" selection-start-column="57" selection-end-line="357" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tags.template.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.template.html">
+      <file leaf-file-name="_quiz.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/scss/_quiz.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3058">
-              <caret line="139" column="16" lean-forward="false" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+            <state relative-caret-position="3398">
+              <caret line="337" column="23" lean-forward="false" selection-start-line="337" selection-start-column="23" selection-end-line="337" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tags.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.component.js">
+      <file leaf-file-name="quiz.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="314">
+              <caret line="170" column="33" lean-forward="true" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
+              <folding>
+                <element signature="e#5422#5755#0" expanded="false" />
+                <element signature="e#5804#6618#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,18 +85,29 @@
       <file leaf-file-name="data.service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/services/data.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="152" column="62" lean-forward="false" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
+            <state relative-caret-position="174">
+              <caret line="198" column="42" lean-forward="true" selection-start-line="198" selection-start-column="42" selection-end-line="198" selection-end-column="42" />
               <folding>
-                <element signature="e#1226#1469#0" expanded="false" />
-                <element signature="e#1514#1580#0" expanded="false" />
-                <element signature="e#1627#2070#0" expanded="false" />
-                <element signature="e#2528#3722#0" expanded="false" />
-                <element signature="e#3776#4205#0" expanded="false" />
-                <element signature="e#4253#4604#0" expanded="false" />
-                <element signature="e#6394#6610#0" expanded="false" />
-                <element signature="e#6648#7095#0" expanded="false" />
+                <element signature="e#1220#1463#0" expanded="false" />
+                <element signature="e#1508#1574#0" expanded="false" />
+                <element signature="e#2111#2480#0" expanded="false" />
+                <element signature="e#3770#4199#0" expanded="false" />
+                <element signature="e#4247#4598#0" expanded="false" />
+                <element signature="e#4636#5278#0" expanded="false" />
+                <element signature="e#5337#5613#0" expanded="false" />
+                <element signature="e#5664#6055#0" expanded="false" />
+                <element signature="e#6104#6342#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Quiz.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/objects/Quiz.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-396">
+              <caret line="97" column="41" lean-forward="true" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,22 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>info</find>
-      <find>quiz</find>
-      <find>home-vie</find>
-      <find>user</find>
-      <find>table-but</find>
-      <find>itemsFo</find>
-      <find>Tota</find>
-      <find>table-it</find>
-      <find>table-header-item</find>
-      <find>table-item</find>
-      <find>border</find>
-      <find>question-button-</find>
-      <find>naviga</find>
-      <find>question-bod</find>
-      <find>qlist-input</find>
-      <find>questionT</find>
       <find>qlist-b</find>
       <find>empty</find>
       <find>qlist-button</find>
@@ -135,12 +132,28 @@
       <find>table-button</find>
       <find>.selec</find>
       <find>.selected</find>
-      <find>itemsFound</find>
       <find>tagsVm.search</find>
       <find>tagsVm.edit</find>
       <find>dirPaginateDir</find>
       <find>tagsVm.data</find>
       <find>template-url</find>
+      <find>30%</find>
+      <find>itemsFound</find>
+      <find>input-block</find>
+      <find>modifyQuiz</find>
+      <find>checkSearch</find>
+      <find>del</find>
+      <find>addEx</find>
+      <find>added</find>
+      <find>addExi</find>
+      <find>quizVm.edit</find>
+      <find>quizVm.edit.questions</find>
+      <find>quizVm.data.questions</find>
+      <find>itemsFOund</find>
+      <find>self.ed</find>
+      <find>quizVm.edit.mode</find>
+      <find>order</find>
+      <find>check</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,15 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/api/quiz/create.php" />
-        <option value="$PROJECT_DIR$/src/api/objects/Question.php" />
-        <option value="$PROJECT_DIR$/src/app/js/services/data.service.js" />
-        <option value="$PROJECT_DIR$/src/api/objects/Quiz.php" />
-        <option value="$PROJECT_DIR$/src/app/index.html" />
-        <option value="$PROJECT_DIR$/src/app/js/home/home.template.html" />
-        <option value="$PROJECT_DIR$/src/app/libs/dirPagination.tpl.html" />
-        <option value="$PROJECT_DIR$/src/app/scss/_uib.scss" />
-        <option value="$PROJECT_DIR$/src/app/js/home/tags/tags.component.js" />
         <option value="$PROJECT_DIR$/src/app/js/home/tags/tags.template.html" />
         <option value="$PROJECT_DIR$/src/app/scss/_tags.scss" />
         <option value="$PROJECT_DIR$/src/app/scss/_home.scss" />
@@ -189,17 +193,26 @@
         <option value="$PROJECT_DIR$/api/category/update.php" />
         <option value="$PROJECT_DIR$/api/category/delete.php" />
         <option value="$PROJECT_DIR$/api/objects/Category.php" />
-        <option value="$PROJECT_DIR$/public/assets/scss/main.scss" />
         <option value="$PROJECT_DIR$/public/css" />
         <option value="$PROJECT_DIR$/api/objects/Subcategory.php" />
         <option value="$PROJECT_DIR$/api/subcategory/create.php" />
         <option value="$PROJECT_DIR$/api/subcategory/delete.php" />
         <option value="$PROJECT_DIR$/api/subcategory/update.php" />
         <option value="$PROJECT_DIR$/public/app/home/question/question.template.html" />
-        <option value="$PROJECT_DIR$/public/app/home/quiz/quiz.template.html" />
         <option value="$PROJECT_DIR$/public/app/home/tags/tags.component.js" />
-        <option value="$PROJECT_DIR$/public/app/services/data.service.js" />
         <option value="$PROJECT_DIR$/public/app/home/tags/tags.template.html" />
+        <option value="$PROJECT_DIR$/public/app/home/class/class.component.js" />
+        <option value="$PROJECT_DIR$/public/app/home/class/class.template.html" />
+        <option value="$PROJECT_DIR$/api/quiz/view.php" />
+        <option value="$PROJECT_DIR$/api/objects/Question.php" />
+        <option value="$PROJECT_DIR$/public/assets/scss/main.scss" />
+        <option value="$PROJECT_DIR$/api/quiz/delete.php" />
+        <option value="$PROJECT_DIR$/api/quiz/update.php" />
+        <option value="$PROJECT_DIR$/public/app/services/data.service.js" />
+        <option value="$PROJECT_DIR$/api/objects/Quiz.php" />
+        <option value="$PROJECT_DIR$/public/app/home/quiz/quiz.component.js" />
+        <option value="$PROJECT_DIR$/public/assets/scss/_quiz.scss" />
+        <option value="$PROJECT_DIR$/public/app/home/quiz/quiz.template.html" />
       </list>
     </option>
   </component>
@@ -240,7 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,6 +286,28 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -293,7 +327,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,6 +480,32 @@
               <option name="myItemId" value="Lindex" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -475,7 +535,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="subcategory" />
+              <option name="myItemId" value="quiz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lindex" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="question" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -497,26 +575,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lindex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Lindex" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="category" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -528,7 +589,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/PhpstormProjects/Newton-Raphson" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -651,12 +712,15 @@
       <workItem from="1488462976411" duration="7299000" />
       <workItem from="1488613606540" duration="49714000" />
       <workItem from="1488850628160" duration="632000" />
-      <workItem from="1488886949990" duration="9010000" />
+      <workItem from="1488886949990" duration="9200000" />
+      <workItem from="1488923262121" duration="1959000" />
+      <workItem from="1488926092732" duration="7846000" />
+      <workItem from="1489115714919" duration="49171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="736593000" />
+    <option name="totallyTimeSpent" value="795759000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -669,25 +733,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20989583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711306" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,85 +762,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/home/question/question.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/home.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/scss/_account.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/quiz/read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/objects/Question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="71" lean-forward="true" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
-          <folding>
-            <marker date="1488379148352" expanded="true" signature="141:206" ph="INSERT INTO ${$this-&gt;table_name}SET... " />
-            <marker date="1488379148352" expanded="true" signature="141:747" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1488379148352" expanded="true" signature="1672:1685" ph="SELECT * FRO... " />
-            <marker date="1488379148352" expanded="true" signature="1672:1688" ph="SELECT * FRO... " />
-            <marker date="1488379148352" expanded="true" signature="1946:2773" ph="SELECT q_id,... ${$this-&gt;table_name}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/quiz/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/objects/Quiz.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="802">
-          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding>
-            <marker date="1488382139864" expanded="true" signature="1668:1941" ph="SELECT * FRO... " />
-            <marker date="1488382139864" expanded="true" signature="2626:2744" ph="SELECT test test" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/home.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/libs/jsrsasign.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/scss/_create_question.scss" />
     <entry file="file://$PROJECT_DIR$/public/assets/scss/_home.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -789,13 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/scss/_quiz.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -827,20 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/app.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/home.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/account/account-login/account-login.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -855,24 +824,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/class/class.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/home/dashboard/dashboard.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -904,34 +859,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/question/question.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" column="64" lean-forward="false" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css" />
-    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="2019" column="21" lean-forward="true" selection-start-line="2019" selection-start-column="21" selection-end-line="2019" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/scss/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/category/read.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="10" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -955,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,15 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="9" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/objects/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-770">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,7 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1408">
           <caret line="64" column="12" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,12 +934,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="27" />
-          <folding>
-            <marker date="1485939537320" expanded="true" signature="10537:10544" ph="«" />
-            <marker date="1485939537320" expanded="true" signature="10687:10695" ph="‹" />
-            <marker date="1485939537320" expanded="true" signature="11126:11134" ph="›" />
-            <marker date="1485939537320" expanded="true" signature="11284:11291" ph="»" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/home.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1032,63 +948,196 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7106">
-          <caret line="323" column="44" lean-forward="false" selection-start-line="323" selection-start-column="32" selection-end-line="323" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="792">
+          <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/app.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="67" lean-forward="false" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
+        <state relative-caret-position="692">
           <caret line="48" column="61" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/class/class.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/class/class.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/quiz/read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="1844" column="34" lean-forward="false" selection-start-line="1844" selection-start-column="17" selection-end-line="1844" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/question/question.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/home/question/question.template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1491">
-          <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="28" />
+        <state relative-caret-position="-2486">
+          <caret line="72" column="43" lean-forward="false" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.component.js">
+    <entry file="file://$PROJECT_DIR$/public/app/home/question/question.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="-990">
+          <caret line="15" column="64" lean-forward="false" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/quiz/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/question/read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/objects/Question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/quiz/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/objects/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/quiz/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/objects/Quiz.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-396">
+          <caret line="97" column="41" lean-forward="true" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/services/data.service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="152" column="62" lean-forward="false" selection-start-line="152" selection-start-column="62" selection-end-line="152" selection-end-column="62" />
+        <state relative-caret-position="174">
+          <caret line="198" column="42" lean-forward="true" selection-start-line="198" selection-start-column="42" selection-end-line="198" selection-end-column="42" />
           <folding>
-            <element signature="e#1226#1469#0" expanded="false" />
-            <element signature="e#1514#1580#0" expanded="false" />
-            <element signature="e#1627#2070#0" expanded="false" />
-            <element signature="e#2528#3722#0" expanded="false" />
-            <element signature="e#3776#4205#0" expanded="false" />
-            <element signature="e#4253#4604#0" expanded="false" />
-            <element signature="e#6394#6610#0" expanded="false" />
-            <element signature="e#6648#7095#0" expanded="false" />
+            <element signature="e#1220#1463#0" expanded="false" />
+            <element signature="e#1508#1574#0" expanded="false" />
+            <element signature="e#2111#2480#0" expanded="false" />
+            <element signature="e#3770#4199#0" expanded="false" />
+            <element signature="e#4247#4598#0" expanded="false" />
+            <element signature="e#4636#5278#0" expanded="false" />
+            <element signature="e#5337#5613#0" expanded="false" />
+            <element signature="e#5664#6055#0" expanded="false" />
+            <element signature="e#6104#6342#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/home/tags/tags.template.html">
+    <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3058">
-          <caret line="139" column="16" lean-forward="false" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+        <state relative-caret-position="314">
+          <caret line="170" column="33" lean-forward="true" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
+          <folding>
+            <element signature="e#5422#5755#0" expanded="false" />
+            <element signature="e#5804#6618#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/scss/_quiz.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3398">
+          <caret line="337" column="23" lean-forward="false" selection-start-line="337" selection-start-column="23" selection-end-line="337" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/home/quiz/quiz.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="357" column="57" lean-forward="false" selection-start-line="357" selection-start-column="57" selection-end-line="357" selection-end-column="57" />
           <folding />
         </state>
       </provider>

@@ -36,10 +36,13 @@ class Quiz
                     . Quiz::ASSOC .
                 "SET
                     quiz_id = :quiz_id,
-                    question_id = :question_id";
+                    question_id = :question_id,
+                    order_no = :order_no";
+
             $stmt2 = $conn->prepare($query2);
             $stmt2->bindParam(":quiz_id", $quiz_id);
             $stmt2->bindParam(":question_id", $data->questions[$i]->id);
+            $stmt2->bindParam(":order_no", $data->questions[$i]->orderNo);
             $stmt2->execute();
         }
 
@@ -52,7 +55,8 @@ class Quiz
             "SELECT 
                 quiz.id,
                 quiz.name AS title,
-                quiz.date,
+                quiz.duration,
+                quiz.passingPercent,
                 quiz.status,
                 category.name AS category,
                 subcategory.name AS subcategory,
@@ -66,7 +70,7 @@ class Quiz
             LEFT OUTER JOIN subject 
                 ON subject.id = quiz.subject_id 
             WHERE 
-                quiz.professor_id = :professor_id AND quiz.status = '1'";
+                quiz.professor_id = :professor_id";
 
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":professor_id", $data->user);
@@ -77,9 +81,14 @@ class Quiz
 
     public static function view($conn, $data){
         $query =
-            "SELECT 
-                question.id,
-                question.detail,
+            "SELECT
+                test.question_id AS id,
+                test.order_no AS orderNo,
+                question.detail AS question,
+                question.option1,
+                question.option2,
+                question.option3,
+                question.option4,
                 question.answer
             FROM"
                 . Quiz::ASSOC .
@@ -95,11 +104,75 @@ class Quiz
         return $result;
     }
 
-    public static function update(){
+    public static function update($conn, $data){
+        $query =
+            "UPDATE"
+                . Quiz::TABLE .
+            "SET
+                name = :name,
+                duration = :duration,
+                passingPercent = :percent,
+                status = :status
+            WHERE
+                id = :id";
 
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":name", $data->title);
+        $stmt->bindParam(":duration", $data->duration);
+        $stmt->bindParam(":percent", $data->passingPercent);
+        $stmt->bindParam(":status", $data->status);
+        $stmt->bindParam(":id", $data->id);
+        $stmt->execute();
+
+        $query2 =
+            "DELETE FROM"
+                . Quiz::ASSOC .
+            "WHERE 
+                quiz_id = :quiz_id";
+
+        $stmt2 = $conn->prepare($query2);
+        $stmt2->bindParam(":quiz_id", $data->id);
+        $stmt2->execute();
+
+        for ($i = 0; $i < count($data->questions); $i++) {
+            $query3 =
+                "INSERT INTO"
+                    . Quiz::ASSOC .
+                "SET
+                    quiz_id = :quiz_id,
+                    question_id = :question_id,
+                    order_no = :order_no";
+
+            $stmt3 = $conn->prepare($query3);
+            $stmt3->bindParam(":quiz_id", $data->id);
+            $stmt3->bindParam(":question_id", $data->questions[$i]->id);
+            $stmt3->bindParam(":order_no", $data->questions[$i]->orderNo);
+            //$stmt3->bindParam(":id", $data->questions[$i]->id);
+            $stmt3->execute();
+        }
+        return true;
     }
 
-    public static function delete(){
+    public static function delete($conn, $id){
+        $query =
+            "DELETE FROM"
+                . Quiz::ASSOC .
+            "WHERE 
+                quiz_id = :quiz_id";
 
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":quiz_id", $id);
+        $stmt->execute();
+
+        $query2 =
+            "DELETE FROM"
+                . Quiz::TABLE .
+            "WHERE
+                id = :id";
+
+        $stmt2 = $conn->prepare($query2);
+        $stmt2->bindParam(":id", $id);
+        $stmt2->execute();
+        return true;
     }
 }
