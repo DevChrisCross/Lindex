@@ -28,7 +28,7 @@
                     selectedCategory: undefined,
                     selectedSubCategory: undefined,
                     selectedSubject: undefined,
-                    title: undefined,
+                    title: "",
                     duration: 60,
                     passingPercent: 50,
                     questions: [],
@@ -121,15 +121,34 @@
                 self.edit.mode = mode;
                 DataService.viewTest(self.edit.id, function (response) {
                     self.edit.questions = response;
-                    console.log(self.edit.questions);
-                    for(let i = 0, j = 0; i < $rootScope.user.questions.length; i++){
-                        if(self.edit.questions[j].id === $rootScope.user.questions[i].id && j < self.edit.questions.length){
-                            $rootScope.user.questions[i].editAdded = true;
-                            self.edit.questions[j].editAdded = true;
-                            i = 0;
-                            j++;
+                    console.log($rootScope.user.questions);
+
+                    for(let i = 0; i < self.edit.questions.length; i++){
+                        for(let j = 0; j < $rootScope.user.questions.length; j++){
+                            if(self.edit.questions[i].id === $rootScope.user.questions[j].id){
+                                self.edit.questions[i].editAdded = true;
+                                $rootScope.user.questions[j].editAdded = true;
+                                break;
+                            }
                         }
                     }
+
+                    // for(let i = 0, j = 0; i < $rootScope.user.questions.length && j < self.edit.questions.length; i++){
+                    //     console.log(self.edit.questions[j].id);
+                    //     console.log($rootScope.user.questions[i].id);
+                    //     if(self.edit.questions[j].id === $rootScope.user.questions[i].id){
+                    //         console.log("EQUAALLSSS");
+                    //         $rootScope.user.questions[i].editAdded = true;
+                    //         self.edit.questions[j].editAdded = true;
+                    //         i = 0;
+                    //         j++;
+                    //     }else if(i === $rootScope.user.questions.length - 1){
+                    //         i = 0;
+                    //         j++;
+                    //     }
+                    // }
+                    console.log(self.edit.questions);
+                    console.log($rootScope.user.questions);
                 });
             };
 
@@ -164,7 +183,7 @@
             };
 
             self.checkQuiz = function (data) {
-                if(data.title === "" || data.title === undefined ||
+                if(data === undefined || data.title === undefined || data.questions === undefined || data.title === "" ||
                     data.duration < 1 || data.passingPercent < 1 || data.questions.length < 10){
                     return true;
                 }else{
