@@ -117,39 +117,24 @@
             };
 
             self.modifyQuiz = function (item, mode) {
-                self.edit = DataService.duplicate(item);
-                self.edit.mode = mode;
-                DataService.viewTest(self.edit.id, function (response) {
-                    self.edit.questions = response;
-                    console.log($rootScope.user.questions);
+                if(item.status==0){
+                    self.edit = DataService.duplicate(item);
+                    self.edit.mode = mode;
+                    DataService.viewTest(self.edit.id, function (response) {
+                        self.edit.questions = response;
+                        console.log($rootScope.user.questions);
 
-                    for(let i = 0; i < self.edit.questions.length; i++){
-                        for(let j = 0; j < $rootScope.user.questions.length; j++){
-                            if(self.edit.questions[i].id === $rootScope.user.questions[j].id){
-                                self.edit.questions[i].editAdded = true;
-                                $rootScope.user.questions[j].editAdded = true;
-                                break;
+                        for(let i = 0; i < self.edit.questions.length; i++){
+                            for(let j = 0; j < $rootScope.user.questions.length; j++){
+                                if(self.edit.questions[i].id === $rootScope.user.questions[j].id){
+                                    self.edit.questions[i].editAdded = true;
+                                    $rootScope.user.questions[j].editAdded = true;
+                                    break;
+                                }
                             }
                         }
-                    }
-
-                    // for(let i = 0, j = 0; i < $rootScope.user.questions.length && j < self.edit.questions.length; i++){
-                    //     console.log(self.edit.questions[j].id);
-                    //     console.log($rootScope.user.questions[i].id);
-                    //     if(self.edit.questions[j].id === $rootScope.user.questions[i].id){
-                    //         console.log("EQUAALLSSS");
-                    //         $rootScope.user.questions[i].editAdded = true;
-                    //         self.edit.questions[j].editAdded = true;
-                    //         i = 0;
-                    //         j++;
-                    //     }else if(i === $rootScope.user.questions.length - 1){
-                    //         i = 0;
-                    //         j++;
-                    //     }
-                    // }
-                    console.log(self.edit.questions);
-                    console.log($rootScope.user.questions);
-                });
+                    });
+                }
             };
 
             self.addExistingQuestion = function (item, questions, mode) {
@@ -221,6 +206,10 @@
                 }
             };
 
+            self.changeStatus = function () {
+
+            };
+
             self.updateQuiz = function () {
                 if(self.edit.questions.length >= 10){
                     for(let i = 0; i < self.edit.questions.length; i++){
@@ -233,8 +222,10 @@
                 }
             };
 
-            self.deleteQuiz = function (id) {
-                DataService.deleteTest(id, function (response) {});
+            self.deleteQuiz = function (item) {
+                if(item.status==0){
+                    DataService.deleteTest(item.id, function (response) {});
+                }
             }
         }
 })();

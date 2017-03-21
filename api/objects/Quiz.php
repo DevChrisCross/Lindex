@@ -17,7 +17,7 @@ class Quiz
                 subject_id = :subject_id,
                 duration = :duration,
                 passingPercent = :percent,
-                status = '1'";
+                status = '0'";
 
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":name", $data->title);

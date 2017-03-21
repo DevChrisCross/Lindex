@@ -2,19 +2,19 @@
   height: 40px;
 
   & > .table-header-item{
-    &.question-data{
+    &.qsearch-data{
       &:nth-child(1),
       &:nth-child(2),
       &:nth-child(3){
-        width: 13%;
+        width: 11.75%;
       }
 
       &:nth-child(4){
-        width: 55%;
+        width: 53.75%;
       }
 
       &:last-child{
-        width: 10%;
+        width: 11%;
       }
     }
   }
@@ -23,21 +23,19 @@
 .table-item-container.qsearch{
   & > .table-item{
     & > .table-item-data{
-      &.question-data{
-        &.question-data{
-          &:nth-child(1),
-          &:nth-child(2),
-          &:nth-child(3){
-            width: 13%;
-          }
+      &.qsearch-data{
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3){
+          width: 12%;
+        }
 
-          &:nth-child(4){
-            width: 55%;
-          }
+        &:nth-child(4){
+          width: 55%;
+        }
 
-          &:last-child{
-            width: 10%;
-          }
+        &:last-child{
+          width: 10%;
         }
       }
     }
@@ -76,11 +74,11 @@
 
     &.qlist-data{
       &:first-child{
-        width: 7%;
+        width: 7.5%;
       }
 
       &:nth-child(2){
-        width: 97%;
+        width: 100%;
       }
 
       &:last-child{
@@ -92,9 +90,11 @@
 
 .table-container.qlist-table{
   margin: 0;
-  max-height: 500px;
+  max-height: 300px;
   overflow-y: scroll;
   overflow-x: hidden;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .table-item-container{
@@ -123,9 +123,15 @@
 
         &:nth-child(7){
           width: 6%;
+          color: white;
           background-color: #f87979;
           box-shadow: inset 0 0 10px #780e0e;
           transition: 0.5s ease all;
+
+          &.active{
+            background-color: #59d75d;
+            box-shadow: inset 0 0 10px #0e7811;
+          }
         }
 
         &:last-child{
@@ -225,6 +231,11 @@
       &:nth-child(2){
         width: 75%;
         margin-left: 50px;
+
+        & > .table-header{
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+        }
       }
 
       & > .input-block{
@@ -278,71 +289,96 @@
         margin: 10px 0 35px auto;
         display: flex;
       }
+    }
+  }
+}
 
-      & > .qlist-input{
-        border: 0 solid #414141;
-        max-height: 0;
-        margin: 0;
-        border-radius: 10px;
-        overflow: hidden;
-        transition: 1s ease all;
+.qlist-input{
+  border: 0 solid #414141;
+  max-height: 0;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 1s ease all;
 
-        &.active{
-          max-height: 1000px;
-          margin: 10px 0 40px 0;
-          border: 1px solid #414141;
-        }
+  &.active{
+    max-height: 1000px;
+    margin: 30px 0 10px 0;
+    border: 1px solid #414141;
+  }
 
-        & > header{
-          color: white;
-          padding: 10px;
-          background-color: #414141;
-        }
+  & > header{
+    color: white;
+    padding: 10px;
+    background-color: #414141;
 
-        & > section{
-          margin: 10px 10px 20px 10px;
+    &.qsearch{
+      padding: 0;
+    }
+  }
 
-          & > textarea.user-input{
-            width: 100% !important;
-            height: 100px !important;
-          }
+  & > section{
+    margin: 0;
 
-          & > .user-input{
-            width: 100%;
-          }
+    &.new-question{
+      margin: 10px;
+    }
 
-          & > .qlist-input-new{
-            display: flex;
-            justify-content: center;
+    &.table-container{
+      overflow-y: scroll;
+      border-radius: 0;
+      max-height: 300px;
+    }
 
-            &:nth-child(4){
-              justify-content: flex-end;
-              margin-bottom: 30px;
-            }
+    & > textarea.user-input{
+      width: 100% !important;
+      height: 100px !important;
+    }
 
-            & > .button:first-child{
-              margin-right: 10px;
-            }
-          }
-        }
+    & > .user-input{
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    & > .qlist-input-new{
+      display: flex;
+      justify-content: center;
+
+      &:nth-child(4){
+        justify-content: flex-end;
+        margin-bottom: 30px;
+      }
+
+      & > .button:first-child{
+        margin-right: 10px;
       }
     }
   }
 }
 
 .quiz-view{
-  min-height: 0;
+  max-height: 0;
+  padding-bottom: 0;
   transition: 1s ease all;
 
+
   &.active{
-    min-height: 1000px;
+    max-height: 1000px;
+    padding-bottom: 10px;
   }
 
   & > .quiz-header{
-    background-color: red;
+    background-color: #c7c7c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #434343;
 
     & > img{
-
+      height: 15px;
+      margin-right: 5px;
     }
   }
 
@@ -356,10 +392,6 @@
     & > .table-container,
     & > .qlist-input{
       width: 100%;
-    }
-
-    & > .qlist-input > header{
-      background-color: red;
     }
 
     & > .input-block{
@@ -382,14 +414,16 @@
         margin-right: 5px;
         color: #414141;
       }
-
-      & > .user-input{
-
-      }
     }
 
     &:nth-child(3){
       flex-direction: column;
     }
+  }
+
+  & > .block-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

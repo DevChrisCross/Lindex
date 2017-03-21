@@ -6,6 +6,6 @@
     $db = $database->getConnection();
     $data = json_decode(file_get_contents("php://input"));
 
-    $result = Subject::read($db, $data->user);
+    $result = Subject::read($db);
     echo json_encode($result);
 ?>
