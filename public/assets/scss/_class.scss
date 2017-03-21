@@ -1,0 +1,110 @@
+.class-inner-container{
+  width: 60%;
+}
+
+.class-assign{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: white;
+  border: 1px solid #414141;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 35%;
+  margin-bottom: 50px;
+
+  & > header{
+    background-color: #414141;
+    color: white;
+    padding: 10px;
+  }
+
+  & > .class-assign-inner{
+    padding: 15px;
+
+    & > .quiz-info{
+      color: #ffffff;
+      padding: 10px;
+      margin-bottom: 10px;
+      line-height: 25px;
+      background-color: #2da6c8;
+      border-radius: 5px;
+    }
+
+    & > .search-filter > .dropdown-container{
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    & > .schedule-info{
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
+
+      & > span{
+        margin-right: 10px;
+      }
+    }
+
+    & > .schedule-time{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > section{
+        display: flex;
+        align-items: center;
+        width: 55%;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
+.table-header{
+  & > .table-header-item{
+    &.class-data{
+      &:first-child{
+        width: 15%;
+      }
+
+      &:nth-child(2){
+        width: 40%;
+      }
+
+      &:nth-child(3){
+        width: 20%;
+      }
+
+      &:last-child{
+        width: 25%;
+      }
+    }
+  }
+}
+
+.table-item-container{
+  & > .table-item{
+    min-height: 0;
+
+    & > .table-item-data{
+      &.class-data{
+        &:first-child{
+          width: 15%;
+        }
+
+        &:nth-child(2){
+          width: 40%;
+        }
+
+        &:nth-child(3){
+          width: 20%;
+        }
+
+        &:last-child{
+          width: 25%;
+        }
+      }
+    }
+  }
+}

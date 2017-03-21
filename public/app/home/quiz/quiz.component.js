@@ -45,11 +45,6 @@
                     options: ["", ""],
                     answer: 0
                 };
-                //
-                // self.dateOptions = {
-                //     initDate: new Date(),
-                //     minDate: new Date()
-                // };
 
                 self.qSearchEdit = {
                     questions: [],

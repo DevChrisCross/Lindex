@@ -4,47 +4,45 @@
             <img src="../../../../assets/img/ico/category-icon-red.png">
             <p>Category List</p>
         </uib-tab-heading>
-        <section class="tags-outer-container">
-            <section class="tags-inner-container">
-                <section class="search-bar">
-                    <section class="search-filter">
-                        <span>Search:</span>
-                        <input type="text" class="user-input search-bar" ng-model="tagsVm.categorySearch" placeholder="Search a category here">
-                    </section>
+        <section class="tags-inner-container">
+            <section class="search-bar">
+                <section class="search-filter">
+                    <span>Search:</span>
+                    <input type="text" class="user-input search-bar" ng-model="tagsVm.categorySearch" placeholder="Search a category here">
+                </section>
 
-                    <section class="search-filter">
-                        <span>Show</span>
-                        <div class="dropdown-container numeric">
-                            <div class="dropdown-header" ng-click="tagsVm.activeDropDown = 'limit'">
-                                <span>{{tagsVm.baseLimit}}</span>
-                                <img src="../../../../assets/img/ico/dropdown-icon.png">
-                            </div>
-                            <ul class="dropdown" ng-class="{'active': tagsVm.activeDropDown === 'limit'}">
-                                <li ng-repeat="entry in $root.user.entryLimit" ng-click="tagsVm.baseLimit = entry; tagsVm.activeDropDown = '';">{{entry}}</li>
-                            </ul>
+                <section class="search-filter">
+                    <span>Show</span>
+                    <div class="dropdown-container numeric">
+                        <div class="dropdown-header" ng-click="tagsVm.activeDropDown = 'limit'">
+                            <span>{{tagsVm.baseLimit}}</span>
+                            <img src="../../../../assets/img/ico/dropdown-icon.png">
                         </div>
-                        <span>entries</span>
-                    </section>
+                        <ul class="dropdown" ng-class="{'active': tagsVm.activeDropDown === 'limit'}">
+                            <li ng-repeat="entry in $root.user.entryLimit" ng-click="tagsVm.baseLimit = entry; tagsVm.activeDropDown = '';">{{entry}}</li>
+                        </ul>
+                    </div>
+                    <span>entries</span>
                 </section>
+            </section>
 
-                <section class="item-pager">
-                    <section>Total of {{categoryItems.length}} items</section>
-                    <dir-pagination-controls
-                            auto-hide="false"
-                            direction-links="true"
-                            boundary-links="true"
-                            template-url="assets/libs/dirPagination.tpl.html"
-                            pagination-id="category">
-                    </dir-pagination-controls>
-                </section>
+            <section class="item-pager">
+                <section>Total of {{categoryItems.length}} items</section>
+                <dir-pagination-controls
+                        auto-hide="false"
+                        direction-links="true"
+                        boundary-links="true"
+                        template-url="assets/libs/dirPagination.tpl.html"
+                        pagination-id="category">
+                </dir-pagination-controls>
+            </section>
 
-                <section class="table-container">
-                    <header class="table-header">
-                        <section class="table-header-item tags-data">Category Name</section>
-                        <section class="table-header-item tags-data">Options</section>
-                    </header>
-                    {{$root.user.categories}}
-                    <section
+            <section class="table-container">
+                <header class="table-header">
+                    <section class="table-header-item tags-data">Category Name</section>
+                    <section class="table-header-item tags-data">Options</section>
+                </header>
+                <section
                         class="table-item-container"
                         dir-paginate="item in $root.user.categories |
                             orderBy: name |
@@ -52,47 +50,47 @@
                             filter: {name: tagsVm.categorySearch} as categoryItems"
                         pagination-id="category">
 
-                        <section class="table-item" ng-class="{'disabled': false}">
-                            <section class="table-item-data tags-data">{{item.name}}</section>
-                            <section class="table-item-data tags-data">
-                                <button class="button table-button" ng-class="{'selected': tagsVm.edit.category.id === item.id}" ng-click="tagsVm.edit.category = tagsVm.duplicate(item)">
-                                    <img src="../../../../assets/img/ico/edit-icon-red.png">
-                                    <span>Edit</span>
-                                </button>
-                                <button class="button table-button" ng-click="tagsVm.deleteCategory(item.id)">
-                                    <img src="../../../../assets/img/ico/delete-icon-red.png">
-                                    <span>Delete</span>
-                                </button>
-                            </section>
+                    <section class="table-item" ng-class="{'disabled': false}">
+                        <section class="table-item-data tags-data">{{item.name}}</section>
+                        <section class="table-item-data tags-data">
+                            <button class="button table-button" ng-class="{'selected': tagsVm.edit.category.id === item.id}" ng-click="tagsVm.edit.category = tagsVm.duplicate(item)">
+                                <img src="../../../../assets/img/ico/edit-icon-red.png">
+                                <span>Edit</span>
+                            </button>
+                            <button class="button table-button" ng-click="tagsVm.deleteCategory(item.id)">
+                                <img src="../../../../assets/img/ico/delete-icon-red.png">
+                                <span>Delete</span>
+                            </button>
                         </section>
                     </section>
-                    <section class="empty-list" ng-class="{'active': categoryItems.length===0}">No items found</section>
                 </section>
-                {{tagsVm.edit}}
-                <section class="item-pager">
-                    <section>Total of {{categoryItems.length}} items</section>
-                    <dir-pagination-controls
-                            auto-hide="false"
-                            direction-links="true"
-                            boundary-links="true"
-                            template-url="assets/libs/dirPagination.tpl.html"
-                            pagination-id="category">
-                    </dir-pagination-controls>
-                </section>
+                <section class="empty-list" ng-class="{'active': categoryItems.length===0}">No items found</section>
             </section>
+            <section class="item-pager">
+                <section>Total of {{categoryItems.length}} items</section>
+                <dir-pagination-controls
+                        auto-hide="false"
+                        direction-links="true"
+                        boundary-links="true"
+                        template-url="assets/libs/dirPagination.tpl.html"
+                        pagination-id="category">
+                </dir-pagination-controls>
+            </section>
+        </section>
 
-            <section class="tags-inner-container">
-                <section class="tags-edit" ng-class="">
-                    <section class="tags-edit-header">Edit Category</section>
-                    <input type="text" class="user-input" ng-model="tagsVm.edit.category.name" placeholder="Enter the new category name here.">
-                    <button class="button" ng-click="tagsVm.editCategory()">Save</button>
-                </section>
-                <section class="tags-edit">
-                    <section class="tags-edit-header">New Category</section>
-                    <input type="text" class="user-input" ng-model="tagsVm.data.category.name" placeholder="Enter the category name here.">
-                    <button class="button" ng-click="tagsVm.createCategory()">Add</button>
-                </section>
+        <section class="tags-inner-container">
+            <section class="tags-edit" ng-class="">
+                <section class="tags-edit-header">Edit Category</section>
+                <input type="text" class="user-input" ng-model="tagsVm.edit.category.name" placeholder="Enter the new category name here.">
+                <button class="button" ng-click="tagsVm.editCategory()">Save</button>
             </section>
+            <section class="tags-edit">
+                <section class="tags-edit-header">New Category</section>
+                <input type="text" class="user-input" ng-model="tagsVm.data.category.name" placeholder="Enter the category name here.">
+                <button class="button" ng-click="tagsVm.createCategory()">Add</button>
+            </section>
+        </section>
+
         </section>
     </uib-tab>
 
@@ -104,95 +102,94 @@
             <p>Subcategory List</p>
         </uib-tab-heading>
 
-        <section class="tags-outer-container">
-            <section class="tags-inner-container">
-                <section class="search-bar">
-                    <section class="search-filter">
-                        <span>Search:</span>
-                        <input type="text" class="user-input search-bar" ng-model="tagsVm.subcategorySearch" placeholder="Search a category here">
-                    </section>
+        <section class="tags-inner-container">
+            <section class="search-bar">
+                <section class="search-filter">
+                    <span>Search:</span>
+                    <input type="text" class="user-input search-bar" ng-model="tagsVm.subcategorySearch" placeholder="Search a category here">
+                </section>
 
-                    <section class="search-filter">
-                        <span>Show</span>
-                        <div class="dropdown-container numeric">
-                            <div class="dropdown-header" ng-click="tagsVm.activeDropDown = 'limit'">
-                                <span>{{tagsVm.baseLimit}}</span>
-                                <img src="../../../../assets/img/ico/dropdown-icon.png">
-                            </div>
-                            <ul class="dropdown" ng-class="{'active': tagsVm.activeDropDown === 'limit'}">
-                                <li ng-repeat="entry in $root.user.entryLimit" ng-click="tagsVm.baseLimit = entry; tagsVm.activeDropDown = '';">{{entry}}</li>
-                            </ul>
+                <section class="search-filter">
+                    <span>Show</span>
+                    <div class="dropdown-container numeric">
+                        <div class="dropdown-header" ng-click="tagsVm.activeDropDown = 'limit'">
+                            <span>{{tagsVm.baseLimit}}</span>
+                            <img src="../../../../assets/img/ico/dropdown-icon.png">
                         </div>
-                        <span>entries</span>
-                    </section>
+                        <ul class="dropdown" ng-class="{'active': tagsVm.activeDropDown === 'limit'}">
+                            <li ng-repeat="entry in $root.user.entryLimit" ng-click="tagsVm.baseLimit = entry; tagsVm.activeDropDown = '';">{{entry}}</li>
+                        </ul>
+                    </div>
+                    <span>entries</span>
                 </section>
+            </section>
 
-                <section class="item-pager">
-                    <section>Total of {{subcategoryItems.length}} items</section>
-                    <dir-pagination-controls
-                            auto-hide="false"
-                            direction-links="true"
-                            boundary-links="true"
-                            template-url="assets/libs/dirPagination.tpl.html"
-                            pagination-id="subcategory">
-                    </dir-pagination-controls>
-                </section>
+            <section class="item-pager">
+                <section>Total of {{subcategoryItems.length}} items</section>
+                <dir-pagination-controls
+                        auto-hide="false"
+                        direction-links="true"
+                        boundary-links="true"
+                        template-url="assets/libs/dirPagination.tpl.html"
+                        pagination-id="subcategory">
+                </dir-pagination-controls>
+            </section>
 
-                <section class="table-container">
-                    <header class="table-header">
-                        <section class="table-header-item tags-data">Subcategory Name</section>
-                        <section class="table-header-item tags-data">Options</section>
-                    </header>
-                    {{$root.user.categories}}
-                    <section
-                            class="table-item-container"
-                            dir-paginate="item in $root.user.subcategories |
+            <section class="table-container">
+                <header class="table-header">
+                    <section class="table-header-item tags-data">Subcategory Name</section>
+                    <section class="table-header-item tags-data">Options</section>
+                </header>
+                <section
+                        class="table-item-container"
+                        dir-paginate="item in $root.user.subcategories |
                             orderBy: name |
                             itemsPerPage: tagsVm.baseLimit |
                             filter: {name: tagsVm.subcategorySearch} as subcategoryItems"
-                            pagination-id="subcategory">
+                        pagination-id="subcategory">
 
-                        <section class="table-item" ng-class="{'disabled': false}">
-                            <section class="table-item-data tags-data">{{item.name}}</section>
-                            <section class="table-item-data tags-data">
-                                <button class="button table-button" ng-class="{'selected': tagsVm.edit.subcategory.id === item.id}" ng-click="tagsVm.edit.subcategory = tagsVm.duplicate(item)">
-                                    <img src="../../../../assets/img/ico/edit-icon-red.png">
-                                    <span>Edit</span>
-                                </button>
-                                <button class="button table-button" ng-click="tagsVm.deleteSubcategory(item.id)">
-                                    <img src="../../../../assets/img/ico/delete-icon-red.png">
-                                    <span>Delete</span>
-                                </button>
-                            </section>
+                    <section class="table-item" ng-class="{'disabled': false}">
+                        <section class="table-item-data tags-data">{{item.name}}</section>
+                        <section class="table-item-data tags-data">
+                            <button class="button table-button" ng-class="{'selected': tagsVm.edit.subcategory.id === item.id}" ng-click="tagsVm.edit.subcategory = tagsVm.duplicate(item)">
+                                <img src="../../../../assets/img/ico/edit-icon-red.png">
+                                <span>Edit</span>
+                            </button>
+                            <button class="button table-button" ng-click="tagsVm.deleteSubcategory(item.id)">
+                                <img src="../../../../assets/img/ico/delete-icon-red.png">
+                                <span>Delete</span>
+                            </button>
                         </section>
                     </section>
-                    <section class="empty-list" ng-class="{'active': subcategoryItems.length===0}">No items found</section>
                 </section>
-
-                <section class="item-pager">
-                    <section>Total of {{subcategoryItems.length}} items</section>
-                    <dir-pagination-controls
-                            auto-hide="false"
-                            direction-links="true"
-                            boundary-links="true"
-                            template-url="assets/libs/dirPagination.tpl.html"
-                            pagination-id="subcategory">
-                    </dir-pagination-controls>
-                </section>
+                <section class="empty-list" ng-class="{'active': subcategoryItems.length===0}">No items found</section>
             </section>
 
-            <section class="tags-inner-container">
-                <section class="tags-edit" ng-class="">
-                    <section class="tags-edit-header">Edit Subcategory</section>
-                    <input type="text" class="user-input" ng-model="tagsVm.edit.subcategory.name" placeholder="Enter the new subcategory name here.">
-                    <button class="button" ng-click="tagsVm.editSubcategory()">Save</button>
-                </section>
-                <section class="tags-edit">
-                    <section class="tags-edit-header">New Subcategory</section>
-                    <input type="text" class="user-input" ng-model="tagsVm.data.subcategory.name" placeholder="Enter the subcategory name here.">
-                    <button class="button" ng-click="tagsVm.createSubcategory()">Add</button>
-                </section>
+            <section class="item-pager">
+                <section>Total of {{subcategoryItems.length}} items</section>
+                <dir-pagination-controls
+                        auto-hide="false"
+                        direction-links="true"
+                        boundary-links="true"
+                        template-url="assets/libs/dirPagination.tpl.html"
+                        pagination-id="subcategory">
+                </dir-pagination-controls>
             </section>
+        </section>
+
+        <section class="tags-inner-container">
+            <section class="tags-edit" ng-class="">
+                <section class="tags-edit-header">Edit Subcategory</section>
+                <input type="text" class="user-input" ng-model="tagsVm.edit.subcategory.name" placeholder="Enter the new subcategory name here.">
+                <button class="button" ng-click="tagsVm.editSubcategory()">Save</button>
+            </section>
+            <section class="tags-edit">
+                <section class="tags-edit-header">New Subcategory</section>
+                <input type="text" class="user-input" ng-model="tagsVm.data.subcategory.name" placeholder="Enter the subcategory name here.">
+                <button class="button" ng-click="tagsVm.createSubcategory()">Add</button>
+            </section>
+        </section>
+
         </section>
     </uib-tab>
 </uib-tabset>

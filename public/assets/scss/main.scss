@@ -11,6 +11,7 @@
 @import "tags";
 @import "question";
 @import "quiz";
+@import "class";
 
 .button{
   background-color: #3dc2cd;
@@ -50,6 +51,10 @@
       color: #414141;
       border: 1px solid #9b2121;
       filter: hue-rotate(190deg);
+    }
+
+    &.selected{
+      box-shadow: inset 0 0 10px #3c3c3c;
     }
 
     & > img {

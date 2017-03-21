@@ -120,4 +120,10 @@
   border-radius: 5px;
   box-shadow: none;
   color: #3C3C3C;
+  transition: 0.5s ease all;
+
+  &.disabled{
+    color: #7b7b7b;
+    background-color: #e8e8e8;
+  }
 }

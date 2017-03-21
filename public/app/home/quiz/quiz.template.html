@@ -64,9 +64,8 @@
             <header class="table-header">
                 <section class="table-header-item quiz-data" ng-repeat="header in quizVm.headers">{{header}}</section>
             </header>
-            <section
-                    class="table-item-container"
-                    dir-paginate="item in $root.user.quizzes |
+            <section class="table-item-container"
+                dir-paginate="item in $root.user.quizzes |
                     orderBy: quizVm.selectedSorter.toLowerCase() : quizVm.selectedSortType.value |
                     itemsPerPage: quizVm.baseLimit |
                     filter: {question: quizVm.search} as itemsFound"
@@ -281,12 +280,7 @@
                             <span>Creation of quiz requires a minimum of 10 questions.</span>
                         </section>
                     </div>
-                    <!--
-                    <div class="input-block" ng-class="{'disabled' : !quizVm.active || quizVm.data.questions.length < 10}">
-                        <span>Exam Date: </span>
-                        <input class="user-input" value="{{quizVm.data.date | date: 'fullDate'}}" disabled>
-                        <div class="datepicker" uib-datepicker ng-model="quizVm.data.date" datepicker-options="quizVm.dateOptions"></div>
-                    </div>-->
+
                 </section>
 
                 <section class="block-divider">

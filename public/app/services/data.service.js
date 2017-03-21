@@ -31,6 +31,8 @@
         self.updateTag = updateTag;
         self.deleteTag = deleteTag;
 
+        self.readClass = readClass;
+
         return self;
 
         /**------------------------------------------------Functions-----------------------------------------------*/
@@ -56,7 +58,9 @@
             self.readTags(function (response) {
                 self.readQuestion(function (response) {
                     self.readTest(function (response) {
-                        callback(true);
+                        self.readClass(function () {
+                            callback(true);
+                        });
                     });
                 });
             });
@@ -179,7 +183,6 @@
                     response = JSON.parse(JSON.stringify(response.data));
                     $rootScope.user.quizzes = response;
                     $rootScope.user.quizTotalItems = $rootScope.user.quizzes.length;
-                    console.log($rootScope.user);
                     callback(true);
                 });
         }
@@ -219,6 +222,15 @@
                 .then(function (response) {
                     self.readTest(function (response) {});
                     callback(response);
+                });
+        }
+
+        function readClass(callback) {
+            $http.post(baseAPI + "section/read.php", {user: self.user.id})
+                .then(function (response) {
+                    response = JSON.parse(JSON.stringify(response.data));
+                    $rootScope.user.classes = response;
+                    callback(true);
                 });
         }
     }

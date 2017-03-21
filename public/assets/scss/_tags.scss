@@ -26,21 +26,19 @@
   }
 }
 
-.tags-outer-container{
-  display: flex;
-
-  & > .tags-inner-container{
+.tags-inner-container{
     &:first-child{
       width: 70%;
     }
 
     &:last-child{
-      position: fixed;
-      right: 40px;
+      position: absolute;
+      right: 15px;
       width: 430px;
+      top: 30px;
     }
-  }
 }
+
 
 .tags-edit{
   display: flex;
