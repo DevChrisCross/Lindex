@@ -1,7 +1,7 @@
 <uib-tabset active="active">
     <uib-tab index="0">
         <uib-tab-heading class="tab-head-container">
-            <img src="../../../../assets/img/ico/list-icon-2.png">
+            <img src="../../../assets/img/ico/list-icon-2.png">
             <p>Quiz List</p>
         </uib-tab-heading>
 
@@ -16,7 +16,7 @@
                 <div class="dropdown-container">
                     <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'sorter'" ng-class="{'active': quizVm.activeDropDown === 'sorter'}">
                         <span>{{quizVm.selectedSorter}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'sorter'}">
                         <li ng-repeat="sorter in quizVm.sorters" ng-click="quizVm.selectedSorter = sorter; quizVm.activeDropDown = ''">{{sorter}}</li>
@@ -25,7 +25,7 @@
                 <div class="dropdown-container">
                     <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'sorterType'" ng-class="{'active': quizVm.activeDropDown === 'sorterType'}">
                         <span>{{quizVm.selectedSortType.name}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'sorterType'}">
                         <li ng-repeat="sortType in quizVm.sortTypes" ng-value="sortType.value" ng-click="quizVm.selectedSortType = sortType; quizVm.activeDropDown = ''">{{sortType.name}}</li>
@@ -38,7 +38,7 @@
                 <div class="dropdown-container numeric">
                     <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'limit'" ng-class="{'active': quizVm.activeDropDown === 'limit'}">
                         <span>{{quizVm.baseLimit}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'limit'}">
                         <li ng-repeat="entry in $root.user.entryLimit" ng-click="quizVm.baseLimit = entry; quizVm.activeDropDown = '';">{{entry}}</li>
@@ -83,11 +83,11 @@
                     </section>
                     <section class="table-item-data quiz-data">
                         <button class="button table-button" ng-click="quizVm.modifyQuiz(item, 'edit')" ng-class="{'disabled':item.status==1}">
-                            <img src="../../../../assets/img/ico/edit-icon-red.png">
+                            <img src="../../../assets/img/ico/edit-icon-red.png">
                             <span>Edit</span>
                         </button>
                         <button class="button table-button" ng-click="quizVm.deleteQuiz(item)" ng-class="{'disabled':item.status==1}">
-                            <img src="../../../../assets/img/ico/delete-icon-red.png">
+                            <img src="../../../assets/img/ico/delete-icon-red.png">
                             <span>Delete</span>
                         </button>
                     </section>
@@ -128,7 +128,7 @@
                                 <section class="table-item-data qlist-data">{{item.question}}</section>
                                 <section class="table-item-data qlist-data">
                                     <button class="button table-button" ng-click="quizVm.popEditItem(item)">
-                                        <img src="../../../../assets/img/ico/delete-icon-red.png">
+                                        <img src="../../../assets/img/ico/delete-icon-red.png">
                                         <span>Delete</span>
                                     </button>
                                 </section>
@@ -199,7 +199,7 @@
 
     <uib-tab index="1">
         <uib-tab-heading class="tab-head-container">
-            <img src="../../../../assets/img/ico/add-icon.png">
+            <img src="../../../assets/img/ico/add-icon.png">
             <p>Add Quiz</p>
         </uib-tab-heading>
 
@@ -211,7 +211,7 @@
                         <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'category'" ng-class="{'disabled' : quizVm.set,'active': quizVm.activeDropDown === 'category' && !quizVm.set}">
                             <span ng-if="quizVm.data.selectedCategory === undefined">Choose a category</span>
                             <span ng-if="quizVm.data.selectedCategory !== undefined">{{quizVm.data.selectedCategory.name}}</span>
-                            <img src="../../../../assets/img/ico/dropdown-icon.png">
+                            <img src="../../../assets/img/ico/dropdown-icon.png">
                         </div>
                         <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'category' && !quizVm.set}">
                             <li ng-repeat="category in $root.user.categories" ng-click="quizVm.data.selectedCategory = category; quizVm.activeDropDown = ''">{{category.name}}</li>
@@ -225,7 +225,7 @@
                         <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'subcategory'" ng-class="{'disabled' : quizVm.set,'active': quizVm.activeDropDown === 'subcategory' && !quizVm.set}">
                             <span ng-if="quizVm.data.selectedSubCategory === undefined">Choose a subcategory</span>
                             <span ng-if="quizVm.data.selectedSubCategory !== undefined">{{quizVm.data.selectedSubCategory.name}}</span>
-                            <img src="../../../../assets/img/ico/dropdown-icon.png">
+                            <img src="../../../assets/img/ico/dropdown-icon.png">
                         </div>
                         <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'subcategory' && !quizVm.set}">
                             <li ng-repeat="subcategory in $root.user.subcategories" ng-click="quizVm.data.selectedSubCategory = subcategory; quizVm.activeDropDown = ''">{{subcategory.name}}</li>
@@ -239,7 +239,7 @@
                         <div class="dropdown-header" ng-click="quizVm.activeDropDown = 'subject'" ng-class="{'disabled' : quizVm.set, 'active': quizVm.activeDropDown === 'subject' && !quizVm.set}">
                             <span ng-if="quizVm.data.selectedSubject === undefined">Choose a subject</span>
                             <span ng-if="quizVm.data.selectedSubject !== undefined">{{quizVm.data.selectedSubject.name}}</span>
-                            <img src="../../../../assets/img/ico/dropdown-icon.png">
+                            <img src="../../../assets/img/ico/dropdown-icon.png">
                         </div>
                         <ul class="dropdown" ng-class="{'active': quizVm.activeDropDown === 'subject' && !quizVm.set}">
                             <li ng-repeat="subject in $root.user.subjects" ng-click="quizVm.data.selectedSubject = subject; quizVm.activeDropDown = ''">{{subject.name}}</li>
@@ -254,7 +254,7 @@
             <section class="quiz-form-block">
                 <section class="info error" ng-class="{'active' : quizVm.setError }">
                     <span>Please choose a category, subcategory, and a subject to proceed.</span>
-                    <img src="../../../../assets/img/ico/add-icon.png" ng-click="quizVm.setError = false">
+                    <img src="../../../assets/img/ico/add-icon.png" ng-click="quizVm.setError = false">
                 </section>
             </section>
 
@@ -296,7 +296,7 @@
                                 <section class="table-item-data qlist-data">{{item.question}}</section>
                                 <section class="table-item-data qlist-data">
                                     <button class="button table-button" ng-click="quizVm.popItem(item);">
-                                        <img src="../../../../assets/img/ico/delete-icon-red.png">
+                                        <img src="../../../assets/img/ico/delete-icon-red.png">
                                         <span>Delete</span>
                                     </button>
                                 </section>
@@ -307,11 +307,11 @@
 
                     <section class="qlist-button">
                         <button class="button table-button" ng-click="quizVm.questionType = 'new'" ng-class="{'disabled' : quizVm.questionType === 'new'}">
-                            <img src="../../../../assets/img/ico/add-icon.png">
+                            <img src="../../../assets/img/ico/add-icon.png">
                             <span>Add A New Question</span>
                         </button>
                         <button class="button table-button" ng-click="quizVm.questionType = 'old'" ng-class="{'disabled' : quizVm.questionType === 'old'}">
-                            <img src="../../../../assets/img/ico/list-icon-2.png">
+                            <img src="../../../assets/img/ico/list-icon-2.png">
                             <span>Use An Existing Question</span>
                         </button>
                     </section>

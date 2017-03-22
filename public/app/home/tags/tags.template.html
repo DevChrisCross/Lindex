@@ -1,7 +1,7 @@
 <uib-tabset active="active">
     <uib-tab index="0">
         <uib-tab-heading class="tab-head-container">
-            <img src="../../../../assets/img/ico/category-icon-red.png">
+            <img src="../../../assets/img/ico/category-icon-red.png">
             <p>Category List</p>
         </uib-tab-heading>
         <section class="tags-inner-container">
@@ -16,7 +16,7 @@
                     <div class="dropdown-container numeric">
                         <div class="dropdown-header" ng-click="tagsVm.activeDropDown = 'limit'">
                             <span>{{tagsVm.baseLimit}}</span>
-                            <img src="../../../../assets/img/ico/dropdown-icon.png">
+                            <img src="../../../assets/img/ico/dropdown-icon.png">
                         </div>
                         <ul class="dropdown" ng-class="{'active': tagsVm.activeDropDown === 'limit'}">
                             <li ng-repeat="entry in $root.user.entryLimit" ng-click="tagsVm.baseLimit = entry; tagsVm.activeDropDown = '';">{{entry}}</li>
@@ -54,11 +54,11 @@
                         <section class="table-item-data tags-data">{{item.name}}</section>
                         <section class="table-item-data tags-data">
                             <button class="button table-button" ng-class="{'selected': tagsVm.edit.category.id === item.id}" ng-click="tagsVm.edit.category = tagsVm.duplicate(item)">
-                                <img src="../../../../assets/img/ico/edit-icon-red.png">
+                                <img src="../../../assets/img/ico/edit-icon-red.png">
                                 <span>Edit</span>
                             </button>
                             <button class="button table-button" ng-click="tagsVm.deleteCategory(item.id)">
-                                <img src="../../../../assets/img/ico/delete-icon-red.png">
+                                <img src="../../../assets/img/ico/delete-icon-red.png">
                                 <span>Delete</span>
                             </button>
                         </section>
@@ -98,7 +98,7 @@
 
     <uib-tab index="1">
         <uib-tab-heading class="tab-head-container">
-            <img src="../../../../assets/img/ico/subcategory-icon-red.png">
+            <img src="../../../assets/img/ico/subcategory-icon-red.png">
             <p>Subcategory List</p>
         </uib-tab-heading>
 
@@ -114,7 +114,7 @@
                     <div class="dropdown-container numeric">
                         <div class="dropdown-header" ng-click="tagsVm.activeDropDown = 'limit'">
                             <span>{{tagsVm.baseLimit}}</span>
-                            <img src="../../../../assets/img/ico/dropdown-icon.png">
+                            <img src="../../../assets/img/ico/dropdown-icon.png">
                         </div>
                         <ul class="dropdown" ng-class="{'active': tagsVm.activeDropDown === 'limit'}">
                             <li ng-repeat="entry in $root.user.entryLimit" ng-click="tagsVm.baseLimit = entry; tagsVm.activeDropDown = '';">{{entry}}</li>
@@ -152,11 +152,11 @@
                         <section class="table-item-data tags-data">{{item.name}}</section>
                         <section class="table-item-data tags-data">
                             <button class="button table-button" ng-class="{'selected': tagsVm.edit.subcategory.id === item.id}" ng-click="tagsVm.edit.subcategory = tagsVm.duplicate(item)">
-                                <img src="../../../../assets/img/ico/edit-icon-red.png">
+                                <img src="../../../assets/img/ico/edit-icon-red.png">
                                 <span>Edit</span>
                             </button>
                             <button class="button table-button" ng-click="tagsVm.deleteSubcategory(item.id)">
-                                <img src="../../../../assets/img/ico/delete-icon-red.png">
+                                <img src="../../../assets/img/ico/delete-icon-red.png">
                                 <span>Delete</span>
                             </button>
                         </section>

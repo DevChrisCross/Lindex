@@ -46,6 +46,12 @@
     background-color: #414141;
     border-radius: 0;
 
+    &.active{
+      background-color: #ffac65;
+      box-shadow: inset 0 0 10px #422c10;
+      filter: hue-rotate(100deg);
+    }
+
     &:hover, &.selected {
       background-color: white;
       color: #414141;

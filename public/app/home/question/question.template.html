@@ -1,7 +1,7 @@
 <uib-tabset active="active">
     <uib-tab index="0">
         <uib-tab-heading class="tab-head-container">
-            <img src="../../../../assets/img/ico/list-icon-2.png">
+            <img src="../../../assets/img/ico/list-icon-2.png">
             <p>Question List</p>
         </uib-tab-heading>
         <section class="search-bar">
@@ -15,7 +15,7 @@
                 <div class="dropdown-container">
                     <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'sorter'">
                         <span>{{questionVm.selectedSorter}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'sorter'}">
                         <li ng-repeat="sorter in questionVm.sorters" ng-click="questionVm.selectedSorter = sorter; questionVm.activeDropDown = ''">{{sorter}}</li>
@@ -24,7 +24,7 @@
                 <div class="dropdown-container">
                     <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'sorterType'">
                         <span>{{questionVm.selectedSortType.name}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'sorterType'}">
                         <li ng-repeat="sortType in questionVm.sortTypes" ng-value="sortType.value" ng-click="questionVm.selectedSortType = sortType; questionVm.activeDropDown = ''">{{sortType.name}}</li>
@@ -37,7 +37,7 @@
                 <div class="dropdown-container numeric">
                     <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'limit'">
                         <span>{{questionVm.baseLimit}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'limit'}">
                         <li ng-repeat="entry in $root.user.entryLimit" ng-click="questionVm.baseLimit = entry; questionVm.activeDropDown = '';">{{entry}}</li>
@@ -78,11 +78,11 @@
                     <section class="table-item-data question-data">{{item.options[item.answer]}}</section>
                     <section class="table-item-data question-data">
                         <button class="button table-button" ng-click="questionVm.edit = questionVm.duplicate(item)">
-                            <img src="../../../../assets/img/ico/edit-icon-red.png">
+                            <img src="../../../assets/img/ico/edit-icon-red.png">
                             <span>Edit</span>
                         </button>
                         <button class="button table-button" ng-click="questionVm.deleteQuestion(item.id)">
-                            <img src="../../../../assets/img/ico/delete-icon-red.png">
+                            <img src="../../../assets/img/ico/delete-icon-red.png">
                             <span>Delete</span>
                         </button>
                     </section>
@@ -90,7 +90,7 @@
 
                 <section class="question-edit" ng-class="{'active': questionVm.edit.id === item.id}">
                     <header class="question-header">
-                        <img src="../../../../assets/img/ico/edit-icon-red.png">
+                        <img src="../../../assets/img/ico/edit-icon-red.png">
                         <span>Edit Question</span>
                     </header>
                     <section class="question-body">
@@ -137,7 +137,7 @@
 
     <uib-tab index="1">
         <uib-tab-heading class="tab-head-container">
-            <img src="../../../../assets/img/ico/add-icon.png">
+            <img src="../../../assets/img/ico/add-icon.png">
             <p>Add Question</p>
         </uib-tab-heading>
         <section class="add-question-container">
@@ -162,7 +162,7 @@
                     <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'subcategory'">
                         <span ng-if="questionVm.data.selectedSubCategory === undefined">Choose a subcategory</span>
                         <span ng-if="questionVm.data.selectedSubCategory !== undefined">{{questionVm.data.selectedSubCategory.name}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'subcategory'}">
                         <li ng-repeat="subcategory in $root.user.subcategories" ng-click="questionVm.data.selectedSubCategory = subcategory; questionVm.activeDropDown = ''">{{subcategory.name}}</li>
@@ -176,7 +176,7 @@
                     <div class="dropdown-header" ng-click="questionVm.activeDropDown = 'subject'">
                         <span ng-if="questionVm.data.selectedSubject === undefined">Choose a subject</span>
                         <span ng-if="questionVm.data.selectedSubject !== undefined">{{questionVm.data.selectedSubject.name}}</span>
-                        <img src="../../../../assets/img/ico/dropdown-icon.png">
+                        <img src="../../../assets/img/ico/dropdown-icon.png">
                     </div>
                     <ul class="dropdown" ng-class="{'active': questionVm.activeDropDown === 'subject'}">
                         <li ng-repeat="subject in $root.user.subjects" ng-click="questionVm.data.selectedSubject = subject; questionVm.activeDropDown = ''">{{subject.name}}</li>
@@ -211,7 +211,7 @@
 
             <section class="error error-show" ng-show="questionVm.added">
                 <span>Question successfully added.</span>
-                <img src="../../../../assets/img/ico/add-icon.png" ng-click="questionVm.added = false">
+                <img src="../../../assets/img/ico/add-icon.png" ng-click="questionVm.added = false">
             </section>
         </section>
     </uib-tab>

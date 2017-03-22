@@ -19,6 +19,10 @@
                     abstract: true,
                     url: "/",
                     template: "<home></home>"
+                })
+                .state("student", {
+                    url: "/student",
+                    template: "<student></student>"
                 });
         }
 

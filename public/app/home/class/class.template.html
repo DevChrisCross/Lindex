@@ -1,7 +1,7 @@
 <uib-tabset active="active">
     <uib-tab index="0">
         <uib-tab-heading class="tab-head-container">
-            <img src="../../../../assets/img/ico/list-icon-2.png">
+            <img src="../../../assets/img/ico/list-icon-2.png">
             <p>Class List</p>
         </uib-tab-heading>
 
@@ -11,32 +11,6 @@
                     <span>Search:</span>
                     <input type="text" class="user-input search-bar" ng-model="classVm.search" placeholder="Search a class here">
                 </section>
-
-                <section class="search-filter">
-                    <span>Show</span>
-                    <div class="dropdown-container numeric">
-                        <div class="dropdown-header" ng-click="classVm.activeDropDown = 'limit'" ng-class="{'active': classVm.activeDropDown === 'limit'}">
-                            <span>{{classVm.baseLimit}}</span>
-                            <img src="../../../../assets/img/ico/dropdown-icon.png">
-                        </div>
-                        <ul class="dropdown" ng-class="{'active': classVm.activeDropDown === 'limit'}">
-                            <li ng-repeat="entry in $root.user.entryLimit" ng-click="classVm.baseLimit = entry; classVm.activeDropDown = '';">{{entry}}</li>
-                        </ul>
-                    </div>
-                    <span>entries</span>
-                </section>
-            </section>
-
-            <hr class="row-divider">
-            <section class="item-pager">
-                <section>Total of {{}} items</section>
-                <dir-pagination-controls
-                        auto-hide="false"
-                        direction-links="true"
-                        boundary-links="true"
-                        template-url="assets/libs/dirPagination.tpl.html"
-                        pagination-id=" ">
-                </dir-pagination-controls>
             </section>
 
             <section class="table-container">
@@ -46,26 +20,37 @@
                 <section class="table-item-container"
                     dir-paginate="item in $root.user.classes |
                         orderBy: classVm.selectedSorter.toLowerCase() : classVm.selectedSortType.value |
-                        itemsPerPage: quizVm.baseLimit |
-                        filter: {block: classVm.search}"
-                        pagination-id="">
+                        itemsPerPage: classVm.baseLimit |
+                        filter: {block: classVm.search} as classFound"
+                        pagination-id="classRef">
                     <section class="table-item" ng-class="{'disabled': quizVm.edit}">
                         <section class="table-item-data class-data">{{item.code}}</section>
                         <section class="table-item-data class-data">{{item.name}}</section>
                         <section class="table-item-data class-data">{{item.block}}</section>
                         <section class="table-item-data class-data">
                             <button class="button table-button" ng-click="">
-                                <img src="../../../../assets/img/ico/edit-icon-red.png">
+                                <img src="../../../assets/img/ico/view-icon-red.png">
                                 <span>View</span>
                             </button>
-                            <button class="button table-button" ng-click="classVm.data.classInfo = item" ng-class="{'selected':classVm.data.classInfo.id===item.id}">
-                                <img src="../../../../assets/img/ico/delete-icon-red.png">
-                                <span>Assign</span>
+                            <button class="button table-button" ng-click="classVm.readAssign(item)" ng-class="{'active': item.status==1, 'selected':classVm.data.classInfo.id===item.id}">
+                                <img src="../../../assets/img/ico/assign-icon2-red.png">
+                                <span ng-if="item.status==0">Assign</span>
+                                <span ng-if="item.status==1">Assigned</span>
                             </button>
                         </section>
                     </section>
                 </section>
                 <section class="empty-list" ng-class="">No items found</section>
+            </section>
+            <section class="item-pager">
+                <section>Total of {{classFound.length}} items</section>
+                <dir-pagination-controls
+                        auto-hide="false"
+                        direction-links="true"
+                        boundary-links="true"
+                        template-url="assets/libs/dirPagination.tpl.html"
+                        pagination-id="classRef">
+                </dir-pagination-controls>
             </section>
         </section>
 
@@ -79,13 +64,13 @@
 
                 <section class="search-filter">
                     <div class="dropdown-container">
-                        <div class="dropdown-header" ng-click="classVm.activeDropDown = 'selectQuiz'" ng-class="{'disabled':classVm.data.classInfo===undefined, 'active': classVm.activeDropDown === 'selectQuiz'}">
-                            <span ng-if="classVm.data.selectedQuiz===undefined">Choose a quiz to schedule</span>
+                        <div class="dropdown-header" ng-click="classVm.activeDropDown = 'selectQuiz'" ng-class="{'disabled':classVm.data.classInfo===undefined || classVm.data.classInfo.quiz[0]!==undefined, 'active': classVm.activeDropDown === 'selectQuiz'}">
+                            <span ng-if="classVm.data.selectedQuiz===undefined && classVm.data.classInfo.quiz[0]!==undefined">Choose a quiz to schedule</span>
                             <span>{{classVm.data.selectedQuiz.title}}</span>
-                            <img src="../../../../assets/img/ico/dropdown-icon.png">
+                            <img src="../../../assets/img/ico/dropdown-icon.png">
                         </div>
-                        <ul class="dropdown" ng-class="{'active': classVm.activeDropDown === 'selectQuiz' && classVm.data.classInfo !== undefined}">
-                            <li ng-repeat="item in $root.user.quizzes" ng-click="classVm.data.selectedQuiz = item; classVm.activeDropDown = '';">{{item.title}}</li>
+                        <ul class="dropdown" ng-class="{'active': classVm.activeDropDown === 'selectQuiz' && classVm.data.classInfo !== undefined && classVm.data.classInfo.quiz[0]===undefined}">
+                            <li ng-repeat="item in $root.user.quizzes" ng-click="classVm.data.selectedQuiz = item; classVm.activeDropDown = ''; classVm.computeTime()">{{item.title}}</li>
                         </ul>
                     </div>
                 </section>
@@ -94,13 +79,18 @@
                     <span>Schedule</span>
                     <input class="user-input disabled" value="{{classVm.data.date | date: 'EEEE, MMMM d, y h:mm a'}}">
                 </section>
-                <section class="datepicker" uib-datepicker ng-model="classVm.data.date" ng-change="classVm.computeTime()" datepicker-options="classVm.dateOptions" ng-disabled="classVm.data.selectedQuiz===undefined"></section>
+                <section class="datepicker" uib-datepicker ng-model="classVm.data.date" ng-change="classVm.computeTime()" datepicker-options="classVm.dateOptions" ng-disabled="classVm.data.selectedQuiz===undefined || classVm.data.classInfo.quiz[0]!==undefined"></section>
                 <section class="schedule-time">
                     <section>
-                        <div uib-timepicker ng-model="classVm.data.timeStart" ng-disabled="classVm.data.selectedQuiz===undefined" ng-change="classVm.computeTime()" min="classVm.timeLimits.lower" max="classVm.timeLimits.upper" show-meridian="false"></div>
+                        <span>From</span>
+                        <div uib-timepicker ng-model="classVm.data.timeStart" ng-disabled="classVm.data.selectedQuiz===undefined || classVm.data.classInfo.quiz[0]!==undefined" ng-change="classVm.computeTime()" min="classVm.timeLimits.lower" max="classVm.timeLimits.upper" show-meridian="false"></div>
+                        <span>to</span>
                         <div uib-timepicker ng-model="classVm.data.timeEnd" show-meridian="false" show-spinners="false" ng-disabled="true"></div>
                     </section>
-                    <button class="button" ng-disabled="classVm.data.selectedQuiz===undefined">Assign</button>
+                    <button class="button" ng-class="{'disabled':classVm.data.selectedQuiz===undefined && classVm.data.classInfo.quiz[0]===undefined}" ng-click="classVm.assignQuiz()">
+                        <span ng-if="classVm.data.classInfo.quiz[0]===undefined">Schedule</span>
+                        <span ng-if="classVm.data.classInfo.quiz[0]!==undefined">Postpone</span>
+                    </button>
                 </section>
 
             </section>

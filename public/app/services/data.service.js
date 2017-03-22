@@ -25,6 +25,8 @@
         self.viewTest = viewTest;
         self.updateTest = updateTest;
         self.deleteTest = deleteTest;
+        self.assignTest = assignTest;
+        self.postponeTest = postponeTest;
 
         self.readTags = readTags;
         self.createTag = createTag;
@@ -221,6 +223,25 @@
             $http.post(baseAPI + "quiz/delete.php", {id: id})
                 .then(function (response) {
                     self.readTest(function (response) {});
+                    callback(response);
+                });
+        }
+
+        function assignTest(data, callback) {
+            $http.post(baseAPI + "quiz/assign.php", data)
+                .then(function (response) {
+                    self.readTest(function (response) {});
+                    self.readClass(function (response) {});
+                    callback(response);
+                });
+
+        }
+
+        function postponeTest(data, callback) {
+            $http.post(baseAPI + "quiz/postpone.php", data)
+                .then(function (response) {
+                    self.readTest(function (response) {});
+                    self.readClass(function (response) {});
                     callback(response);
                 });
         }

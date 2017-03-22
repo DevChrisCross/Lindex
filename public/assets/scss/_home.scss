@@ -29,12 +29,15 @@
     align-content: center;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 
     & > p {
       margin-right: 15px;
       text-transform: capitalize;
       color: #666666;
+
+      & > a{
+        cursor: pointer;
+      }
     }
 
     & > img{

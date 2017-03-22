@@ -4,6 +4,7 @@ class Quiz
 {
     const TABLE = " quiz ";
     const ASSOC = " test ";
+    const SCHED = " quiz_schedule ";
 
     public static function create($conn, $data){
         $query =
@@ -16,8 +17,7 @@ class Quiz
                 subcategory_id = :subcategory_id,
                 subject_id = :subject_id,
                 duration = :duration,
-                passingPercent = :percent,
-                status = '0'";
+                passingPercent = :percent";
 
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":name", $data->title);
@@ -57,7 +57,6 @@ class Quiz
                 quiz.name AS title,
                 quiz.duration,
                 quiz.passingPercent,
-                quiz.status,
                 category.name AS category,
                 subcategory.name AS subcategory,
                 subject.name AS subject
@@ -76,6 +75,20 @@ class Quiz
         $stmt->bindParam(":professor_id", $data->user);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        for ($i = 0; $i < count($result); $i++) {
+            $query2 =
+                "SELECT COUNT(*) FROM"
+                    . Quiz::SCHED .
+                "WHERE
+                    quiz_id = :quiz_id";
+
+            $stmt2 = $conn->prepare($query2);
+            $stmt2->bindParam(":quiz_id", $result[$i]['id']);
+            $stmt2->execute();
+            $status = $stmt2->fetchColumn();
+            $result[$i]['status'] = $status==0 ? 0 : 1;
+        }
         return $result;
     }
 
@@ -112,7 +125,6 @@ class Quiz
                 name = :name,
                 duration = :duration,
                 passingPercent = :percent,
-                status = :status
             WHERE
                 id = :id";
 
@@ -120,7 +132,6 @@ class Quiz
         $stmt->bindParam(":name", $data->title);
         $stmt->bindParam(":duration", $data->duration);
         $stmt->bindParam(":percent", $data->passingPercent);
-        $stmt->bindParam(":status", $data->status);
         $stmt->bindParam(":id", $data->id);
         $stmt->execute();
 
@@ -174,5 +185,39 @@ class Quiz
         $stmt2->bindParam(":id", $id);
         $stmt2->execute();
         return true;
+    }
+
+    public static function assign($conn, $data){
+        $query =
+            "INSERT INTO"
+                . Quiz::SCHED .
+            "SET
+                quiz_id = :quiz_id,
+                class_id = :class_id,
+                schedule = :schedule";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":quiz_id", $data->selectedQuiz->id);
+        $stmt->bindParam(":class_id", $data->classInfo->id);
+        $data->dateString = date("Y-m-d H:i:s", strtotime($data->dateString));
+        $stmt->bindParam(":schedule", $data->dateString);
+        $stmt->execute();
+        return true;
+    }
+
+    public static function postpone($conn, $data){
+        $query =
+            "DELETE FROM"
+                . Quiz::SCHED .
+            "WHERE
+                quiz_id = :quiz_id AND
+                class_id = :class_id";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":quiz_id", $data->selectedQuiz->id);
+        $stmt->bindParam(":class_id", $data->classInfo->id);
+        $stmt->execute();
+        return true;
+
     }
 }

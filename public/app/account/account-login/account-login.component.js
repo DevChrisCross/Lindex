@@ -25,7 +25,11 @@
                 AuthenticationService.login(self.user, function (response) {
                     if (response !== undefined) {
                         DataService.initialize(response, function (response) {
-                            $state.go("home.dashboard");
+                            if(self.user.signInAs === 'Professor'){
+                                $state.go("home.dashboard");
+                            }else {
+                                $state.go("student")
+                            }
                         });
                     } else {
                         self.invalid = true;

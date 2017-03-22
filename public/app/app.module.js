@@ -9,6 +9,7 @@
        "angularUtils.directives.dirPagination",
 
        "lindex.account",
+       "lindex.student",
        "lindex.home",
        "lindex.dashboard",
        "lindex.tags",

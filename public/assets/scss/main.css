@@ -1434,12 +1434,13 @@ fieldset[disabled] .btn-link:focus {
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: center;
-    cursor: pointer; }
+    justify-content: center; }
     .home-header > .user-account > p {
       margin-right: 15px;
       text-transform: capitalize;
       color: #666666; }
+      .home-header > .user-account > p > a {
+        cursor: pointer; }
     .home-header > .user-account > img:nth-child(2) {
       height: 35px;
       margin-right: 5px; }
@@ -1988,7 +1989,8 @@ fieldset[disabled] .btn-link:focus {
   border: 1px solid #e3e3e3;
   padding: 9px;
   border-radius: 5px;
-  margin: 10px 0; }
+  margin: 10px 0;
+  transition: 1s ease all; }
 
 .add-quiz-container {
   display: flex;
@@ -2155,8 +2157,22 @@ fieldset[disabled] .btn-link:focus {
     justify-content: center;
     align-items: center; }
 
+.balloon {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  word-break: break-word; }
+
 .class-inner-container {
   width: 60%; }
+  .class-inner-container > .search-bar {
+    margin: 0; }
+    .class-inner-container > .search-bar > .search-filter {
+      width: 100%; }
+      .class-inner-container > .search-bar > .search-filter > .user-input {
+        width: 100%; }
 
 .class-assign {
   position: absolute;
@@ -2197,8 +2213,10 @@ fieldset[disabled] .btn-link:focus {
       .class-assign > .class-assign-inner > .schedule-time > section {
         display: flex;
         align-items: center;
-        width: 55%;
+        width: 60%;
         justify-content: space-around; }
+        .class-assign > .class-assign-inner > .schedule-time > section > span {
+          margin: 0 5px; }
 
 .table-header > .table-header-item.class-data:first-child {
   width: 15%; }
@@ -2247,6 +2265,10 @@ fieldset[disabled] .btn-link:focus {
     align-content: center;
     background-color: #414141;
     border-radius: 0; }
+    .button.table-button.active {
+      background-color: #ffac65;
+      box-shadow: inset 0 0 10px #422c10;
+      filter: hue-rotate(100deg); }
     .button.table-button:hover, .button.table-button.selected {
       background-color: white;
       color: #414141;

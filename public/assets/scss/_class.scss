@@ -1,5 +1,31 @@
+.balloon{
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  word-break: break-word;
+
+  &.quizInfo{
+
+  }
+}
+
+
 .class-inner-container{
   width: 60%;
+
+  & > .search-bar{
+    margin: 0;
+
+    & > .search-filter{
+      width: 100%;
+
+      & > .user-input{
+        width: 100%;
+      }
+    }
+  }
 }
 
 .class-assign{
@@ -54,8 +80,12 @@
       & > section{
         display: flex;
         align-items: center;
-        width: 55%;
+        width: 60%;
         justify-content: space-around;
+
+        & > span{
+          margin: 0 5px;
+        }
       }
     }
   }
