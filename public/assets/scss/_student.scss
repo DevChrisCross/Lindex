@@ -1,0 +1,134 @@
+.student-container{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #313131;
+  color: white;
+
+  & > header{
+    display: flex;
+    align-items: center;
+    height: 200px;
+    padding: 10px 50px 50px 50px;
+
+    & > .tup-container{
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      & > img{
+        height: 70px;
+        margin-right: 10px;
+      }
+
+      & > span{
+        word-break: break-word;
+        width: 230px;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+
+      & > #tup{
+        height: 70px;
+        margin-bottom: 10px;
+      }
+    }
+
+    & > #lindex-logo{
+      position: relative;
+      height: 80px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    & > .user-account{
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+
+      & > img{
+        height: 55px;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  & > section:nth-child(2){
+    background-color: #e8e8e8;
+    padding: 0 100px;
+    height: 10vh;
+    display: flex;
+    position: relative;
+    z-index: 200;
+  }
+
+  & > .logo-container{
+    display: flex;
+    justify-content: flex-start;
+
+    & > img{
+      z-index: 100;
+    }
+
+    & > .black-modal{
+      background-color: black;
+      width: 100%;
+      position: absolute;
+      height: 100vh;
+      top: 190px;
+      left: 0;
+      opacity: 0.7;
+      filter: contrast(1) hue-rotate(0deg) sepia(0) grayscale(0);
+      animation: none;
+      transition: opacity 1s ease, top 1s ease;
+    }
+  }
+}
+
+.student-quiz{
+  position: relative;
+  top: -50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 10px;
+  color: #e8e8e8;
+
+  & > header{
+    border-top: 3px solid #e8e8e8;
+    padding: 15px;
+    color: #545454;
+    text-align: center;
+    font-weight: bold;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 30px;
+    background-color: white;
+  }
+
+  & > .content{
+    height: 75px;
+    padding: 20px;
+    background-color: #313131;
+    text-align: center;
+    position: absolute;
+    left: 13px;
+    top: 50px;
+    width: 97%;
+    border-bottom-left-radius: 75px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, height 1s ease;
+
+    &:hover{
+      background-color: #c73e3e;
+    }
+
+    &.active{
+      height: 550px;
+    }
+  }
+}

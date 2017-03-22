@@ -10,6 +10,10 @@
 
     studentController.$inject = [];
     function studentController  () {
+        let self = this;
 
+        (function init() {
+            self.tabs = [false, false, false];
+        })();
     }
 })();

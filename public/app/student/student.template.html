@@ -1,1 +1,31 @@
-THE FANTASTIC STUDENT HERE
+<section class="student-container">
+    <header>
+        <section class="tup-container">
+            <img src="../../assets/img/ico/tup-logo.png" id="tup">
+            <span>Technological University of the Philippines</span>
+        </section>
+        <svg id="lindex-logo" ng-class="{'active': homeVm.navMenu}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="397.85" height="347.34" viewBox="0 0 397.85 347.34"><defs><style>.cls-1,.cls-3,.cls-4,.cls-5,.cls-6{fill:#d81632;}.cls-2{fill:#333;}.cls-10,.cls-11,.cls-12,.cls-3,.cls-4,.cls-5,.cls-6,.cls-9{font-size:24.89px;font-family:YuGothicUI-Bold, Yu Gothic UI;font-weight:700;}.cls-3,.cls-9{letter-spacing:0.06em;}.cls-10,.cls-4{letter-spacing:0.02em;}.cls-11,.cls-5{letter-spacing:0.08em;}.cls-12,.cls-6{letter-spacing:0.1em;}.cls-7{fill:#e5e5e5;}.cls-10,.cls-11,.cls-12,.cls-8,.cls-9{fill:#188ad6;}</style></defs><title>logo</title><rect class="cls-1" x="60.76" y="121.41" width="42.85" height="42.85"/><rect class="cls-2" x="268.59" y="121.41" width="129.27" height="42.85"/><rect class="cls-1" x="122.01" y="304.08" width="275.84" height="1.57"/><rect class="cls-1" y="304.08" width="42.85" height="1.57"/><rect class="cls-2" x="0.05" width="42.85" height="285.67"/><rect class="cls-1" x="60.76" y="182.83" width="42.85" height="157.12"/><rect class="cls-2" x="121.46" y="182.12" width="42.85" height="103.56"/><polygon class="cls-2" points="250.73 224.97 250.73 285.67 207.88 285.67 207.88 164.26 121.82 164.26 121.82 121.41 250.73 121.41 250.73 182.12 250.73 224.97"/><rect class="cls-2" x="268.59" y="242.82" width="129.27" height="42.85"/><rect class="cls-2" x="268.59" y="182.12" width="129.27" height="42.85"/><text class="cls-3" transform="translate(127.89 339.6) scale(1.1 1)">N</text><text class="cls-4" transform="translate(212.89 339.6) scale(1.1 1)">D</text><text class="cls-5" transform="translate(295.89 339.6) scale(1.1 1)">E</text><text class="cls-6" transform="translate(373.89 339.6) scale(1.1 1)">X</text><rect class="cls-7" x="268.59" y="121.41" width="129.27" height="42.85"/><rect class="cls-7" x="0.05" width="42.85" height="285.67"/><rect class="cls-7" x="121.46" y="182.12" width="42.85" height="103.56"/><polygon class="cls-7" points="250.73 224.97 250.73 285.67 207.88 285.67 207.88 164.26 121.82 164.26 121.82 121.41 250.73 121.41 250.73 182.12 250.73 224.97"/><rect class="cls-7" x="268.59" y="242.82" width="129.27" height="42.85"/><rect class="cls-7" x="268.59" y="182.12" width="129.27" height="42.85"/><rect class="cls-8" x="60.76" y="121.41" width="42.85" height="42.85"/><rect class="cls-8" x="122.01" y="304.08" width="275.84" height="1.57"/><rect class="cls-8" y="304.08" width="42.85" height="1.57"/><rect class="cls-8" x="60.76" y="182.83" width="42.85" height="157.12"/><text class="cls-9" transform="translate(127.89 339.6) scale(1.1 1)">N</text><text class="cls-10" transform="translate(212.89 339.6) scale(1.1 1)">D</text><text class="cls-11" transform="translate(295.89 339.6) scale(1.1 1)">E</text><text class="cls-12" transform="translate(373.89 339.6) scale(1.1 1)">X</text></svg>
+        <div class="user-account">
+            <p><a ng-click="homeVm.logout()">Logout, </a>{{homeVm.name}}</p>
+            <img src="../../assets/img/ico/account-icon.png">
+        </div>
+    </header>
+    <section>
+        <section class="student-quiz">
+            <header>Upcoming Quizzes</header>
+            <section class="content" ng-click="studentVm.tabs[0] = !studentVm.tabs[0]" ng-class="{'active':studentVm.tabs[0]}">safdsa</section>
+        </section>
+        <section class="student-quiz">
+            <header>On-going Quizzes</header>
+            <section class="content" ng-click="studentVm.tabs[1] = !studentVm.tabs[1]" ng-class="{'active':studentVm.tabs[1]}">safdsa</section>
+        </section>
+        <section class="student-quiz">
+            <header>Taken Quizzes</header>
+            <section class="content" ng-click="studentVm.tabs[2] = !studentVm.tabs[2]" ng-class="{'active':studentVm.tabs[2]}">safdsa</section>
+        </section>
+    </section>
+    <section class="logo-container">
+        <div class="black-modal"></div>
+       <img src="../../assets/img/bg/tup-slide.jpg">
+    </section>
+</section>
