@@ -26,7 +26,7 @@
                     if (response !== undefined) {
                         DataService.initialize(response, function (response) {
                             if(self.user.signInAs === 'Professor'){
-                                $state.go("home.dashboard");
+                                $state.go("home.classComp");
                             }else {
                                 $state.go("student")
                             }

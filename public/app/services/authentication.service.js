@@ -23,7 +23,7 @@
                     if (response.data.length !== 0) {
                         console.log(response.data[0]);
                         token = self.encodeToken(response.data[0]);
-                        $localStorage.currentUser = { token: token };
+                        $localStorage.currentUser = { token: token, signInAs: response.data[0]["signInAs"]};
                         $http.defaults.headers.common.Authorization = 'Bearer ' + token;
                     }callback(token);
                 });

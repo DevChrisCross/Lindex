@@ -38,6 +38,14 @@
                 if (restrictedPage && !$localStorage.currentUser) {
                     $location.path('/account');
                 }
+                else {
+                    if(($location.path()=="/" || $location.path()=="/student") && $localStorage.currentUser.signInAs == "Professor"){
+                        $location.path("/");
+                    }
+                    if($location.path()=="/" && $localStorage.currentUser.signInAs == "Student"){
+                        $location.path("/student");
+                    }
+                }
             });
         }
 })();

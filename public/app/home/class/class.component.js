@@ -15,8 +15,10 @@
             self.assignQuiz = assignQuiz;
             self.computeTime = computeTime;
             self.readAssign = readAssign;
+            self.viewClass = viewClass;
 
             (function init() {
+                self.currentClass = undefined;
                 self.headers = ["Subject Code", "Subject Name", "Class and Section", "Options"];
                 self.baseLimit = 10;
 
@@ -43,7 +45,6 @@
             })();
 
             function readAssign(item) {
-                let dItem = DataService.duplicate(item);
                 self.data = {
                     classInfo: undefined,
                     selectedQuiz: undefined,
@@ -55,12 +56,11 @@
                     self.data.classInfo = item;
                 }
                 if(item.status === 1){
-                    console.log("lower");
                     self.data.classInfo = item;
-                    self.data.selectedQuiz = item.quiz[0];
-                    self.data.date = new Date(item.quiz[0].schedule);
-                    self.data.timeStart = new Date(item.quiz[0].schedule);
-                    self.data.timeEnd = new Date(item.quiz[0].schedule);
+                    self.data.selectedQuiz = item.quizzes[item.scheduleIndex];
+                    self.data.date = new Date(item.quizzes[item.scheduleIndex].schedule);
+                    self.data.timeStart = new Date(item.quizzes[item.scheduleIndex].schedule);
+                    self.data.timeEnd = new Date(item.quizzes[item.scheduleIndex].schedule);
                     self.data.timeEnd.setMinutes(self.data.timeEnd.getMinutes() + parseInt(self.data.selectedQuiz.duration));
                 }self.data.status = item.status;
             }
@@ -89,6 +89,11 @@
                 self.data.date.setMinutes(self.data.timeStart.getMinutes());
                 self.data.timeEnd = new Date(self.data.date);
                 self.data.timeEnd.setMinutes(self.data.date.getMinutes() + parseInt(self.data.selectedQuiz.duration));
+            }
+
+            function viewClass(item) {
+                self.currentClass = item.students;
+                self.currentQuizzes = item.quizzes;
             }
         }
 })();

@@ -7,10 +7,10 @@
         homeConfiguration.$inject = ["$stateProvider"];
         function homeConfiguration  ( $stateProvider ) {
             $stateProvider
-                .state("home.dashboard", {
-                    url: "",
-                    template: "<dashboard></dashboard>"
-                })
+                // .state("home.dashboard", {
+                //     url: "",
+                //     template: "<dashboard></dashboard>"
+                // })
                 .state("home.tags", {
                     url: "tags",
                     template: "<tags></tags>"
@@ -24,7 +24,7 @@
                     template: "<quiz></quiz>"
                 })
                 .state("home.classComp", {
-                    url: "classes",
+                    url: "",
                     template: "<class-comp></class-comp>"
                 });
         }

@@ -7,6 +7,7 @@
        "ui.router",
        "ngStorage",
        "angularUtils.directives.dirPagination",
+       "timer",
 
        "lindex.account",
        "lindex.student",

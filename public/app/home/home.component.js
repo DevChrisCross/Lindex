@@ -15,7 +15,7 @@
 
             (function init() {
                 DataService.initialize($localStorage.currentUser.token, function (response) {
-                    self.currentNavigation =
+                    self.currentNavigation = "Classes";
                     self.name = DataService.user.lastName + ", " + DataService.user.firstName;
                     self.navMenu = false;
                     self.userMenu = false;

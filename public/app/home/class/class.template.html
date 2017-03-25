@@ -28,7 +28,7 @@
                         <section class="table-item-data class-data">{{item.name}}</section>
                         <section class="table-item-data class-data">{{item.block}}</section>
                         <section class="table-item-data class-data">
-                            <button class="button table-button" ng-click="">
+                            <button class="button table-button" ng-click="classVm.viewClass(item)">
                                 <img src="../../../assets/img/ico/view-icon-red.png">
                                 <span>View</span>
                             </button>
@@ -42,6 +42,31 @@
                 </section>
                 <section class="empty-list" ng-class="">No items found</section>
             </section>
+
+            <section class="quiz-label">
+                <section ng-repeat="quiz in classVm.currentQuizzes track by $index">
+                    <section>{{$index+1}}</section>
+                    <section>{{quiz.title}}</section>
+                </section>
+            </section>
+
+            <section class="class-view" ng-class="{'disabled':classVm.currentClass === undefined}">
+                <section class="student-header">
+                    <section>Name</section>
+                    <section class="quiz-column" ng-repeat="quiz in classVm.currentQuizzes track by $index">
+                        {{$index+1}}
+                    </section>
+                </section>
+                <section class="student-table" ng-repeat="student in classVm.currentClass">
+                    <section class="student-row">
+                        <section>{{student.last_name}}, {{student.first_name}}</section>
+                        <section class="student-grade" ng-repeat="grade in student.grades">
+                            {{grade[0].score}}
+                        </section>
+                    </section>
+                </section>
+            </section>
+
             <section class="item-pager">
                 <section>Total of {{classFound.length}} items</section>
                 <dir-pagination-controls
@@ -64,12 +89,12 @@
 
                 <section class="search-filter">
                     <div class="dropdown-container">
-                        <div class="dropdown-header" ng-click="classVm.activeDropDown = 'selectQuiz'" ng-class="{'disabled':classVm.data.classInfo===undefined || classVm.data.classInfo.quiz[0]!==undefined, 'active': classVm.activeDropDown === 'selectQuiz'}">
-                            <span ng-if="classVm.data.selectedQuiz===undefined && classVm.data.classInfo.quiz[0]!==undefined">Choose a quiz to schedule</span>
+                        <div class="dropdown-header" ng-click="classVm.activeDropDown = 'selectQuiz'" ng-class="{'disabled':classVm.data.classInfo===undefined || classVm.data.classInfo.status===1, 'active': classVm.activeDropDown === 'selectQuiz'}">
+                            <span ng-if="classVm.data.selectedQuiz===undefined && classVm.data.classInfo.status===1">Choose a quiz to schedule</span>
                             <span>{{classVm.data.selectedQuiz.title}}</span>
                             <img src="../../../assets/img/ico/dropdown-icon.png">
                         </div>
-                        <ul class="dropdown" ng-class="{'active': classVm.activeDropDown === 'selectQuiz' && classVm.data.classInfo !== undefined && classVm.data.classInfo.quiz[0]===undefined}">
+                        <ul class="dropdown" ng-class="{'active': classVm.activeDropDown === 'selectQuiz' && classVm.data.classInfo !== undefined && classVm.data.classInfo.status===0}">
                             <li ng-repeat="item in $root.user.quizzes" ng-click="classVm.data.selectedQuiz = item; classVm.activeDropDown = ''; classVm.computeTime()">{{item.title}}</li>
                         </ul>
                     </div>
@@ -79,17 +104,17 @@
                     <span>Schedule</span>
                     <input class="user-input disabled" value="{{classVm.data.date | date: 'EEEE, MMMM d, y h:mm a'}}">
                 </section>
-                <section class="datepicker" uib-datepicker ng-model="classVm.data.date" ng-change="classVm.computeTime()" datepicker-options="classVm.dateOptions" ng-disabled="classVm.data.selectedQuiz===undefined || classVm.data.classInfo.quiz[0]!==undefined"></section>
+                <section class="datepicker" uib-datepicker ng-model="classVm.data.date" ng-change="classVm.computeTime()" datepicker-options="classVm.dateOptions" ng-disabled="classVm.data.selectedQuiz===undefined || classVm.data.classInfo.status===1"></section>
                 <section class="schedule-time">
                     <section>
                         <span>From</span>
-                        <div uib-timepicker ng-model="classVm.data.timeStart" ng-disabled="classVm.data.selectedQuiz===undefined || classVm.data.classInfo.quiz[0]!==undefined" ng-change="classVm.computeTime()" min="classVm.timeLimits.lower" max="classVm.timeLimits.upper" show-meridian="false"></div>
+                        <div uib-timepicker ng-model="classVm.data.timeStart" ng-disabled="classVm.data.selectedQuiz===undefined || classVm.data.classInfo.status===1" ng-change="classVm.computeTime()" min="classVm.timeLimits.lower" max="classVm.timeLimits.upper" show-meridian="false"></div>
                         <span>to</span>
                         <div uib-timepicker ng-model="classVm.data.timeEnd" show-meridian="false" show-spinners="false" ng-disabled="true"></div>
                     </section>
-                    <button class="button" ng-class="{'disabled':classVm.data.selectedQuiz===undefined && classVm.data.classInfo.quiz[0]===undefined}" ng-click="classVm.assignQuiz()">
-                        <span ng-if="classVm.data.classInfo.quiz[0]===undefined">Schedule</span>
-                        <span ng-if="classVm.data.classInfo.quiz[0]!==undefined">Postpone</span>
+                    <button class="button" ng-class="{'disabled':classVm.data.selectedQuiz===undefined}" ng-click="classVm.assignQuiz()">
+                        <span ng-if="classVm.data.classInfo.status==0 || classVm.data.classInfo.status==undefined">Schedule</span>
+                        <span ng-if="classVm.data.classInfo.status==1">Postpone</span>
                     </button>
                 </section>
 

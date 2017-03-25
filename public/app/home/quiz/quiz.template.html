@@ -68,7 +68,7 @@
                 dir-paginate="item in $root.user.quizzes |
                     orderBy: quizVm.selectedSorter.toLowerCase() : quizVm.selectedSortType.value |
                     itemsPerPage: quizVm.baseLimit |
-                    filter: {question: quizVm.search} as itemsFound"
+                    filter: {title: quizVm.search} as itemsFound"
                     pagination-id="quiz">
                 <section class="table-item" ng-class="{'disabled': quizVm.edit}">
                     <section class="table-item-data quiz-data">{{item.category}}</section>

@@ -138,3 +138,96 @@
     }
   }
 }
+
+.class-view{
+  overflow-y: scroll;
+  max-height: 400px;
+  width: 100%;
+  transition: 1s ease all;
+  border: 1px solid #737373;
+
+  &.disabled{
+    max-height: 0;
+    border: 0;
+  }
+
+  & > .student-header{
+    display: flex;
+    border-bottom: 1px solid #505050;
+
+    & > section{
+      &:first-child{
+        display: flex;
+        padding: 15px;
+        width: 300px;
+        background-color: #414141;
+        color: white;
+        justify-content: center;
+        //border: 1px solid black;
+      }
+
+      &.quiz-column{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 110px;
+        background-color: #9a9a9a;
+        border-right: 1px solid #505050;
+        color: white;
+
+      }
+    }
+  }
+
+  & > .student-table{
+
+    & > .student-row{
+      display: flex;
+      background-color: #d7d7d7;
+      border-bottom: 1px solid #505050;
+
+      & > .student-grade{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 110px;
+        background-color: #9a9a9a;
+        border-right: 1px solid #505050;
+        color: white;
+      }
+
+      & > section{
+        &:first-child{
+          display: flex;
+          padding: 15px;
+          width: 300px;
+          background-color: #414141;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.quiz-label{
+  border: 1px solid #686868;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  background-color: #d7d7d7;
+  margin-bottom: 10px;
+  width: 100%;
+  color: #545454;
+
+  & > section{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 10px;
+
+    & > section:first-child{
+      margin-right: 10px;
+    }
+  }
+}

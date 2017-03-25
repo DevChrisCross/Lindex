@@ -11,6 +11,7 @@
 
         self.user = undefined;
         self.initialize = initialize;
+        self.studentInitialize = studentInitialize;
 
         self.duplicate = duplicate;
         self.choiceLimit = choiceLimit;
@@ -27,6 +28,7 @@
         self.deleteTest = deleteTest;
         self.assignTest = assignTest;
         self.postponeTest = postponeTest;
+        self.recordTest = recordTest;
 
         self.readTags = readTags;
         self.createTag = createTag;
@@ -34,6 +36,8 @@
         self.deleteTag = deleteTag;
 
         self.readClass = readClass;
+
+        self.readSchedule = readSchedule;
 
         return self;
 
@@ -65,6 +69,15 @@
                         });
                     });
                 });
+            });
+        }
+
+        function studentInitialize(token, callback) {
+            self.user = AuthenticationService.decodeToken(token);
+            $rootScope.user = {};
+
+            self.readSchedule(function (response) {
+                callback(true);
             });
         }
 
@@ -246,12 +259,31 @@
                 });
         }
 
+        function recordTest(data, callback) {
+            data.studentID = self.user.id;
+            console.log(data);
+            $http.post(baseAPI + "quiz/record.php", data)
+                .then(function (response) {
+                    callback(response);
+                });
+        }
+
         function readClass(callback) {
             $http.post(baseAPI + "section/read.php", {user: self.user.id})
                 .then(function (response) {
                     response = JSON.parse(JSON.stringify(response.data));
                     $rootScope.user.classes = response;
+                    console.log(response);
                     callback(true);
+                });
+        }
+
+        function readSchedule(callback) {
+            $http.post(baseAPI + "student/readSchedule.php", {studentID: self.user.id})
+                .then(function (response) {
+                    response = JSON.parse(JSON.stringify(response.data));
+                    $rootScope.user.classes = response;
+                    callback(response);
                 });
         }
     }

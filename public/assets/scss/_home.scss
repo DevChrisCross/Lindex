@@ -23,67 +23,65 @@
   background-color: #fafafa;
   color: #efe6ee;
   width: 100%;
+}
 
-  & > .user-account{
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+.user-account{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 
-    & > p {
-      margin-right: 15px;
-      text-transform: capitalize;
-      color: #666666;
+  & > p {
+    margin-right: 15px;
+    text-transform: capitalize;
+    color: #666666;
 
-      & > a{
-        cursor: pointer;
-      }
-    }
-
-    & > img{
-      &:nth-child(2){
-        height: 35px;
-        margin-right: 5px;
-      }
-
-      &:nth-child(3){
-        height: 15px;
-      }
-    }
-
-    & > .user-account-menu{
-      position: absolute;
-      right: 10px;
-      top: 75px;
-      width: 200px;
-      height: 0;
-      padding: 0;
-      margin: 0;
-
-      border-radius: 5px 0 5px 5px;
-      background-color: #666666;
-      list-style: none;
-      overflow: hidden;
-      z-index: 5;
-      transition: 1s ease all;
-
-      & > li{
-        padding: 0 20px;
-
-        &:hover{
-
-        }
-      }
-
-      &.active{
-        height: 100%;
-        padding: 20px 0;
-
-      }
+    & > a{
+      cursor: pointer;
     }
   }
 
+  & > img{
+    &:nth-child(2){
+      height: 35px;
+      margin-right: 5px;
+    }
 
+    &:nth-child(3){
+      height: 15px;
+    }
+  }
+
+  & > .user-account-menu{
+    position: absolute;
+    right: 10px;
+    top: 75px;
+    width: 200px;
+    height: 0;
+    padding: 0;
+    margin: 0;
+
+    border-radius: 5px 0 5px 5px;
+    background-color: #666666;
+    list-style: none;
+    overflow: hidden;
+    z-index: 5;
+    transition: 1s ease all;
+
+    & > li{
+      padding: 0 20px;
+
+      &:hover{
+
+      }
+    }
+
+    &.active{
+      height: 100%;
+      padding: 20px 0;
+
+    }
+  }
 }
 
 .home-header-title{

@@ -1,4 +1,4 @@
-<section class="student-container">
+<section class="student-container" ng-class="{'disabled':studentVm.quizStarted}">
     <header>
         <section class="tup-container">
             <img src="../../assets/img/ico/tup-logo.png" id="tup">
@@ -6,26 +6,143 @@
         </section>
         <svg id="lindex-logo" ng-class="{'active': homeVm.navMenu}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="397.85" height="347.34" viewBox="0 0 397.85 347.34"><defs><style>.cls-1,.cls-3,.cls-4,.cls-5,.cls-6{fill:#d81632;}.cls-2{fill:#333;}.cls-10,.cls-11,.cls-12,.cls-3,.cls-4,.cls-5,.cls-6,.cls-9{font-size:24.89px;font-family:YuGothicUI-Bold, Yu Gothic UI;font-weight:700;}.cls-3,.cls-9{letter-spacing:0.06em;}.cls-10,.cls-4{letter-spacing:0.02em;}.cls-11,.cls-5{letter-spacing:0.08em;}.cls-12,.cls-6{letter-spacing:0.1em;}.cls-7{fill:#e5e5e5;}.cls-10,.cls-11,.cls-12,.cls-8,.cls-9{fill:#188ad6;}</style></defs><title>logo</title><rect class="cls-1" x="60.76" y="121.41" width="42.85" height="42.85"/><rect class="cls-2" x="268.59" y="121.41" width="129.27" height="42.85"/><rect class="cls-1" x="122.01" y="304.08" width="275.84" height="1.57"/><rect class="cls-1" y="304.08" width="42.85" height="1.57"/><rect class="cls-2" x="0.05" width="42.85" height="285.67"/><rect class="cls-1" x="60.76" y="182.83" width="42.85" height="157.12"/><rect class="cls-2" x="121.46" y="182.12" width="42.85" height="103.56"/><polygon class="cls-2" points="250.73 224.97 250.73 285.67 207.88 285.67 207.88 164.26 121.82 164.26 121.82 121.41 250.73 121.41 250.73 182.12 250.73 224.97"/><rect class="cls-2" x="268.59" y="242.82" width="129.27" height="42.85"/><rect class="cls-2" x="268.59" y="182.12" width="129.27" height="42.85"/><text class="cls-3" transform="translate(127.89 339.6) scale(1.1 1)">N</text><text class="cls-4" transform="translate(212.89 339.6) scale(1.1 1)">D</text><text class="cls-5" transform="translate(295.89 339.6) scale(1.1 1)">E</text><text class="cls-6" transform="translate(373.89 339.6) scale(1.1 1)">X</text><rect class="cls-7" x="268.59" y="121.41" width="129.27" height="42.85"/><rect class="cls-7" x="0.05" width="42.85" height="285.67"/><rect class="cls-7" x="121.46" y="182.12" width="42.85" height="103.56"/><polygon class="cls-7" points="250.73 224.97 250.73 285.67 207.88 285.67 207.88 164.26 121.82 164.26 121.82 121.41 250.73 121.41 250.73 182.12 250.73 224.97"/><rect class="cls-7" x="268.59" y="242.82" width="129.27" height="42.85"/><rect class="cls-7" x="268.59" y="182.12" width="129.27" height="42.85"/><rect class="cls-8" x="60.76" y="121.41" width="42.85" height="42.85"/><rect class="cls-8" x="122.01" y="304.08" width="275.84" height="1.57"/><rect class="cls-8" y="304.08" width="42.85" height="1.57"/><rect class="cls-8" x="60.76" y="182.83" width="42.85" height="157.12"/><text class="cls-9" transform="translate(127.89 339.6) scale(1.1 1)">N</text><text class="cls-10" transform="translate(212.89 339.6) scale(1.1 1)">D</text><text class="cls-11" transform="translate(295.89 339.6) scale(1.1 1)">E</text><text class="cls-12" transform="translate(373.89 339.6) scale(1.1 1)">X</text></svg>
         <div class="user-account">
-            <p><a ng-click="homeVm.logout()">Logout, </a>{{homeVm.name}}</p>
+            <p><a ng-click="studentVm.logout()">Logout, </a>{{studentVm.name}}</p>
             <img src="../../assets/img/ico/account-icon.png">
         </div>
     </header>
     <section>
         <section class="student-quiz">
-            <header>Upcoming Quizzes</header>
-            <section class="content" ng-click="studentVm.tabs[0] = !studentVm.tabs[0]" ng-class="{'active':studentVm.tabs[0]}">safdsa</section>
+            <header>
+                <img src="../../assets/img/ico/upcoming.png">
+                <span>Upcoming Quizzes</span>
+            </header>
+            <section class="content" ng-click="studentVm.tabs[0] = !studentVm.tabs[0]; studentVm.updateQuizStatus()" ng-class="{'active':studentVm.tabs[0]}">
+                <section class="notification" ng-class="{'disabled':studentVm.tabs[0]}">
+                    {{studentVm.quizzes.upcomingDays.length + studentVm.quizzes.upcomingToday.length}}
+                    <span ng-if="studentVm.quizzes.upcomingDays.length + studentVm.quizzes.upcomingToday.length >= 2">Quizzes</span>
+                    <span ng-if="studentVm.quizzes.upcomingDays.length + studentVm.quizzes.upcomingToday.length < 2">Quiz</span>
+                </section>
+                <section class="expand">
+                    <section ng-repeat="quiz in studentVm.quizzes.upcomingDays | orderBy:'schedule' ">
+                        <section>Name: {{quiz.name}}</section>
+                        <section>Duration: {{quiz.duration}} minutes</section>
+                        <section>Subject: {{quiz.subject.code}} {{quiz.subject.name}}</section>
+                        <section>Passing Percentage: {{quiz.passingPercent}}%</section>
+                        <section>Schedule: {{quiz.schedule | date: 'EEEE, MMMM d, y | h:mm a'}}</section>
+                    </section>
+                </section>
+            </section>
         </section>
+
         <section class="student-quiz">
-            <header>On-going Quizzes</header>
-            <section class="content" ng-click="studentVm.tabs[1] = !studentVm.tabs[1]" ng-class="{'active':studentVm.tabs[1]}">safdsa</section>
+            <header>
+                <img src="../../assets/img/ico/ongoing.png">
+                <span>On-going Quizzes</span>
+            </header>
+            <section class="content" ng-click="studentVm.tabs[1] = !studentVm.tabs[1]; studentVm.updateQuizStatus()" ng-class="{'active':studentVm.tabs[1]}">
+                <section class="notification" ng-class="{'disabled':studentVm.tabs[1]}">
+                    {{studentVm.quizzes.active.length}}
+                    <span ng-if="studentVm.quizzes.active.length >= 2">Quizzes</span>
+                    <span ng-if="studentVm.quizzes.active.length < 2">Quiz</span>
+                </section>
+                <!--<section class="expand">-->
+                    <!--<section ng-repeat="quiz in studentVm.quizzes.active | orderBy:'schedule'">-->
+                        <!--<section>Name: {{quiz.name}}</section>-->
+                        <!--<section>Duration: {{quiz.duration}} minutes</section>-->
+                        <!--<section>Subject: {{quiz.subject.code}} {{quiz.subject.name}}</section>-->
+                        <!--<section>Passing Percentage: {{quiz.passingPercent}}%</section>-->
+                        <!--<section>Started on {{quiz.schedule | date: 'EEEE, MMMM d, y | h:mm a'}}</section>-->
+                        <!--<button class="button" ng-click="studentVm.takeQuiz(quiz)">Take Quiz</button>-->
+                    <!--</section>-->
+                <!--</section>-->
+
+                <!---------------------------------------EXPERIMENTAL------------------------------------>
+                <section class="expand">
+                    <section ng-repeat="quiz in studentVm.quizzes.upcomingDays">
+                        <section>Name: {{quiz.name}}</section>
+                        <section>Duration: {{quiz.duration}} minutes</section>
+                        <section>Subject: {{quiz.subject.code}} {{quiz.subject.name}}</section>
+                        <section>Passing Percentage: {{quiz.passingPercent}}%</section>
+                        <section>Started on {{quiz.schedule | date: 'EEEE, MMMM d, y | h:mm a'}}</section>
+                        <button class="button" ng-click="studentVm.takeQuiz(quiz)">Take Quiz</button>
+                    </section>
+                </section>
+            </section>
         </section>
+
         <section class="student-quiz">
-            <header>Taken Quizzes</header>
-            <section class="content" ng-click="studentVm.tabs[2] = !studentVm.tabs[2]" ng-class="{'active':studentVm.tabs[2]}">safdsa</section>
+            <header>
+                <img src="../../assets/img/ico/doneTaken.png">
+                <span>Taken and Missed Quizzes</span>
+            </header>
+            <section class="content" ng-click="studentVm.tabs[2] = !studentVm.tabs[2]; studentVm.updateQuizStatus()" ng-class="{'active':studentVm.tabs[2]}">
+                <section class="notification" ng-class="{'disabled':studentVm.tabs[2]}">
+                    {{studentVm.quizzes.taken.length + studentVm.quizzes.missed.length}}
+                    <span ng-if="studentVm.quizzes.taken.length + studentVm.quizzes.missed.length >= 2">Quizzes</span>
+                    <span ng-if="studentVm.quizzes.taken.length + studentVm.quizzes.missed.length < 2">Quiz</span>
+                </section>
+                <section class="expand">
+                    <section ng-repeat="quiz in studentVm.quizzes.taken | orderBy:'schedule'">
+                        <section>Name: {{quiz.name}}</section>
+                        <section>Duration: {{quiz.duration}} minutes</section>
+                        <section>Subject: {{quiz.subject.code}} {{quiz.subject.name}}</section>
+                        <section>Passing Percentage: {{quiz.passingPercent}}%</section>
+                        <section>Date Taken: {{quiz.schedule | date: 'EEEE, MMMM d, y'}}</section>
+                        <section>Percentage Score: {{quiz.score}}</section>
+                    </section>
+                </section>
+            </section>
         </section>
     </section>
+
     <section class="logo-container">
         <div class="black-modal"></div>
        <img src="../../assets/img/bg/tup-slide.jpg">
     </section>
+</section>
+
+<section class="active-quiz-container" ng-class="{'active':studentVm.quizStarted}">
+    <header class="quiz-info">
+        <section>
+            <span>{{studentVm.activeQuiz.name}}</span>
+            <small>{{studentVm.activeQuiz.subject.code}} {{studentVm.activeQuiz.subject.name}}</small>
+        </section>
+        <section>
+            <img src="../../assets/img/ico/account-icon.png">
+            <span>{{studentVm.name}}</span>
+        </section>
+        <section>
+            <div class="time-display">
+                <img src="../../assets/img/ico/timer-left-icon.png">
+                <span>Time Left</span>
+            </div>
+            <timer class="time" end-time="studentVm.activeQuiz.quizEnd">{{hours}}:{{minutes}}:{{seconds}}</timer>
+        </section>
+    </header>
+
+    <section class="quiz-question" ng-class="{'disabled':studentVm.questionIndex+1==studentVm.activeQuiz.questions.length}">
+        <section>
+            <span>{{studentVm.questionIndex+1}}.) {{studentVm.activeQuiz.questions[studentVm.questionIndex].detail}}</span>
+        </section>
+        <section>
+            <ul>
+                <li ng-repeat="choice in studentVm.activeQuiz.questions[studentVm.questionIndex].options track by $index">
+                    <input type="radio" name="answer" ng-value="$index" ng-model="studentVm.activeQuiz.currentAnswer" ng-click="" >
+                    <span>{{choice}}</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="question-navigator">
+            <span>Showing {{studentVm.questionIndex+1}} out of {{studentVm.activeQuiz.questions.length}} questions</span>
+            <button class="button" ng-click="studentVm.nextQuestion()">
+                <span ng-if="studentVm.questionIndex+1 < studentVm.activeQuiz.questions.length">Next Question</span>
+                <span ng-if="studentVm.questionIndex+1 === studentVm.activeQuiz.questions.length">Submit Quiz</span>
+            </button>
+        </section>
+    </section>
+    {{studentVm.activeQuiz.correctAnswers}}
+    <footer class="quiz-footer">
+        <svg id="lindex-logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="397.85" height="347.34" viewBox="0 0 397.85 347.34"><defs><style>.cls-1,.cls-3,.cls-4,.cls-5,.cls-6{fill:#d81632;}.cls-2{fill:#333;}.cls-3,.cls-4,.cls-5,.cls-6{font-size:24.89px;font-family:YuGothicUI-Bold, Yu Gothic UI;font-weight:700;}.cls-3{letter-spacing:0.06em;}.cls-4{letter-spacing:0.02em;}.cls-5{letter-spacing:0.08em;}.cls-6{letter-spacing:0.1em;}</style></defs><title>lindex</title><rect class="cls-1" x="60.76" y="121.41" width="42.85" height="42.85"/><rect class="cls-2" x="268.59" y="121.41" width="129.27" height="42.85"/><rect class="cls-1" x="122.01" y="304.08" width="275.84" height="1.57"/><rect class="cls-1" y="304.08" width="42.85" height="1.57"/><rect class="cls-2" x="0.05" width="42.85" height="285.67"/><rect class="cls-1" x="60.76" y="182.83" width="42.85" height="157.12"/><rect class="cls-2" x="121.46" y="182.12" width="42.85" height="103.56"/><polygon class="cls-2" points="250.73 224.97 250.73 285.67 207.88 285.67 207.88 164.26 121.82 164.26 121.82 121.41 250.73 121.41 250.73 182.12 250.73 224.97"/><rect class="cls-2" x="268.59" y="242.82" width="129.27" height="42.85"/><rect class="cls-2" x="268.59" y="182.12" width="129.27" height="42.85"/><text class="cls-3" transform="translate(127.89 339.6) scale(1.1 1)">N</text><text class="cls-4" transform="translate(212.89 339.6) scale(1.1 1)">D</text><text class="cls-5" transform="translate(295.89 339.6) scale(1.1 1)">E</text><text class="cls-6" transform="translate(373.89 339.6) scale(1.1 1)">X</text></svg>
+    </footer>
 </section>

@@ -5,6 +5,7 @@ class Quiz
     const TABLE = " quiz ";
     const ASSOC = " test ";
     const SCHED = " quiz_schedule ";
+    const GRADE = " student_grades ";
 
     public static function create($conn, $data){
         $query =
@@ -219,5 +220,24 @@ class Quiz
         $stmt->execute();
         return true;
 
+    }
+
+    public static function record($conn, $data){
+        $query =
+            "INSERT INTO"
+                . Quiz::GRADE .
+            "SET
+                student_id = :student_id,
+                quiz_id = :quiz_id,
+                class_id = :class_id,
+                score = :score";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":quiz_id", $data->quizID);
+        $stmt->bindParam(":class_id", $data->classID);
+        $stmt->bindParam(":student_id", $data->studentID);
+        $stmt->bindParam(":score", $data->quizScore);
+        $stmt->execute();
+        return true;
     }
 }
